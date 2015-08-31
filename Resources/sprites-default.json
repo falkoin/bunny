@@ -1,0 +1,11 @@
+{
+    "sheets": [
+        { 
+            "coordinatesFileName": "sprites-0001-default.plist",
+            "textureFileName": "sprites-0001-default.png",
+            "width": 262.0,
+            "height": 252.0
+        }
+    ],
+    "signature": "c5eaa44db5efed6f0fe592dd8ed3952e56812c70"
+}

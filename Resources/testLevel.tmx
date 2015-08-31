@@ -1,0 +1,233 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.0" orientation="orthogonal" renderorder="right-down" width="16" height="64" tilewidth="16" tileheight="16" nextobjectid="51">
+ <tileset firstgid="1" name="tiles" tilewidth="16" tileheight="16">
+  <image source="tiles.png" width="128" height="16"/>
+ </tileset>
+ <layer name="background" width="16" height="64">
+  <data encoding="base64" compression="zlib">
+   eJztwwEJAAAMBKHj+4dej6HgqqmqqqqvHyPACAE=
+  </data>
+ </layer>
+ <layer name="walls" width="16" height="64">
+  <data encoding="base64" compression="zlib">
+   eJzty7ENAAAIw7AO/f9mXkCwOlJGN0mfX+N5nud5nud5nud5fu8/D5X9AnE=
+  </data>
+ </layer>
+ <objectgroup name="objects">
+  <object id="1" x="192" y="960" width="8" height="8">
+   <properties>
+    <property name="taste" value="1"/>
+   </properties>
+  </object>
+  <object id="3" x="144" y="944" width="8" height="8">
+   <properties>
+    <property name="taste" value="1"/>
+   </properties>
+  </object>
+  <object id="4" x="63.472" y="886.646" width="8" height="8">
+   <properties>
+    <property name="taste" value="1"/>
+   </properties>
+  </object>
+  <object id="5" x="96" y="928" width="8" height="8">
+   <properties>
+    <property name="taste" value="3"/>
+   </properties>
+  </object>
+  <object id="6" x="64" y="848" width="8" height="8">
+   <properties>
+    <property name="taste" value="1"/>
+   </properties>
+  </object>
+  <object id="7" x="64" y="752" width="8" height="8">
+   <properties>
+    <property name="taste" value="1"/>
+   </properties>
+  </object>
+  <object id="8" x="128" y="688" width="8" height="8">
+   <properties>
+    <property name="taste" value="1"/>
+   </properties>
+  </object>
+  <object id="9" x="96" y="720" width="8" height="8">
+   <properties>
+    <property name="taste" value="1"/>
+   </properties>
+  </object>
+  <object id="10" x="160" y="592" width="8" height="8">
+   <properties>
+    <property name="taste" value="1"/>
+   </properties>
+  </object>
+  <object id="11" x="160" y="656" width="8" height="8">
+   <properties>
+    <property name="taste" value="1"/>
+   </properties>
+  </object>
+  <object id="12" x="128" y="464" width="8" height="8">
+   <properties>
+    <property name="taste" value="1"/>
+   </properties>
+  </object>
+  <object id="13" x="144" y="528" width="8" height="8">
+   <properties>
+    <property name="taste" value="1"/>
+   </properties>
+  </object>
+  <object id="15" x="112" y="400" width="8" height="8">
+   <properties>
+    <property name="taste" value="3"/>
+   </properties>
+  </object>
+  <object id="17" x="112" y="256" width="8" height="8">
+   <properties>
+    <property name="taste" value="1"/>
+   </properties>
+  </object>
+  <object id="18" x="139.966" y="233.248" width="8" height="8">
+   <properties>
+    <property name="taste" value="1"/>
+   </properties>
+  </object>
+  <object id="19" x="159.917" y="203.592" width="8" height="8">
+   <properties>
+    <property name="taste" value="1"/>
+   </properties>
+  </object>
+  <object id="20" x="177.71" y="171.24" width="8" height="8">
+   <properties>
+    <property name="taste" value="1"/>
+   </properties>
+  </object>
+  <object id="21" x="188.494" y="122.712" width="8" height="8">
+   <properties>
+    <property name="taste" value="1"/>
+   </properties>
+  </object>
+  <object id="22" x="190.651" y="68.792" width="8" height="8">
+   <properties>
+    <property name="taste" value="1"/>
+   </properties>
+  </object>
+  <object id="23" x="64" y="800" width="8" height="8">
+   <properties>
+    <property name="taste" value="3"/>
+   </properties>
+  </object>
+  <object id="24" x="169.083" y="950.923" width="8" height="8">
+   <properties>
+    <property name="taste" value="1"/>
+   </properties>
+  </object>
+  <object id="25" x="119.477" y="933.668" width="8" height="8">
+   <properties>
+    <property name="taste" value="1"/>
+   </properties>
+  </object>
+  <object id="26" x="74.184" y="908.326" width="8" height="8">
+   <properties>
+    <property name="taste" value="1"/>
+   </properties>
+  </object>
+  <object id="27" x="64.4784" y="822.593" width="8" height="8">
+   <properties>
+    <property name="taste" value="1"/>
+   </properties>
+  </object>
+  <object id="28" x="65.0176" y="777.301" width="8" height="8">
+   <properties>
+    <property name="taste" value="1"/>
+   </properties>
+  </object>
+  <object id="29" x="79.576" y="734.704" width="8" height="8">
+   <properties>
+    <property name="taste" value="1"/>
+   </properties>
+  </object>
+  <object id="30" x="111.928" y="706.665" width="8" height="8">
+   <properties>
+    <property name="taste" value="3"/>
+   </properties>
+  </object>
+  <object id="31" x="144.28" y="672.157" width="8" height="8">
+   <properties>
+    <property name="taste" value="1"/>
+   </properties>
+  </object>
+  <object id="32" x="173.397" y="639.265" width="8" height="8">
+   <properties>
+    <property name="taste" value="1"/>
+   </properties>
+  </object>
+  <object id="33" x="179.867" y="616.08" width="8" height="8">
+   <properties>
+    <property name="taste" value="3"/>
+   </properties>
+  </object>
+  <object id="34" x="152.907" y="569.169" width="8" height="8">
+   <properties>
+    <property name="taste" value="1"/>
+   </properties>
+  </object>
+  <object id="35" x="139.427" y="552.454" width="8" height="8">
+   <properties>
+    <property name="taste" value="1"/>
+   </properties>
+  </object>
+  <object id="36" x="141.045" y="499.073" width="8" height="8">
+   <properties>
+    <property name="taste" value="3"/>
+   </properties>
+  </object>
+  <object id="37" x="132.418" y="483.976" width="8" height="8">
+   <properties>
+    <property name="taste" value="1"/>
+   </properties>
+  </object>
+  <object id="38" x="129.182" y="439.222" width="8" height="8">
+   <properties>
+    <property name="taste" value="1"/>
+   </properties>
+  </object>
+  <object id="39" x="111.928" y="418.733" width="8" height="8">
+   <properties>
+    <property name="taste" value="1"/>
+   </properties>
+  </object>
+  <object id="40" x="111.389" y="380.449" width="8" height="8">
+   <properties>
+    <property name="taste" value="2"/>
+   </properties>
+  </object>
+  <object id="44" x="92.5168" y="187.416" width="8" height="8">
+   <properties>
+    <property name="taste" value="1"/>
+   </properties>
+  </object>
+  <object id="45" x="66.096" y="159.917" width="8" height="8">
+   <properties>
+    <property name="taste" value="1"/>
+   </properties>
+  </object>
+  <object id="46" x="46.1456" y="123.251" width="8" height="8">
+   <properties>
+    <property name="taste" value="1"/>
+   </properties>
+  </object>
+  <object id="47" x="45.0672" y="93.056" width="8" height="8">
+   <properties>
+    <property name="taste" value="1"/>
+   </properties>
+  </object>
+  <object id="48" x="45.6064" y="48.8416" width="8" height="8">
+   <properties>
+    <property name="taste" value="1"/>
+   </properties>
+  </object>
+  <object id="50" x="129.722" y="812.349" width="8" height="8">
+   <properties>
+    <property name="taste" value="3"/>
+   </properties>
+  </object>
+ </objectgroup>
+</map>
