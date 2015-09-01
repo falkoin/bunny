@@ -4,6 +4,7 @@
 #include "OverlayLayer.h"
 #include "GameOverScene.h"
 #include "Consumable.h"
+#include "ShadowLayer.h";
 
 USING_NS_CC;
 
@@ -49,6 +50,7 @@ void GameScene::update(float dt)
     checkCollisionY();
     updatePlayerY(dt);
     updateCamera();
+    shader();
     _hud->setPosition(this->convertToNodeSpace(Point(1,1)));
     _hud->updateScore(score);
 }
@@ -87,7 +89,8 @@ void GameScene::onAcceleration(cocos2d::Acceleration *acc, cocos2d::Event *event
     }
     else
     {
-        player->stop();
+        if (player->state != Player::State::Win)
+            player->stop();
     }
 }
 
@@ -237,10 +240,6 @@ void GameScene::checkHit()
                 Rect playerRect = player->getBoundingBox();
                 if (pillRect.intersectsRect(playerRect))
                 {
-
-
-//                    std::chrono::milliseconds duration( 30 );
-//                    std::this_thread::sleep_for( duration );
                     if (pills->getTag() == 1)
                     {
                         player->moveUp();
@@ -249,6 +248,7 @@ void GameScene::checkHit()
                         p->setPositionType(ParticleSystemQuad::PositionType::RELATIVE);
                         p->setPosition(pills->getPosition()+Point(pills->getContentSize()/2));
                         addChild(p);
+                        _shadowLayer->setShadowColor(Vec4(0.86,0.17,0.87,0.55));
                     }
                     else if (pills->getTag() == 2)
                     {
@@ -258,6 +258,7 @@ void GameScene::checkHit()
                         p->setPositionType(ParticleSystemQuad::PositionType::RELATIVE);
                         p->setPosition(pills->getPosition()+Point(pills->getContentSize()/2));
                         addChild(p);
+                        _shadowLayer->setShadowColor(Vec4(0.17,0.85,0.86,0.55));
                     }
                     else if (pills->getTag() == 3)
                     {
@@ -268,16 +269,19 @@ void GameScene::checkHit()
                         p->setPositionType(ParticleSystemQuad::PositionType::RELATIVE);
                         p->setPosition(pills->getPosition()+Point(pills->getContentSize()/2));
                         addChild(p);
+                        _shadowLayer->setShadowColor(Vec4(0.21,0.86,0.17,0.55));
                     }
                     else
                     {
                         log("Error");
+                        _shadowLayer->setShadowColor(Vec4(0.0,0.0,0.0,0.55));
                     }
                     pillVec.eraseObject(pills);
                     pills->removeFromParent();
                     score++;
-
+                    break;
                 }
+                player->idle();
             }
         }
     }
@@ -293,6 +297,27 @@ void GameScene::updateCamera()
     int cameraSpaceFactor = 40;
     auto mapSize = level->getMap()->getMapSize();
     int mapHeight = mapSize.height*16*SCALE_FACTOR;
+    int mapWidth = mapSize.width*16*SCALE_FACTOR;
+    
+    if (playerPosition.x - visibleSize.width*0.5+cameraSpaceFactor*SCALE_FACTOR <= 0)
+    {
+        cameraTarget->setPositionX(0+visibleSize.width*0.5);
+    }
+    else if ((playerPosition.x + visibleSize.width*0.5-cameraSpaceFactor*SCALE_FACTOR) >= mapWidth)
+    {
+        cameraTarget->setPositionX(mapWidth-visibleSize.width*0.5);
+    }
+    else
+    {
+        if (playerPosition.x-cameraPosition.x > cameraSpaceFactor * SCALE_FACTOR)
+        {
+            cameraTarget->setPositionX((int)playerPosition.x - cameraSpaceFactor * SCALE_FACTOR);
+        }
+        else if (playerPosition.x-cameraPosition.x < -cameraSpaceFactor * SCALE_FACTOR)
+        {
+            cameraTarget->setPositionX((int)playerPosition.x + cameraSpaceFactor * SCALE_FACTOR);
+        }
+    }
     
     if (playerPosition.y - visibleSize.height*0.5+cameraSpaceFactor*SCALE_FACTOR <= 0)
     {
@@ -322,10 +347,19 @@ void GameScene::gameOver()
         if (!_win)
         {
             _hud->drawEndMessage();
+            player->removeFromParent();
+            ParticleSystemQuad* p = ParticleSystemQuad::create("explosionPlayer.plist");
+            p->setGlobalZOrder(1010);
+            p->setPositionType(ParticleSystemQuad::PositionType::RELATIVE);
+            p->setPosition(player->getPosition()+Point(player->getContentSize()/2));
+            addChild(p);
+            _shadowLayer->setShadowColor(Vec4(1.0,0.0,0.0,0.55));
+            
         }
         else if (_win)
         {
             _hud->drawWinMessage();
+            player->win();
         }
         else
         {
@@ -335,4 +369,18 @@ void GameScene::gameOver()
         player->setPlayerVelocity(Point(0,0));
         
     }
+}
+
+void GameScene::shader()
+{
+    Point playerInWorld = this->convertToWorldSpace(Point(player->getPositionX()+player->getContentSize().width/2*SCALE_FACTOR,player->getPositionY()+player->getContentSize().height/2*SCALE_FACTOR));
+    if (abs(playerInWorld.x - lastPoint.x) > 2 * SCALE_FACTOR || abs(playerInWorld.y - lastPoint.y) > 2 * SCALE_FACTOR)
+    {
+        lastPoint = lastPoint.lerp(playerInWorld, 0.1);
+    }
+    _shadowLayer->setLightPosition(lastPoint);
+    _shadowLayer->setPosition(this->convertToNodeSpace(Point(0,0)));
+//    _hud->setPosition(this->convertToNodeSpace(Point(3*SCALE_FACTOR,visibleSize.height-10*SCALE_FACTOR  )));
+//    auto tempPosition = player->getPosition();
+//    _bg->setPosition(this->convertToNodeSpace(Point(0,0)));
 }

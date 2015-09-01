@@ -9,7 +9,7 @@
         <key>format</key>
         <integer>3</integer>
         <key>size</key>
-        <string>{262.0,252.0}</string>
+        <string>{234.0,280.0}</string>
         <key>name</key>
         <string>sprites</string>
         <key>textureFileName</key>
@@ -70,7 +70,7 @@
             <key>spriteTrimmed</key>
             <true/>
             <key>textureRect</key>
-            <string>{{38.0,232.0},{12.0,12.0}}</string>
+            <string>{{16.0,264.0},{12.0,12.0}}</string>
             <key>textureRotated</key>
             <false/>
             <key>aliases</key>
@@ -90,7 +90,7 @@
             <key>spriteTrimmed</key>
             <true/>
             <key>textureRect</key>
-            <string>{{246.0,2.0},{12.0,12.0}}</string>
+            <string>{{30.0,264.0},{12.0,12.0}}</string>
             <key>textureRotated</key>
             <false/>
             <key>aliases</key>
@@ -110,7 +110,7 @@
             <key>spriteTrimmed</key>
             <true/>
             <key>textureRect</key>
-            <string>{{52.0,232.0},{12.0,12.0}}</string>
+            <string>{{44.0,264.0},{12.0,12.0}}</string>
             <key>textureRotated</key>
             <false/>
             <key>aliases</key>
@@ -130,7 +130,7 @@
             <key>spriteTrimmed</key>
             <true/>
             <key>textureRect</key>
-            <string>{{66.0,232.0},{12.0,12.0}}</string>
+            <string>{{92.0,232.0},{12.0,12.0}}</string>
             <key>textureRotated</key>
             <false/>
             <key>aliases</key>
@@ -150,7 +150,7 @@
             <key>spriteTrimmed</key>
             <true/>
             <key>textureRect</key>
-            <string>{{80.0,232.0},{12.0,12.0}}</string>
+            <string>{{58.0,264.0},{12.0,12.0}}</string>
             <key>textureRotated</key>
             <false/>
             <key>aliases</key>
@@ -170,7 +170,7 @@
             <key>spriteTrimmed</key>
             <true/>
             <key>textureRect</key>
-            <string>{{94.0,232.0},{12.0,12.0}}</string>
+            <string>{{106.0,232.0},{12.0,12.0}}</string>
             <key>textureRotated</key>
             <false/>
             <key>aliases</key>
@@ -190,7 +190,7 @@
             <key>spriteTrimmed</key>
             <true/>
             <key>textureRect</key>
-            <string>{{108.0,232.0},{12.0,12.0}}</string>
+            <string>{{120.0,232.0},{12.0,12.0}}</string>
             <key>textureRotated</key>
             <false/>
             <key>aliases</key>
@@ -210,7 +210,7 @@
             <key>spriteTrimmed</key>
             <true/>
             <key>textureRect</key>
-            <string>{{122.0,232.0},{12.0,12.0}}</string>
+            <string>{{134.0,232.0},{12.0,12.0}}</string>
             <key>textureRotated</key>
             <false/>
             <key>aliases</key>
@@ -230,7 +230,7 @@
             <key>spriteTrimmed</key>
             <true/>
             <key>textureRect</key>
-            <string>{{136.0,232.0},{12.0,12.0}}</string>
+            <string>{{148.0,232.0},{12.0,12.0}}</string>
             <key>textureRotated</key>
             <false/>
             <key>aliases</key>
@@ -250,7 +250,7 @@
             <key>spriteTrimmed</key>
             <true/>
             <key>textureRect</key>
-            <string>{{150.0,232.0},{12.0,12.0}}</string>
+            <string>{{162.0,232.0},{12.0,12.0}}</string>
             <key>textureRotated</key>
             <false/>
             <key>aliases</key>
@@ -270,7 +270,7 @@
             <key>spriteTrimmed</key>
             <true/>
             <key>textureRect</key>
-            <string>{{164.0,232.0},{12.0,12.0}}</string>
+            <string>{{176.0,232.0},{12.0,12.0}}</string>
             <key>textureRotated</key>
             <false/>
             <key>aliases</key>
@@ -290,7 +290,7 @@
             <key>spriteTrimmed</key>
             <true/>
             <key>textureRect</key>
-            <string>{{178.0,232.0},{12.0,12.0}}</string>
+            <string>{{190.0,232.0},{12.0,12.0}}</string>
             <key>textureRotated</key>
             <false/>
             <key>aliases</key>
@@ -310,7 +310,7 @@
             <key>spriteTrimmed</key>
             <true/>
             <key>textureRect</key>
-            <string>{{192.0,232.0},{12.0,12.0}}</string>
+            <string>{{204.0,232.0},{12.0,12.0}}</string>
             <key>textureRotated</key>
             <false/>
             <key>aliases</key>
@@ -330,7 +330,7 @@
             <key>spriteTrimmed</key>
             <true/>
             <key>textureRect</key>
-            <string>{{206.0,232.0},{12.0,12.0}}</string>
+            <string>{{218.0,232.0},{12.0,12.0}}</string>
             <key>textureRotated</key>
             <false/>
             <key>aliases</key>
@@ -350,7 +350,7 @@
             <key>spriteTrimmed</key>
             <true/>
             <key>textureRect</key>
-            <string>{{220.0,232.0},{12.0,12.0}}</string>
+            <string>{{92.0,246.0},{12.0,12.0}}</string>
             <key>textureRotated</key>
             <false/>
             <key>aliases</key>
@@ -370,7 +370,7 @@
             <key>spriteTrimmed</key>
             <true/>
             <key>textureRect</key>
-            <string>{{232.0,2.0},{12.0,12.0}}</string>
+            <string>{{2.0,250.0},{12.0,12.0}}</string>
             <key>textureRotated</key>
             <false/>
             <key>aliases</key>
@@ -390,7 +390,7 @@
             <key>spriteTrimmed</key>
             <true/>
             <key>textureRect</key>
-            <string>{{232.0,16.0},{12.0,12.0}}</string>
+            <string>{{16.0,250.0},{12.0,12.0}}</string>
             <key>textureRotated</key>
             <false/>
             <key>aliases</key>
@@ -410,7 +410,7 @@
             <key>spriteTrimmed</key>
             <true/>
             <key>textureRect</key>
-            <string>{{232.0,30.0},{12.0,12.0}}</string>
+            <string>{{30.0,250.0},{12.0,12.0}}</string>
             <key>textureRotated</key>
             <false/>
             <key>aliases</key>
@@ -430,7 +430,7 @@
             <key>spriteTrimmed</key>
             <true/>
             <key>textureRect</key>
-            <string>{{232.0,44.0},{12.0,12.0}}</string>
+            <string>{{44.0,250.0},{12.0,12.0}}</string>
             <key>textureRotated</key>
             <false/>
             <key>aliases</key>
@@ -450,7 +450,7 @@
             <key>spriteTrimmed</key>
             <true/>
             <key>textureRect</key>
-            <string>{{232.0,58.0},{12.0,12.0}}</string>
+            <string>{{58.0,250.0},{12.0,12.0}}</string>
             <key>textureRotated</key>
             <false/>
             <key>aliases</key>
@@ -470,7 +470,7 @@
             <key>spriteTrimmed</key>
             <true/>
             <key>textureRect</key>
-            <string>{{232.0,72.0},{12.0,12.0}}</string>
+            <string>{{72.0,250.0},{12.0,12.0}}</string>
             <key>textureRotated</key>
             <false/>
             <key>aliases</key>
@@ -490,7 +490,7 @@
             <key>spriteTrimmed</key>
             <true/>
             <key>textureRect</key>
-            <string>{{232.0,86.0},{12.0,12.0}}</string>
+            <string>{{106.0,246.0},{12.0,12.0}}</string>
             <key>textureRotated</key>
             <false/>
             <key>aliases</key>
@@ -510,7 +510,7 @@
             <key>spriteTrimmed</key>
             <true/>
             <key>textureRect</key>
-            <string>{{232.0,100.0},{12.0,12.0}}</string>
+            <string>{{120.0,246.0},{12.0,12.0}}</string>
             <key>textureRotated</key>
             <false/>
             <key>aliases</key>
@@ -530,7 +530,7 @@
             <key>spriteTrimmed</key>
             <true/>
             <key>textureRect</key>
-            <string>{{232.0,114.0},{12.0,12.0}}</string>
+            <string>{{134.0,246.0},{12.0,12.0}}</string>
             <key>textureRotated</key>
             <false/>
             <key>aliases</key>
@@ -550,7 +550,7 @@
             <key>spriteTrimmed</key>
             <true/>
             <key>textureRect</key>
-            <string>{{232.0,128.0},{12.0,12.0}}</string>
+            <string>{{148.0,246.0},{12.0,12.0}}</string>
             <key>textureRotated</key>
             <false/>
             <key>aliases</key>
@@ -570,7 +570,7 @@
             <key>spriteTrimmed</key>
             <true/>
             <key>textureRect</key>
-            <string>{{232.0,142.0},{12.0,12.0}}</string>
+            <string>{{162.0,246.0},{12.0,12.0}}</string>
             <key>textureRotated</key>
             <false/>
             <key>aliases</key>
@@ -590,7 +590,7 @@
             <key>spriteTrimmed</key>
             <true/>
             <key>textureRect</key>
-            <string>{{232.0,156.0},{12.0,12.0}}</string>
+            <string>{{176.0,246.0},{12.0,12.0}}</string>
             <key>textureRotated</key>
             <false/>
             <key>aliases</key>
@@ -610,7 +610,7 @@
             <key>spriteTrimmed</key>
             <true/>
             <key>textureRect</key>
-            <string>{{232.0,170.0},{12.0,12.0}}</string>
+            <string>{{190.0,246.0},{12.0,12.0}}</string>
             <key>textureRotated</key>
             <false/>
             <key>aliases</key>
@@ -630,7 +630,7 @@
             <key>spriteTrimmed</key>
             <true/>
             <key>textureRect</key>
-            <string>{{232.0,184.0},{12.0,12.0}}</string>
+            <string>{{204.0,246.0},{12.0,12.0}}</string>
             <key>textureRotated</key>
             <false/>
             <key>aliases</key>
@@ -650,7 +650,7 @@
             <key>spriteTrimmed</key>
             <true/>
             <key>textureRect</key>
-            <string>{{232.0,198.0},{12.0,12.0}}</string>
+            <string>{{218.0,246.0},{12.0,12.0}}</string>
             <key>textureRotated</key>
             <false/>
             <key>aliases</key>
@@ -670,7 +670,7 @@
             <key>spriteTrimmed</key>
             <true/>
             <key>textureRect</key>
-            <string>{{232.0,212.0},{12.0,12.0}}</string>
+            <string>{{86.0,260.0},{12.0,12.0}}</string>
             <key>textureRotated</key>
             <false/>
             <key>aliases</key>
@@ -690,7 +690,7 @@
             <key>spriteTrimmed</key>
             <true/>
             <key>textureRect</key>
-            <string>{{234.0,226.0},{12.0,12.0}}</string>
+            <string>{{2.0,264.0},{12.0,12.0}}</string>
             <key>textureRotated</key>
             <false/>
             <key>aliases</key>
@@ -711,6 +711,66 @@
             <true/>
             <key>textureRect</key>
             <string>{{20.0,232.0},{16.0,16.0}}</string>
+            <key>textureRotated</key>
+            <false/>
+            <key>aliases</key>
+            <array>
+            </array>
+        </dict>
+        <key>playerHappy.png</key>
+        <dict>
+            <key>spriteSize</key>
+            <string>{16.0,16.0}</string>
+            <key>spriteOffset</key>
+            <string>{0.0,-0.0}</string>
+            <key>spriteSourceSize</key>
+            <string>{16.0,16.0}</string>
+            <key>spriteSourceColorRect</key>
+            <string>{{0.0,0.0},{16.0,16.0}}</string>
+            <key>spriteTrimmed</key>
+            <true/>
+            <key>textureRect</key>
+            <string>{{38.0,232.0},{16.0,16.0}}</string>
+            <key>textureRotated</key>
+            <false/>
+            <key>aliases</key>
+            <array>
+            </array>
+        </dict>
+        <key>playerIdle.png</key>
+        <dict>
+            <key>spriteSize</key>
+            <string>{16.0,16.0}</string>
+            <key>spriteOffset</key>
+            <string>{0.0,-0.0}</string>
+            <key>spriteSourceSize</key>
+            <string>{16.0,16.0}</string>
+            <key>spriteSourceColorRect</key>
+            <string>{{0.0,0.0},{16.0,16.0}}</string>
+            <key>spriteTrimmed</key>
+            <true/>
+            <key>textureRect</key>
+            <string>{{56.0,232.0},{16.0,16.0}}</string>
+            <key>textureRotated</key>
+            <false/>
+            <key>aliases</key>
+            <array>
+            </array>
+        </dict>
+        <key>playerWin.png</key>
+        <dict>
+            <key>spriteSize</key>
+            <string>{16.0,16.0}</string>
+            <key>spriteOffset</key>
+            <string>{0.0,-0.0}</string>
+            <key>spriteSourceSize</key>
+            <string>{16.0,16.0}</string>
+            <key>spriteSourceColorRect</key>
+            <string>{{0.0,0.0},{16.0,16.0}}</string>
+            <key>spriteTrimmed</key>
+            <true/>
+            <key>textureRect</key>
+            <string>{{74.0,232.0},{16.0,16.0}}</string>
             <key>textureRotated</key>
             <false/>
             <key>aliases</key>

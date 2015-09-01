@@ -93,6 +93,13 @@ bool TestScene::init()
     camera->retain();
     this->runAction(camera);
     
+    // shader
+    _shadowLayer = ShadowLayer::create();
+    this->addChild(_shadowLayer);
+    _shadowLayer->setGlobalZOrder(999);
+    _shadowLayer->setAnchorPoint(Point(0.5, 0.5));
+    lastPoint = Point(0,0);
+    
     // Overlay
     _hud = OverlayLayer::create();
     this->addChild(_hud);

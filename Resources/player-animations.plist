@@ -19,13 +19,70 @@
 						<true/>
 					</dict>
 					<key>spriteframe</key>
-					<string>player.png</string>
+					<string>playerIdle.png</string>
 				</dict>
 			</array>
 			<key>loops</key>
 			<integer>1</integer>
 			<key>restoreOriginalFrame</key>
-			<true/>
+			<false/>
+		</dict>
+		<key>happy</key>
+		<dict>
+			<key>delayPerUnit</key>
+			<real>0.5</real>
+			<key>frames</key>
+			<array>
+				<dict>
+					<key>delayUnits</key>
+					<integer>1</integer>
+					<key>notification</key>
+					<dict>
+						<key>firstframe</key>
+						<true/>
+					</dict>
+					<key>spriteframe</key>
+					<string>playerHappy.png</string>
+				</dict>
+			</array>
+			<key>loops</key>
+			<integer>1</integer>
+			<key>restoreOriginalFrame</key>
+			<false/>
+		</dict>
+		<key>win</key>
+		<dict>
+			<key>delayPerUnit</key>
+			<real>0.5</real>
+			<key>frames</key>
+			<array>
+				<dict>
+					<key>delayUnits</key>
+					<integer>1</integer>
+					<key>notification</key>
+					<dict>
+						<key>firstframe</key>
+						<true/>
+					</dict>
+					<key>spriteframe</key>
+					<string>playerWin.png</string>
+				</dict>
+				<dict>
+					<key>delayUnits</key>
+					<integer>1</integer>
+					<key>notification</key>
+					<dict>
+						<key>firstframe</key>
+						<true/>
+					</dict>
+					<key>spriteframe</key>
+					<string>playerHappy.png</string>
+				</dict>
+			</array>
+			<key>loops</key>
+			<integer>1</integer>
+			<key>restoreOriginalFrame</key>
+			<false/>
 		</dict>
 	</dict>
 	<key>properties</key>

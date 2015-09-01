@@ -9,6 +9,7 @@
 #include "GameOverScene.h"
 #include "MainMenuScene.h"
 #include "TestScene.h"
+#include "TestSceneTwo.h"
 #include "Globals.h"
 
 
@@ -46,7 +47,7 @@ bool GameOverScene::init()
     auto backgroundSprite = Sprite::create("background.png");
     backgroundSprite->setPosition(Point(visibleSize.width / 2 + origin.x, visibleSize.height / 2 + origin.y));
     this->addChild(backgroundSprite);
-    
+
     auto playItem = MenuItemImage::create("retry.png","retryPressed.png",CC_CALLBACK_1(GameOverScene::gotToGameScene, this));
     playItem->setScale(SCALE_FACTOR/3.0f);
     playItem->setPosition(Point( visibleSize.width * 0.75 + origin.x, visibleSize.height / 2 + origin.y));
@@ -68,7 +69,21 @@ bool GameOverScene::init()
 
 void GameOverScene::gotToGameScene(Ref *sender)
 {
-    auto scene = TestScene::createScene();
+    int currentLevel = UserDefault::getInstance()->getIntegerForKey("currentLevel");
+    auto scene  = TestScene::createScene();
+    if (currentLevel == 1)
+    {
+        scene = TestScene::createScene();
+    }
+    else if (currentLevel == 2)
+    {
+        scene = TestSceneTwo::createScene();
+    }
+    else
+    {
+        scene = MainMenuScene::createScene();
+        log("Level Change Error");
+    }
     Director::getInstance()->replaceScene(TransitionFade::create(1.0, scene));
 }
 

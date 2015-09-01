@@ -1,6 +1,7 @@
 #include "MainMenuScene.h"
 #include "TestScene.h"
 #include "Globals.h"
+#include "LevelMenuScene.h"
 
 
 USING_NS_CC;
@@ -55,6 +56,6 @@ bool MainMenuScene::init()
 
 void MainMenuScene::gotToGameScene(Ref *sender)
 {
-    auto scene = TestScene::createScene();
+    auto scene = LevelMenuScene::createScene();
     Director::getInstance()->replaceScene(TransitionFade::create(2.0, scene));
 }

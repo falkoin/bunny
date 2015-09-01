@@ -6,6 +6,7 @@
 #include "Consumable.h"
 #include "Level.h"
 #include "OverlayLayer.h"
+#include "ShadowLayer.h"
 
 class GameScene : public cocos2d::Layer
 {
@@ -28,6 +29,7 @@ protected:
     Sprite *cameraTarget;
     Follow *camera;
     OverlayLayer *_hud;
+    ShadowLayer* _shadowLayer;
     
     bool _touchEnabled;
     bool _gameOver;
@@ -41,11 +43,13 @@ protected:
     void checkCollisionX();
     void checkCollisionY();
     void checkHit();
+    void shader();
     virtual void gameOver();
     
     int score;
     bool _win;
     Vector<Sprite*> pillVec;
+    cocos2d::Point lastPoint;
 
     
 };
