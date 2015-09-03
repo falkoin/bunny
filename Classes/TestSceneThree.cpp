@@ -1,12 +1,12 @@
 //
-//  TestScene.cpp
+//  TestSceneThree.cpp
 //  bunny
 //
 //  Created by Falko Döhring on 26.08.15.
 //
 //
 
-#include "TestScene.h"
+#include "TestSceneThree.h"
 #include "GameScene.h"
 #include "Level.h"
 #include "Globals.h"
@@ -15,12 +15,12 @@
 
 USING_NS_CC;
 
-Scene* TestScene::createScene()
+Scene* TestSceneThree::createScene()
 {
     auto scene = Scene::create();
     
     // 'layer' is an autorelease object
-    auto layer = TestScene::create();
+    auto layer = TestSceneThree::create();
     
     // add layer as a child to scene
     scene->addChild(layer);
@@ -30,7 +30,7 @@ Scene* TestScene::createScene()
 }
 
 // on "init" you need to initialize your instance
-bool TestScene::init()
+bool TestSceneThree::init()
 {
     //////////////////////////////
     // 1. super init first
@@ -44,13 +44,13 @@ bool TestScene::init()
     Director::getInstance()->setProjection(cocos2d::DisplayLinkDirector::Projection::_2D);
     // map
     level = new Level();
-    level->loadMap("testLevel.tmx",this);
+    level->loadMap("level3.tmx",this);
     level->getMap()->setScale(SCALE_FACTOR);
     this->addChild(level->getMap(),-1);
     auto bg = level->getMap()->getLayer("background");
     bg->setGlobalZOrder(1);
     auto walls = level->getMap()->getLayer("walls");
-    walls->setGlobalZOrder(4);
+    walls->setGlobalZOrder(2);
     
 
     // level objects
@@ -75,30 +75,11 @@ bool TestScene::init()
         pillVec.pushBack(pill);
     }
     
-    // parallax
-    parallaxOne = Sprite::create("parallax.png");
-    parallaxOne->setGlobalZOrder(3);
-    parallaxOne->setScale(SCALE_FACTOR);
-    parallaxOne->getTexture()->setAliasTexParameters();
-    parallaxOne->setPosition(Point(visibleSize.width*0.5+origin.x,visibleSize.height*0.5+origin.y));
-    parallaxOne->setAnchorPoint(Point(0.5, 0.5));
-    this->addChild(parallaxOne);
-    
-    parallaxTwo = Sprite::create("parallax2.png");
-    parallaxTwo->setGlobalZOrder(2);
-    parallaxTwo->setScale(SCALE_FACTOR);
-    parallaxTwo->getTexture()->setAliasTexParameters();
-    parallaxTwo->setPosition(Point(visibleSize.width*0.5+origin.x,visibleSize.height*0.5+origin.y));
-    parallaxTwo->setAnchorPoint(Point(0.5, 0.5));
-    this->addChild(parallaxTwo);
-    
-    
-    
     // player
     player = Player::create();
     player->retain();
     this->addChild(player);
-    player->setPosition(level->tileCoordinateToPosition(Point(7,1)));
+    player->setPosition(level->tileCoordinateToPosition(Point(60,1)));
     player->setGlobalZOrder(15);
     
     // camera
@@ -129,12 +110,12 @@ bool TestScene::init()
     _touchEnabled = true;
     auto touchListener = EventListenerTouchOneByOne::create();
     touchListener->setSwallowTouches(true);
-    touchListener->onTouchBegan = CC_CALLBACK_2(TestScene::onTouchBegan, this);
+    touchListener->onTouchBegan = CC_CALLBACK_2(TestSceneThree::onTouchBegan, this);
     Director::getInstance()->getEventDispatcher()->addEventListenerWithSceneGraphPriority(touchListener, this);
-    this->schedule(schedule_selector(TestScene::update), 0.01f);
+    this->schedule(schedule_selector(TestSceneThree::update), 0.01f);
     
     Device::setAccelerometerEnabled(true);
-    auto listener = EventListenerAcceleration::create(CC_CALLBACK_2(TestScene::onAcceleration, this));
+    auto listener = EventListenerAcceleration::create(CC_CALLBACK_2(TestSceneThree::onAcceleration, this));
     _eventDispatcher->addEventListenerWithSceneGraphPriority(listener, this);
     Device::setAccelerometerInterval(1/60);
     

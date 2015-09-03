@@ -37,7 +37,7 @@
 	<key>gravityx</key>
 	<real>6</real>
 	<key>gravityy</key>
-	<integer>-1</integer>
+	<integer>-90</integer>
 	<key>maxParticles</key>
 	<integer>9</integer>
 	<key>maxRadius</key>

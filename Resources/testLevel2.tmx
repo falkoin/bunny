@@ -5,12 +5,12 @@
  </tileset>
  <layer name="background" width="128" height="64">
   <data encoding="base64" compression="zlib">
-   eJztwwEJAAAMBKHj+4dekCm4aqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqr6/AHwD0AB
+   eJztw0ENAAAMA6F71L/mCRkkrJqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqPn9gLYAB
   </data>
  </layer>
  <layer name="walls" width="128" height="64">
   <data encoding="base64" compression="zlib">
-   eJzt3UENADAQw7A+jj/mIRgCx1IRBEBv2zV6MdXfVn9b/W31t9XfVn9b/W31t9XfVn9b/W31t9XfVn9b/W31t9XfVn9b/W31t9XfVn9b/W31t9XfVn9b/W31t9XfVn9b/W31t9XfVn9b/W31t9XfVn9b/W31t9XfVn9b/W31t9XfVn9b/W31t9XfVn9b/W31t9XfVn9b/W31t9XfVn9b/W31t9Xf9vsDb84eoiQF8Q==
+   eJzt3QEJADAQA7HC+/c8BVOQC1TBCehtu0Yvpvrb6m+rv63+tvrb6m+rv63+tvrb6m+rv63+tvrb6m+rv63+tvrb6m+rv63+tvrb6m+rv63+tvrb6m+rv63+tvrb6m+rv63+tvrb6m+rv63+tvrb6m+rv63+tvrb6m+rv63+tvrb6m+rv63+tvrb6m+rv63+tvrb6m+rv63+tvrb6m+rv63+tvrbfn/gzdkDmZsEdQ==
   </data>
  </layer>
  <objectgroup name="objects">

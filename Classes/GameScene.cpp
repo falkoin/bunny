@@ -4,7 +4,8 @@
 #include "OverlayLayer.h"
 #include "GameOverScene.h"
 #include "Consumable.h"
-#include "ShadowLayer.h";
+#include "ShadowLayer.h"
+#include "SimpleAudioEngine.h"
 
 USING_NS_CC;
 
@@ -81,11 +82,11 @@ void GameScene::onAcceleration(cocos2d::Acceleration *acc, cocos2d::Event *event
 //    log("Velocity X: %f", player->getPlayerVelocity().x);
     if (accX > ACCELSENSITIVITY && !_gameOver)
     {
-        player->moveRight();
+        player->moveRight(acc->x);
     }
     else if (accX < -ACCELSENSITIVITY && !_gameOver)
     {
-        player->moveLeft();
+        player->moveLeft(acc->x);
     }
     else
     {
@@ -204,7 +205,8 @@ void GameScene::checkCollisionY()
     {
         if ((tile.containsPoint(tmp1pos)) || (tile.containsPoint(tmp2pos)))
         {
-            if (player->getPlayerVelocity().y > 0)
+            float mapheight = ((float)level->getMap()->getMapSize().height - 2) * 16 * SCALE_FACTOR;
+            if (player->getPlayerVelocity().y > 0 && player->getPosition().y+player->getContentSize().height >= mapheight)
             {
                 int topCollisionPosition = tile.getMinY() - (player->getContentSize().height) * SCALE_FACTOR;
                 player->setPositionY(topCollisionPosition);
@@ -220,6 +222,7 @@ void GameScene::checkCollisionY()
                 if (score > 0)
                 {
                     gameOver();
+                    CocosDenshion::SimpleAudioEngine::getInstance()->playEffect("ouch.wav");
                 }
             }
             player->setPlayerVelocity(Point(player->getPlayerVelocity().x,0));
@@ -249,6 +252,7 @@ void GameScene::checkHit()
                         p->setPosition(pills->getPosition()+Point(pills->getContentSize()/2));
                         addChild(p);
                         _shadowLayer->setShadowColor(Vec4(0.86,0.17,0.87,0.55));
+                        CocosDenshion::SimpleAudioEngine::getInstance()->playEffect("bloop.wav");
                     }
                     else if (pills->getTag() == 2)
                     {
@@ -259,6 +263,7 @@ void GameScene::checkHit()
                         p->setPosition(pills->getPosition()+Point(pills->getContentSize()/2));
                         addChild(p);
                         _shadowLayer->setShadowColor(Vec4(0.17,0.85,0.86,0.55));
+                        CocosDenshion::SimpleAudioEngine::getInstance()->playEffect("woooh.wav");
                     }
                     else if (pills->getTag() == 3)
                     {
@@ -270,6 +275,7 @@ void GameScene::checkHit()
                         p->setPosition(pills->getPosition()+Point(pills->getContentSize()/2));
                         addChild(p);
                         _shadowLayer->setShadowColor(Vec4(0.21,0.86,0.17,0.55));
+                        CocosDenshion::SimpleAudioEngine::getInstance()->playEffect("bloop.wav");
                     }
                     else
                     {
@@ -332,10 +338,14 @@ void GameScene::updateCamera()
         if (playerPosition.y-cameraPosition.y > cameraSpaceFactor * SCALE_FACTOR)
         {
             cameraTarget->setPositionY((int)playerPosition.y - cameraSpaceFactor * SCALE_FACTOR);
+            parallaxOne->setPosition(Point(parallaxOne->getPositionX(),parallaxOne->getPositionY()+player->getPlayerVelocity().y*0.3));
+            parallaxTwo->setPosition(Point(parallaxTwo->getPositionX(),parallaxTwo->getPositionY()+player->getPlayerVelocity().y*0.5));
         }
         else if (playerPosition.y-cameraPosition.y < -cameraSpaceFactor * SCALE_FACTOR)
         {
             cameraTarget->setPositionY((int)playerPosition.y + cameraSpaceFactor * SCALE_FACTOR);
+            parallaxOne->setPosition(Point(parallaxOne->getPositionX(),parallaxOne->getPositionY()+player->getPlayerVelocity().y*0.3));
+            parallaxTwo->setPosition(Point(parallaxTwo->getPositionX(),parallaxTwo->getPositionY()+player->getPlayerVelocity().y*0.5));
         }
     } 
 }
@@ -382,5 +392,5 @@ void GameScene::shader()
     _shadowLayer->setPosition(this->convertToNodeSpace(Point(0,0)));
 //    _hud->setPosition(this->convertToNodeSpace(Point(3*SCALE_FACTOR,visibleSize.height-10*SCALE_FACTOR  )));
 //    auto tempPosition = player->getPosition();
-//    _bg->setPosition(this->convertToNodeSpace(Point(0,0)));
+//    parallaxOne->setPosition(this->convertToNodeSpace(Point(0.5,0.5)));
 }

@@ -5,12 +5,12 @@
  </tileset>
  <layer name="background" width="16" height="64">
   <data encoding="base64" compression="zlib">
-   eJztwwEJAAAMBKHj+4dej6HgqqmqqqqvHyPACAE=
+   eJztw8EJAAAMA6F7ZP+Zu0dRcNVUVVXV1w83gBAB
   </data>
  </layer>
  <layer name="walls" width="16" height="64">
   <data encoding="base64" compression="zlib">
-   eJzty7ENAAAIw7AO/f9mXkCwOlJGN0mfX+N5nud5nud5nud5fu8/D5X9AnE=
+   eJzty7EJAAAMw7BA/v+5L5R2lcGjmqTPr/E8z/M8z/M8z/M8v/efB7R6AdU=
   </data>
  </layer>
  <objectgroup name="objects">

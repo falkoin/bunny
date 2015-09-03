@@ -30,6 +30,8 @@ protected:
     Follow *camera;
     OverlayLayer *_hud;
     ShadowLayer* _shadowLayer;
+    Sprite* parallaxOne;
+    Sprite* parallaxTwo;
     
     bool _touchEnabled;
     bool _gameOver;

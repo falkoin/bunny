@@ -10,7 +10,9 @@
 #include "MainMenuScene.h"
 #include "TestScene.h"
 #include "TestSceneTwo.h"
+#include "TestSceneThree.h"
 #include "Globals.h"
+#include "LevelMenuScene.h"
 
 
 USING_NS_CC;
@@ -79,6 +81,10 @@ void GameOverScene::gotToGameScene(Ref *sender)
     {
         scene = TestSceneTwo::createScene();
     }
+    else if (currentLevel == 3)
+    {
+        scene = TestSceneThree::createScene();
+    }
     else
     {
         scene = MainMenuScene::createScene();
@@ -89,6 +95,6 @@ void GameOverScene::gotToGameScene(Ref *sender)
 
 void GameOverScene::gotToMenuScene(Ref *sender)
 {
-    auto scene = MainMenuScene::createScene();
+    auto scene = LevelMenuScene::createScene();
     Director::getInstance()->replaceScene(TransitionFade::create(2.0, scene));
 }
