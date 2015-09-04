@@ -205,7 +205,9 @@ void GameScene::checkCollisionY()
     {
         if ((tile.containsPoint(tmp1pos)) || (tile.containsPoint(tmp2pos)))
         {
-            float mapheight = ((float)level->getMap()->getMapSize().height - 2) * 16 * SCALE_FACTOR;
+            float mapheight = ((float)level->getMap()->getMapSize().height - 3) * 16 * SCALE_FACTOR;
+            log("Position Y: %f", player->getPositionY());
+            log("Mapheight: %f", mapheight);
             if (player->getPlayerVelocity().y > 0 && player->getPosition().y+player->getContentSize().height >= mapheight)
             {
                 int topCollisionPosition = tile.getMinY() - (player->getContentSize().height) * SCALE_FACTOR;
@@ -299,6 +301,8 @@ void GameScene::updateCamera()
     visibleSize = Director::getInstance()->getVisibleSize();
 //    auto test = convertToNodeSpace(origin);
     auto playerPosition = player->getPosition();
+    auto positionDiff = playerPosition-lastPlayerPosition;
+    lastPlayerPosition = playerPosition;
     auto cameraPosition = cameraTarget->getPosition();
     int cameraSpaceFactor = 40;
     auto mapSize = level->getMap()->getMapSize();
@@ -317,11 +321,21 @@ void GameScene::updateCamera()
     {
         if (playerPosition.x-cameraPosition.x > cameraSpaceFactor * SCALE_FACTOR)
         {
-            cameraTarget->setPositionX((int)playerPosition.x - cameraSpaceFactor * SCALE_FACTOR);
+            cameraTarget->setPositionX(playerPosition.x - cameraSpaceFactor * SCALE_FACTOR);
+            if (parallaxOne != NULL)
+            {
+                parallaxOne->setPosition(Point(parallaxOne->getPositionX()+positionDiff.x*0.8,parallaxOne->getPositionY()));
+                parallaxTwo->setPosition(Point(parallaxTwo->getPositionX()+positionDiff.x*0.9,parallaxTwo->getPositionY()));
+            }
         }
-        else if (playerPosition.x-cameraPosition.x < -cameraSpaceFactor * SCALE_FACTOR)
+        if (playerPosition.x-cameraPosition.x < -cameraSpaceFactor * SCALE_FACTOR)
         {
-            cameraTarget->setPositionX((int)playerPosition.x + cameraSpaceFactor * SCALE_FACTOR);
+            cameraTarget->setPositionX(playerPosition.x + cameraSpaceFactor * SCALE_FACTOR);
+            if (parallaxOne != NULL)
+            {
+                parallaxOne->setPosition(Point(parallaxOne->getPositionX()+positionDiff.x*0.8,parallaxOne->getPositionY()));
+                parallaxTwo->setPosition(Point(parallaxTwo->getPositionX()+positionDiff.x*0.9,parallaxTwo->getPositionY()));
+            }
         }
     }
     
@@ -337,15 +351,21 @@ void GameScene::updateCamera()
     {
         if (playerPosition.y-cameraPosition.y > cameraSpaceFactor * SCALE_FACTOR)
         {
-            cameraTarget->setPositionY((int)playerPosition.y - cameraSpaceFactor * SCALE_FACTOR);
-            parallaxOne->setPosition(Point(parallaxOne->getPositionX(),parallaxOne->getPositionY()+player->getPlayerVelocity().y*0.3));
-            parallaxTwo->setPosition(Point(parallaxTwo->getPositionX(),parallaxTwo->getPositionY()+player->getPlayerVelocity().y*0.5));
+            cameraTarget->setPositionY(playerPosition.y - cameraSpaceFactor * SCALE_FACTOR);
+            if (parallaxOne != NULL)
+            {
+                parallaxOne->setPosition(Point(parallaxOne->getPositionX(),parallaxOne->getPositionY()+positionDiff.y*0.8));
+                parallaxTwo->setPosition(Point(parallaxTwo->getPositionX(),parallaxTwo->getPositionY()+positionDiff.y*0.9));
+            }
         }
-        else if (playerPosition.y-cameraPosition.y < -cameraSpaceFactor * SCALE_FACTOR)
+        if (playerPosition.y-cameraPosition.y < -cameraSpaceFactor * SCALE_FACTOR)
         {
-            cameraTarget->setPositionY((int)playerPosition.y + cameraSpaceFactor * SCALE_FACTOR);
-            parallaxOne->setPosition(Point(parallaxOne->getPositionX(),parallaxOne->getPositionY()+player->getPlayerVelocity().y*0.3));
-            parallaxTwo->setPosition(Point(parallaxTwo->getPositionX(),parallaxTwo->getPositionY()+player->getPlayerVelocity().y*0.5));
+            cameraTarget->setPositionY(playerPosition.y + cameraSpaceFactor * SCALE_FACTOR);
+            if (parallaxOne != NULL)
+            {
+                parallaxOne->setPosition(Point(parallaxOne->getPositionX(),parallaxOne->getPositionY()+positionDiff.y*0.8));
+                parallaxTwo->setPosition(Point(parallaxTwo->getPositionX(),parallaxTwo->getPositionY()+positionDiff.y*0.9));
+            }
         }
     } 
 }

@@ -92,8 +92,6 @@ bool TestScene::init()
     parallaxTwo->setAnchorPoint(Point(0.5, 0.5));
     this->addChild(parallaxTwo);
     
-    
-    
     // player
     player = Player::create();
     player->retain();

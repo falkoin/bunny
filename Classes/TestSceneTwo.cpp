@@ -50,7 +50,7 @@ bool TestSceneTwo::init()
     auto bg = level->getMap()->getLayer("background");
     bg->setGlobalZOrder(1);
     auto walls = level->getMap()->getLayer("walls");
-    walls->setGlobalZOrder(2);
+    walls->setGlobalZOrder(4);
     
 
     // level objects
@@ -74,6 +74,23 @@ bool TestSceneTwo::init()
         pill->setGlobalZOrder(16);
         pillVec.pushBack(pill);
     }
+    
+    // parallax
+    parallaxOne = Sprite::create("parallax21.png");
+    parallaxOne->setGlobalZOrder(2);
+    parallaxOne->setScale(SCALE_FACTOR);
+    parallaxOne->getTexture()->setAliasTexParameters();
+    parallaxOne->setPosition(Point(128*16*SCALE_FACTOR-parallaxOne->getContentSize().width*0.5*SCALE_FACTOR,visibleSize.height*0.5+origin.y));
+    parallaxOne->setAnchorPoint(Point(0.5, 0.5));
+    this->addChild(parallaxOne);
+    
+    parallaxTwo = Sprite::create("parallax22.png");
+    parallaxTwo->setGlobalZOrder(3);
+    parallaxTwo->setScale(SCALE_FACTOR);
+    parallaxTwo->getTexture()->setAliasTexParameters();
+    parallaxTwo->setPosition(Point(128*16*SCALE_FACTOR-parallaxOne->getContentSize().width*0.5*SCALE_FACTOR,visibleSize.height*0.5+origin.y));
+    parallaxTwo->setAnchorPoint(Point(0.5, 0.5));
+    this->addChild(parallaxTwo);
     
     // player
     player = Player::create();
@@ -122,6 +139,7 @@ bool TestSceneTwo::init()
     // parameters
     score = 0;
     _win = false;
+    lastPlayerPosition = player->getPosition();
     
     this->scheduleUpdate();
     return true;

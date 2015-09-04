@@ -52,6 +52,7 @@ protected:
     bool _win;
     Vector<Sprite*> pillVec;
     cocos2d::Point lastPoint;
+    cocos2d::Point lastPlayerPosition;
 
     
 };
