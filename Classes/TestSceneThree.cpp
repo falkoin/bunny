@@ -12,6 +12,7 @@
 #include "Globals.h"
 #include "OverlayLayer.h"
 #include "MainMenuScene.h"
+#include "Light.h"
 
 USING_NS_CC;
 
@@ -50,7 +51,7 @@ bool TestSceneThree::init()
     auto bg = level->getMap()->getLayer("background");
     bg->setGlobalZOrder(1);
     auto walls = level->getMap()->getLayer("walls");
-    walls->setGlobalZOrder(4);
+    walls->setGlobalZOrder(7);
     
 
     // level objects
@@ -72,24 +73,52 @@ bool TestSceneThree::init()
         pill->setPosition(Point(x*SCALE_FACTOR,y*SCALE_FACTOR));
         addChild(pill);
         pill->setGlobalZOrder(16);
+        auto light = Light::create(taste);
+        light->retain();
+        light->setPosition(Point(pill->getContentSize().width*0.5,pill->getContentSize().height*0.5));
+        light->setScale(0.5);
+        light->setGlobalZOrder(15);
+        pill->addChild(light);
         pillVec.pushBack(pill);
     }
+    
+    // clouds
+    nMaxClouds = 30;
+    for (int it = 0; it < nMaxClouds; it++) {
+        auto clouds = Movable::create(random(0.1, 0.4));
+        clouds->setScale(SCALE_FACTOR);
+        clouds->setPosition(Point(random(0.0,1.0)*level->getMap()->getMapSize().width*16*SCALE_FACTOR-clouds->getContentSize().width, level->getMap()->getMapSize().height*16*SCALE_FACTOR*random(0.4,0.9)));
+        clouds->setGlobalZOrder(3);
+        clouds->setScale(random(SCALE_FACTOR, SCALE_FACTOR*2));
+        clouds->retain();
+        addChild(clouds);
+        cloudVec.pushBack(clouds);
+    }
+
     // parallax
-    parallaxOne = Sprite::create("parallax21.png");
-    parallaxOne->setGlobalZOrder(3);
+    parallaxOne = Sprite::create("parallaxHill001.png");
+    parallaxOne->setGlobalZOrder(2);
     parallaxOne->setScale(SCALE_FACTOR);
     parallaxOne->getTexture()->setAliasTexParameters();
-    parallaxOne->setPosition(Point(visibleSize.width*0.5+origin.x,visibleSize.height*0.5+origin.y));
+    parallaxOne->setPosition(Point(64*16*SCALE_FACTOR-parallaxOne->getContentSize().width*0.5*SCALE_FACTOR,visibleSize.height*0.5+origin.y));
     parallaxOne->setAnchorPoint(Point(0.5, 0.5));
     this->addChild(parallaxOne);
     
-    parallaxTwo = Sprite::create("parallax22.png");
-    parallaxTwo->setGlobalZOrder(2);
+    parallaxTwo = Sprite::create("parallaxHill002.png");
+    parallaxTwo->setGlobalZOrder(4);
     parallaxTwo->setScale(SCALE_FACTOR);
     parallaxTwo->getTexture()->setAliasTexParameters();
-    parallaxTwo->setPosition(Point(visibleSize.width*0.5+origin.x,visibleSize.height*0.5+origin.y));
+    parallaxTwo->setPosition(Point(64*16*SCALE_FACTOR-parallaxOne->getContentSize().width*0.5*SCALE_FACTOR,visibleSize.height*0.5+origin.y));
     parallaxTwo->setAnchorPoint(Point(0.5, 0.5));
     this->addChild(parallaxTwo);
+    
+    parallaxThree = Sprite::create("parallaxHill003.png");
+    parallaxThree->setGlobalZOrder(5);
+    parallaxThree->setScale(SCALE_FACTOR);
+    parallaxThree->getTexture()->setAliasTexParameters();
+    parallaxThree->setPosition(Point(64*16*SCALE_FACTOR-parallaxOne->getContentSize().width*0.5*SCALE_FACTOR,visibleSize.height*0.5+origin.y));
+    parallaxThree->setAnchorPoint(Point(0.5, 0.5));
+    this->addChild(parallaxThree);
     
     // player
     player = Player::create();

@@ -8,9 +8,14 @@
    eJztw0ENAAAMA6F71L/mCRkkrJqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqPn9gLYAB
   </data>
  </layer>
+ <layer name="midground" width="128" height="64">
+  <data encoding="base64" compression="zlib">
+   eJztwzENAAAMA6Be9S+57zwMEhIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAADgqi/DAGJvAvU=
+  </data>
+ </layer>
  <layer name="walls" width="128" height="64">
   <data encoding="base64" compression="zlib">
-   eJzt3QEJADAQA7HC+/c8BVOQC1TBCehtu0Yvpvrb6m+rv63+tvrb6m+rv63+tvrb6m+rv63+tvrb6m+rv63+tvrb6m+rv63+tvrb6m+rv63+tvrb6m+rv63+tvrb6m+rv63+tvrb6m+rv63+tvrb6m+rv63+tvrb6m+rv63+tvrb6m+rv63+tvrb6m+rv63+tvrb6m+rv63+tvrb6m+rv63+tvrbfn/gzdkDmZsEdQ==
+   eJzt0UENwDAAxLD7rB1/xNNwxJaCIGfbUbZ3VN35X+Z/m/9t/rf53+Z/m/9t/rf53+Z/m/9t/rf53+Z/m/9t/rf53+Z/m/9t/rf53+Z/m/9t/rf53+Z/m/9t/rf53+Z/m/9t/rf53+Z/m/9t/rf53+Z/m/9t/rf53+Z/m/9t/rf53+Z/m/9t/rf53+Z/m/9t/rf53+Z/m/9t/rf53+Z/m/9t/rf53/b/f5TuA/PgCSM=
   </data>
  </layer>
  <objectgroup name="objects">

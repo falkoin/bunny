@@ -7,18 +7,22 @@ uniform vec4 shadowColor;
 
 void main()
 {
-    float darkness = 0.20;
+    float darkness = 0.70;
 //    gl_FragColor = shadowColor;
     gl_FragColor = vec4(0.0,0.0,0.0,0.0);
     vec2 centerPos = gl_FragCoord.xy - vec2(position.x, position.y);
     //calculate light density
     float z = sqrt(lightSize*lightSize - centerPos.x*centerPos.x - centerPos.y*centerPos.y);
-    z /= lightSize*2.0;
+    z /= lightSize*1.0;
     if (length(centerPos) < lightSize) {
         gl_FragColor.a = darkness - z*z;
     }
+    else if (length(centerPos) < 150.0)
+    {
+        gl_FragColor.a = darkness - z;
+    }
     else
     {
-        gl_FragColor.a = 0.20;
+        gl_FragColor.a = 0.70;
     }
 }

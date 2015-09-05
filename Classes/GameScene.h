@@ -7,6 +7,7 @@
 #include "Level.h"
 #include "OverlayLayer.h"
 #include "ShadowLayer.h"
+#include "Movable.h"
 
 class GameScene : public cocos2d::Layer
 {
@@ -30,8 +31,10 @@ protected:
     Follow *camera;
     OverlayLayer *_hud;
     ShadowLayer* _shadowLayer;
+    Movable* cloud;
     Sprite* parallaxOne;
     Sprite* parallaxTwo;
+    Sprite* parallaxThree;
     
     bool _touchEnabled;
     bool _gameOver;
@@ -49,8 +52,10 @@ protected:
     virtual void gameOver();
     
     int score;
+    int nMaxClouds;
     bool _win;
     Vector<Sprite*> pillVec;
+    Vector<Movable*> cloudVec;
     cocos2d::Point lastPoint;
     cocos2d::Point lastPlayerPosition;
 

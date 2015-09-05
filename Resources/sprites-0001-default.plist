@@ -9,7 +9,7 @@
         <key>format</key>
         <integer>3</integer>
         <key>size</key>
-        <string>{234.0,280.0}</string>
+        <string>{264.0,255.0}</string>
         <key>name</key>
         <string>sprites</string>
         <key>textureFileName</key>
@@ -17,6 +17,26 @@
     </dict>
     <key>frames</key>
     <dict>
+        <key>cloud.png</key>
+        <dict>
+            <key>spriteSize</key>
+            <string>{31.0,19.0}</string>
+            <key>spriteOffset</key>
+            <string>{0.5,-4.5}</string>
+            <key>spriteSourceSize</key>
+            <string>{32.0,32.0}</string>
+            <key>spriteSourceColorRect</key>
+            <string>{{1.0,11.0},{31.0,19.0}}</string>
+            <key>spriteTrimmed</key>
+            <true/>
+            <key>textureRect</key>
+            <string>{{2.0,232.0},{31.0,19.0}}</string>
+            <key>textureRotated</key>
+            <false/>
+            <key>aliases</key>
+            <array>
+            </array>
+        </dict>
         <key>item.png</key>
         <dict>
             <key>spriteSize</key>
@@ -30,7 +50,7 @@
             <key>spriteTrimmed</key>
             <true/>
             <key>textureRect</key>
-            <string>{{2.0,232.0},{16.0,16.0}}</string>
+            <string>{{113.0,232.0},{16.0,16.0}}</string>
             <key>textureRotated</key>
             <false/>
             <key>aliases</key>
@@ -60,17 +80,17 @@
         <key>pill_00.png</key>
         <dict>
             <key>spriteSize</key>
-            <string>{12.0,12.0}</string>
+            <string>{13.0,12.0}</string>
             <key>spriteOffset</key>
-            <string>{0.0,-0.0}</string>
+            <string>{0.5,-0.0}</string>
             <key>spriteSourceSize</key>
             <string>{16.0,16.0}</string>
             <key>spriteSourceColorRect</key>
-            <string>{{2.0,2.0},{12.0,12.0}}</string>
+            <string>{{2.0,2.0},{13.0,12.0}}</string>
             <key>spriteTrimmed</key>
             <true/>
             <key>textureRect</key>
-            <string>{{16.0,264.0},{12.0,12.0}}</string>
+            <string>{{247.0,58.0},{13.0,12.0}}</string>
             <key>textureRotated</key>
             <false/>
             <key>aliases</key>
@@ -80,17 +100,17 @@
         <key>pill_01.png</key>
         <dict>
             <key>spriteSize</key>
-            <string>{12.0,12.0}</string>
+            <string>{13.0,12.0}</string>
             <key>spriteOffset</key>
-            <string>{0.0,1.0}</string>
+            <string>{0.5,1.0}</string>
             <key>spriteSourceSize</key>
             <string>{16.0,16.0}</string>
             <key>spriteSourceColorRect</key>
-            <string>{{2.0,1.0},{12.0,12.0}}</string>
+            <string>{{2.0,1.0},{13.0,12.0}}</string>
             <key>spriteTrimmed</key>
             <true/>
             <key>textureRect</key>
-            <string>{{30.0,264.0},{12.0,12.0}}</string>
+            <string>{{247.0,86.0},{13.0,12.0}}</string>
             <key>textureRotated</key>
             <false/>
             <key>aliases</key>
@@ -100,17 +120,17 @@
         <key>pill_02.png</key>
         <dict>
             <key>spriteSize</key>
-            <string>{12.0,12.0}</string>
+            <string>{13.0,12.0}</string>
             <key>spriteOffset</key>
-            <string>{0.0,2.0}</string>
+            <string>{0.5,2.0}</string>
             <key>spriteSourceSize</key>
             <string>{16.0,16.0}</string>
             <key>spriteSourceColorRect</key>
-            <string>{{2.0,0.0},{12.0,12.0}}</string>
+            <string>{{2.0,0.0},{13.0,12.0}}</string>
             <key>spriteTrimmed</key>
             <true/>
             <key>textureRect</key>
-            <string>{{44.0,264.0},{12.0,12.0}}</string>
+            <string>{{247.0,72.0},{13.0,12.0}}</string>
             <key>textureRotated</key>
             <false/>
             <key>aliases</key>
@@ -120,17 +140,17 @@
         <key>pill_03.png</key>
         <dict>
             <key>spriteSize</key>
-            <string>{12.0,12.0}</string>
+            <string>{13.0,12.0}</string>
             <key>spriteOffset</key>
-            <string>{0.0,1.0}</string>
+            <string>{0.5,1.0}</string>
             <key>spriteSourceSize</key>
             <string>{16.0,16.0}</string>
             <key>spriteSourceColorRect</key>
-            <string>{{2.0,1.0},{12.0,12.0}}</string>
+            <string>{{2.0,1.0},{13.0,12.0}}</string>
             <key>spriteTrimmed</key>
             <true/>
             <key>textureRect</key>
-            <string>{{92.0,232.0},{12.0,12.0}}</string>
+            <string>{{247.0,100.0},{13.0,12.0}}</string>
             <key>textureRotated</key>
             <false/>
             <key>aliases</key>
@@ -140,17 +160,17 @@
         <key>pill_04.png</key>
         <dict>
             <key>spriteSize</key>
-            <string>{12.0,12.0}</string>
+            <string>{13.0,12.0}</string>
             <key>spriteOffset</key>
-            <string>{0.0,-0.0}</string>
+            <string>{0.5,-0.0}</string>
             <key>spriteSourceSize</key>
             <string>{16.0,16.0}</string>
             <key>spriteSourceColorRect</key>
-            <string>{{2.0,2.0},{12.0,12.0}}</string>
+            <string>{{2.0,2.0},{13.0,12.0}}</string>
             <key>spriteTrimmed</key>
             <true/>
             <key>textureRect</key>
-            <string>{{58.0,264.0},{12.0,12.0}}</string>
+            <string>{{131.0,232.0},{13.0,12.0}}</string>
             <key>textureRotated</key>
             <false/>
             <key>aliases</key>
@@ -160,17 +180,17 @@
         <key>pill_05.png</key>
         <dict>
             <key>spriteSize</key>
-            <string>{12.0,12.0}</string>
+            <string>{13.0,12.0}</string>
             <key>spriteOffset</key>
-            <string>{0.0,-1.0}</string>
+            <string>{0.5,-1.0}</string>
             <key>spriteSourceSize</key>
             <string>{16.0,16.0}</string>
             <key>spriteSourceColorRect</key>
-            <string>{{2.0,3.0},{12.0,12.0}}</string>
+            <string>{{2.0,3.0},{13.0,12.0}}</string>
             <key>spriteTrimmed</key>
             <true/>
             <key>textureRect</key>
-            <string>{{106.0,232.0},{12.0,12.0}}</string>
+            <string>{{146.0,232.0},{13.0,12.0}}</string>
             <key>textureRotated</key>
             <false/>
             <key>aliases</key>
@@ -180,17 +200,17 @@
         <key>pill_06.png</key>
         <dict>
             <key>spriteSize</key>
-            <string>{12.0,12.0}</string>
+            <string>{13.0,12.0}</string>
             <key>spriteOffset</key>
-            <string>{0.0,-2.0}</string>
+            <string>{0.5,-2.0}</string>
             <key>spriteSourceSize</key>
             <string>{16.0,16.0}</string>
             <key>spriteSourceColorRect</key>
-            <string>{{2.0,4.0},{12.0,12.0}}</string>
+            <string>{{2.0,4.0},{13.0,12.0}}</string>
             <key>spriteTrimmed</key>
             <true/>
             <key>textureRect</key>
-            <string>{{120.0,232.0},{12.0,12.0}}</string>
+            <string>{{161.0,232.0},{13.0,12.0}}</string>
             <key>textureRotated</key>
             <false/>
             <key>aliases</key>
@@ -200,17 +220,17 @@
         <key>pill_07.png</key>
         <dict>
             <key>spriteSize</key>
-            <string>{12.0,12.0}</string>
+            <string>{13.0,12.0}</string>
             <key>spriteOffset</key>
-            <string>{0.0,-1.0}</string>
+            <string>{0.5,-1.0}</string>
             <key>spriteSourceSize</key>
             <string>{16.0,16.0}</string>
             <key>spriteSourceColorRect</key>
-            <string>{{2.0,3.0},{12.0,12.0}}</string>
+            <string>{{2.0,3.0},{13.0,12.0}}</string>
             <key>spriteTrimmed</key>
             <true/>
             <key>textureRect</key>
-            <string>{{134.0,232.0},{12.0,12.0}}</string>
+            <string>{{176.0,232.0},{13.0,12.0}}</string>
             <key>textureRotated</key>
             <false/>
             <key>aliases</key>
@@ -220,17 +240,17 @@
         <key>pill_08.png</key>
         <dict>
             <key>spriteSize</key>
-            <string>{12.0,12.0}</string>
+            <string>{13.0,12.0}</string>
             <key>spriteOffset</key>
-            <string>{0.0,-0.0}</string>
+            <string>{0.5,-0.0}</string>
             <key>spriteSourceSize</key>
             <string>{16.0,16.0}</string>
             <key>spriteSourceColorRect</key>
-            <string>{{2.0,2.0},{12.0,12.0}}</string>
+            <string>{{2.0,2.0},{13.0,12.0}}</string>
             <key>spriteTrimmed</key>
             <true/>
             <key>textureRect</key>
-            <string>{{148.0,232.0},{12.0,12.0}}</string>
+            <string>{{191.0,232.0},{13.0,12.0}}</string>
             <key>textureRotated</key>
             <false/>
             <key>aliases</key>
@@ -240,17 +260,17 @@
         <key>pill_09.png</key>
         <dict>
             <key>spriteSize</key>
-            <string>{12.0,12.0}</string>
+            <string>{13.0,12.0}</string>
             <key>spriteOffset</key>
-            <string>{0.0,1.0}</string>
+            <string>{0.5,1.0}</string>
             <key>spriteSourceSize</key>
             <string>{16.0,16.0}</string>
             <key>spriteSourceColorRect</key>
-            <string>{{2.0,1.0},{12.0,12.0}}</string>
+            <string>{{2.0,1.0},{13.0,12.0}}</string>
             <key>spriteTrimmed</key>
             <true/>
             <key>textureRect</key>
-            <string>{{162.0,232.0},{12.0,12.0}}</string>
+            <string>{{206.0,232.0},{13.0,12.0}}</string>
             <key>textureRotated</key>
             <false/>
             <key>aliases</key>
@@ -260,17 +280,17 @@
         <key>pill_10.png</key>
         <dict>
             <key>spriteSize</key>
-            <string>{12.0,12.0}</string>
+            <string>{13.0,12.0}</string>
             <key>spriteOffset</key>
-            <string>{0.0,2.0}</string>
+            <string>{0.5,2.0}</string>
             <key>spriteSourceSize</key>
             <string>{16.0,16.0}</string>
             <key>spriteSourceColorRect</key>
-            <string>{{2.0,0.0},{12.0,12.0}}</string>
+            <string>{{2.0,0.0},{13.0,12.0}}</string>
             <key>spriteTrimmed</key>
             <true/>
             <key>textureRect</key>
-            <string>{{176.0,232.0},{12.0,12.0}}</string>
+            <string>{{221.0,232.0},{13.0,12.0}}</string>
             <key>textureRotated</key>
             <false/>
             <key>aliases</key>
@@ -280,17 +300,17 @@
         <key>pill_11.png</key>
         <dict>
             <key>spriteSize</key>
-            <string>{12.0,12.0}</string>
+            <string>{13.0,12.0}</string>
             <key>spriteOffset</key>
-            <string>{0.0,1.0}</string>
+            <string>{0.5,1.0}</string>
             <key>spriteSourceSize</key>
             <string>{16.0,16.0}</string>
             <key>spriteSourceColorRect</key>
-            <string>{{2.0,1.0},{12.0,12.0}}</string>
+            <string>{{2.0,1.0},{13.0,12.0}}</string>
             <key>spriteTrimmed</key>
             <true/>
             <key>textureRect</key>
-            <string>{{190.0,232.0},{12.0,12.0}}</string>
+            <string>{{232.0,2.0},{13.0,12.0}}</string>
             <key>textureRotated</key>
             <false/>
             <key>aliases</key>
@@ -300,17 +320,17 @@
         <key>pill_12.png</key>
         <dict>
             <key>spriteSize</key>
-            <string>{12.0,12.0}</string>
+            <string>{13.0,12.0}</string>
             <key>spriteOffset</key>
-            <string>{0.0,-0.0}</string>
+            <string>{0.5,-0.0}</string>
             <key>spriteSourceSize</key>
             <string>{16.0,16.0}</string>
             <key>spriteSourceColorRect</key>
-            <string>{{2.0,2.0},{12.0,12.0}}</string>
+            <string>{{2.0,2.0},{13.0,12.0}}</string>
             <key>spriteTrimmed</key>
             <true/>
             <key>textureRect</key>
-            <string>{{204.0,232.0},{12.0,12.0}}</string>
+            <string>{{232.0,16.0},{13.0,12.0}}</string>
             <key>textureRotated</key>
             <false/>
             <key>aliases</key>
@@ -320,17 +340,17 @@
         <key>pill_13.png</key>
         <dict>
             <key>spriteSize</key>
-            <string>{12.0,12.0}</string>
+            <string>{13.0,12.0}</string>
             <key>spriteOffset</key>
-            <string>{0.0,-1.0}</string>
+            <string>{0.5,-1.0}</string>
             <key>spriteSourceSize</key>
             <string>{16.0,16.0}</string>
             <key>spriteSourceColorRect</key>
-            <string>{{2.0,3.0},{12.0,12.0}}</string>
+            <string>{{2.0,3.0},{13.0,12.0}}</string>
             <key>spriteTrimmed</key>
             <true/>
             <key>textureRect</key>
-            <string>{{218.0,232.0},{12.0,12.0}}</string>
+            <string>{{232.0,30.0},{13.0,12.0}}</string>
             <key>textureRotated</key>
             <false/>
             <key>aliases</key>
@@ -340,17 +360,17 @@
         <key>pill_14.png</key>
         <dict>
             <key>spriteSize</key>
-            <string>{12.0,12.0}</string>
+            <string>{13.0,12.0}</string>
             <key>spriteOffset</key>
-            <string>{0.0,-2.0}</string>
+            <string>{0.5,-2.0}</string>
             <key>spriteSourceSize</key>
             <string>{16.0,16.0}</string>
             <key>spriteSourceColorRect</key>
-            <string>{{2.0,4.0},{12.0,12.0}}</string>
+            <string>{{2.0,4.0},{13.0,12.0}}</string>
             <key>spriteTrimmed</key>
             <true/>
             <key>textureRect</key>
-            <string>{{92.0,246.0},{12.0,12.0}}</string>
+            <string>{{232.0,44.0},{13.0,12.0}}</string>
             <key>textureRotated</key>
             <false/>
             <key>aliases</key>
@@ -360,17 +380,17 @@
         <key>pill_15.png</key>
         <dict>
             <key>spriteSize</key>
-            <string>{12.0,12.0}</string>
+            <string>{13.0,12.0}</string>
             <key>spriteOffset</key>
-            <string>{0.0,-1.0}</string>
+            <string>{0.5,-1.0}</string>
             <key>spriteSourceSize</key>
             <string>{16.0,16.0}</string>
             <key>spriteSourceColorRect</key>
-            <string>{{2.0,3.0},{12.0,12.0}}</string>
+            <string>{{2.0,3.0},{13.0,12.0}}</string>
             <key>spriteTrimmed</key>
             <true/>
             <key>textureRect</key>
-            <string>{{2.0,250.0},{12.0,12.0}}</string>
+            <string>{{232.0,58.0},{13.0,12.0}}</string>
             <key>textureRotated</key>
             <false/>
             <key>aliases</key>
@@ -380,17 +400,17 @@
         <key>pill_16.png</key>
         <dict>
             <key>spriteSize</key>
-            <string>{12.0,12.0}</string>
+            <string>{13.0,12.0}</string>
             <key>spriteOffset</key>
-            <string>{0.0,-0.0}</string>
+            <string>{0.5,-0.0}</string>
             <key>spriteSourceSize</key>
             <string>{16.0,16.0}</string>
             <key>spriteSourceColorRect</key>
-            <string>{{2.0,2.0},{12.0,12.0}}</string>
+            <string>{{2.0,2.0},{13.0,12.0}}</string>
             <key>spriteTrimmed</key>
             <true/>
             <key>textureRect</key>
-            <string>{{16.0,250.0},{12.0,12.0}}</string>
+            <string>{{232.0,72.0},{13.0,12.0}}</string>
             <key>textureRotated</key>
             <false/>
             <key>aliases</key>
@@ -400,17 +420,17 @@
         <key>pill_17.png</key>
         <dict>
             <key>spriteSize</key>
-            <string>{12.0,12.0}</string>
+            <string>{13.0,12.0}</string>
             <key>spriteOffset</key>
-            <string>{0.0,1.0}</string>
+            <string>{0.5,1.0}</string>
             <key>spriteSourceSize</key>
             <string>{16.0,16.0}</string>
             <key>spriteSourceColorRect</key>
-            <string>{{2.0,1.0},{12.0,12.0}}</string>
+            <string>{{2.0,1.0},{13.0,12.0}}</string>
             <key>spriteTrimmed</key>
             <true/>
             <key>textureRect</key>
-            <string>{{30.0,250.0},{12.0,12.0}}</string>
+            <string>{{232.0,86.0},{13.0,12.0}}</string>
             <key>textureRotated</key>
             <false/>
             <key>aliases</key>
@@ -420,17 +440,17 @@
         <key>pill_18.png</key>
         <dict>
             <key>spriteSize</key>
-            <string>{12.0,12.0}</string>
+            <string>{13.0,12.0}</string>
             <key>spriteOffset</key>
-            <string>{0.0,2.0}</string>
+            <string>{0.5,2.0}</string>
             <key>spriteSourceSize</key>
             <string>{16.0,16.0}</string>
             <key>spriteSourceColorRect</key>
-            <string>{{2.0,0.0},{12.0,12.0}}</string>
+            <string>{{2.0,0.0},{13.0,12.0}}</string>
             <key>spriteTrimmed</key>
             <true/>
             <key>textureRect</key>
-            <string>{{44.0,250.0},{12.0,12.0}}</string>
+            <string>{{232.0,100.0},{13.0,12.0}}</string>
             <key>textureRotated</key>
             <false/>
             <key>aliases</key>
@@ -440,17 +460,17 @@
         <key>pill_19.png</key>
         <dict>
             <key>spriteSize</key>
-            <string>{12.0,12.0}</string>
+            <string>{13.0,12.0}</string>
             <key>spriteOffset</key>
-            <string>{0.0,1.0}</string>
+            <string>{0.5,1.0}</string>
             <key>spriteSourceSize</key>
             <string>{16.0,16.0}</string>
             <key>spriteSourceColorRect</key>
-            <string>{{2.0,1.0},{12.0,12.0}}</string>
+            <string>{{2.0,1.0},{13.0,12.0}}</string>
             <key>spriteTrimmed</key>
             <true/>
             <key>textureRect</key>
-            <string>{{58.0,250.0},{12.0,12.0}}</string>
+            <string>{{232.0,114.0},{13.0,12.0}}</string>
             <key>textureRotated</key>
             <false/>
             <key>aliases</key>
@@ -460,17 +480,17 @@
         <key>pill_20.png</key>
         <dict>
             <key>spriteSize</key>
-            <string>{12.0,12.0}</string>
+            <string>{13.0,12.0}</string>
             <key>spriteOffset</key>
-            <string>{0.0,-0.0}</string>
+            <string>{0.5,-0.0}</string>
             <key>spriteSourceSize</key>
             <string>{16.0,16.0}</string>
             <key>spriteSourceColorRect</key>
-            <string>{{2.0,2.0},{12.0,12.0}}</string>
+            <string>{{2.0,2.0},{13.0,12.0}}</string>
             <key>spriteTrimmed</key>
             <true/>
             <key>textureRect</key>
-            <string>{{72.0,250.0},{12.0,12.0}}</string>
+            <string>{{232.0,128.0},{13.0,12.0}}</string>
             <key>textureRotated</key>
             <false/>
             <key>aliases</key>
@@ -480,17 +500,17 @@
         <key>pill_21.png</key>
         <dict>
             <key>spriteSize</key>
-            <string>{12.0,12.0}</string>
+            <string>{13.0,12.0}</string>
             <key>spriteOffset</key>
-            <string>{0.0,-1.0}</string>
+            <string>{0.5,-1.0}</string>
             <key>spriteSourceSize</key>
             <string>{16.0,16.0}</string>
             <key>spriteSourceColorRect</key>
-            <string>{{2.0,3.0},{12.0,12.0}}</string>
+            <string>{{2.0,3.0},{13.0,12.0}}</string>
             <key>spriteTrimmed</key>
             <true/>
             <key>textureRect</key>
-            <string>{{106.0,246.0},{12.0,12.0}}</string>
+            <string>{{232.0,142.0},{13.0,12.0}}</string>
             <key>textureRotated</key>
             <false/>
             <key>aliases</key>
@@ -500,17 +520,17 @@
         <key>pill_22.png</key>
         <dict>
             <key>spriteSize</key>
-            <string>{12.0,12.0}</string>
+            <string>{13.0,12.0}</string>
             <key>spriteOffset</key>
-            <string>{0.0,-2.0}</string>
+            <string>{0.5,-2.0}</string>
             <key>spriteSourceSize</key>
             <string>{16.0,16.0}</string>
             <key>spriteSourceColorRect</key>
-            <string>{{2.0,4.0},{12.0,12.0}}</string>
+            <string>{{2.0,4.0},{13.0,12.0}}</string>
             <key>spriteTrimmed</key>
             <true/>
             <key>textureRect</key>
-            <string>{{120.0,246.0},{12.0,12.0}}</string>
+            <string>{{232.0,156.0},{13.0,12.0}}</string>
             <key>textureRotated</key>
             <false/>
             <key>aliases</key>
@@ -520,17 +540,17 @@
         <key>pill_23.png</key>
         <dict>
             <key>spriteSize</key>
-            <string>{12.0,12.0}</string>
+            <string>{13.0,12.0}</string>
             <key>spriteOffset</key>
-            <string>{0.0,-1.0}</string>
+            <string>{0.5,-1.0}</string>
             <key>spriteSourceSize</key>
             <string>{16.0,16.0}</string>
             <key>spriteSourceColorRect</key>
-            <string>{{2.0,3.0},{12.0,12.0}}</string>
+            <string>{{2.0,3.0},{13.0,12.0}}</string>
             <key>spriteTrimmed</key>
             <true/>
             <key>textureRect</key>
-            <string>{{134.0,246.0},{12.0,12.0}}</string>
+            <string>{{232.0,170.0},{13.0,12.0}}</string>
             <key>textureRotated</key>
             <false/>
             <key>aliases</key>
@@ -540,17 +560,17 @@
         <key>pill_24.png</key>
         <dict>
             <key>spriteSize</key>
-            <string>{12.0,12.0}</string>
+            <string>{13.0,12.0}</string>
             <key>spriteOffset</key>
-            <string>{0.0,-0.0}</string>
+            <string>{0.5,-0.0}</string>
             <key>spriteSourceSize</key>
             <string>{16.0,16.0}</string>
             <key>spriteSourceColorRect</key>
-            <string>{{2.0,2.0},{12.0,12.0}}</string>
+            <string>{{2.0,2.0},{13.0,12.0}}</string>
             <key>spriteTrimmed</key>
             <true/>
             <key>textureRect</key>
-            <string>{{148.0,246.0},{12.0,12.0}}</string>
+            <string>{{232.0,184.0},{13.0,12.0}}</string>
             <key>textureRotated</key>
             <false/>
             <key>aliases</key>
@@ -560,17 +580,17 @@
         <key>pill_25.png</key>
         <dict>
             <key>spriteSize</key>
-            <string>{12.0,12.0}</string>
+            <string>{13.0,12.0}</string>
             <key>spriteOffset</key>
-            <string>{0.0,1.0}</string>
+            <string>{0.5,1.0}</string>
             <key>spriteSourceSize</key>
             <string>{16.0,16.0}</string>
             <key>spriteSourceColorRect</key>
-            <string>{{2.0,1.0},{12.0,12.0}}</string>
+            <string>{{2.0,1.0},{13.0,12.0}}</string>
             <key>spriteTrimmed</key>
             <true/>
             <key>textureRect</key>
-            <string>{{162.0,246.0},{12.0,12.0}}</string>
+            <string>{{232.0,198.0},{13.0,12.0}}</string>
             <key>textureRotated</key>
             <false/>
             <key>aliases</key>
@@ -580,17 +600,17 @@
         <key>pill_26.png</key>
         <dict>
             <key>spriteSize</key>
-            <string>{12.0,12.0}</string>
+            <string>{13.0,12.0}</string>
             <key>spriteOffset</key>
-            <string>{0.0,2.0}</string>
+            <string>{0.5,2.0}</string>
             <key>spriteSourceSize</key>
             <string>{16.0,16.0}</string>
             <key>spriteSourceColorRect</key>
-            <string>{{2.0,0.0},{12.0,12.0}}</string>
+            <string>{{2.0,0.0},{13.0,12.0}}</string>
             <key>spriteTrimmed</key>
             <true/>
             <key>textureRect</key>
-            <string>{{176.0,246.0},{12.0,12.0}}</string>
+            <string>{{232.0,212.0},{13.0,12.0}}</string>
             <key>textureRotated</key>
             <false/>
             <key>aliases</key>
@@ -600,17 +620,17 @@
         <key>pill_27.png</key>
         <dict>
             <key>spriteSize</key>
-            <string>{12.0,12.0}</string>
+            <string>{13.0,12.0}</string>
             <key>spriteOffset</key>
-            <string>{0.0,1.0}</string>
+            <string>{0.5,1.0}</string>
             <key>spriteSourceSize</key>
             <string>{16.0,16.0}</string>
             <key>spriteSourceColorRect</key>
-            <string>{{2.0,1.0},{12.0,12.0}}</string>
+            <string>{{2.0,1.0},{13.0,12.0}}</string>
             <key>spriteTrimmed</key>
             <true/>
             <key>textureRect</key>
-            <string>{{190.0,246.0},{12.0,12.0}}</string>
+            <string>{{236.0,226.0},{13.0,12.0}}</string>
             <key>textureRotated</key>
             <false/>
             <key>aliases</key>
@@ -620,17 +640,17 @@
         <key>pill_28.png</key>
         <dict>
             <key>spriteSize</key>
-            <string>{12.0,12.0}</string>
+            <string>{13.0,12.0}</string>
             <key>spriteOffset</key>
-            <string>{0.0,-0.0}</string>
+            <string>{0.5,-0.0}</string>
             <key>spriteSourceSize</key>
             <string>{16.0,16.0}</string>
             <key>spriteSourceColorRect</key>
-            <string>{{2.0,2.0},{12.0,12.0}}</string>
+            <string>{{2.0,2.0},{13.0,12.0}}</string>
             <key>spriteTrimmed</key>
             <true/>
             <key>textureRect</key>
-            <string>{{204.0,246.0},{12.0,12.0}}</string>
+            <string>{{247.0,2.0},{13.0,12.0}}</string>
             <key>textureRotated</key>
             <false/>
             <key>aliases</key>
@@ -640,17 +660,17 @@
         <key>pill_29.png</key>
         <dict>
             <key>spriteSize</key>
-            <string>{12.0,12.0}</string>
+            <string>{13.0,12.0}</string>
             <key>spriteOffset</key>
-            <string>{0.0,-1.0}</string>
+            <string>{0.5,-1.0}</string>
             <key>spriteSourceSize</key>
             <string>{16.0,16.0}</string>
             <key>spriteSourceColorRect</key>
-            <string>{{2.0,3.0},{12.0,12.0}}</string>
+            <string>{{2.0,3.0},{13.0,12.0}}</string>
             <key>spriteTrimmed</key>
             <true/>
             <key>textureRect</key>
-            <string>{{218.0,246.0},{12.0,12.0}}</string>
+            <string>{{247.0,16.0},{13.0,12.0}}</string>
             <key>textureRotated</key>
             <false/>
             <key>aliases</key>
@@ -660,17 +680,17 @@
         <key>pill_30.png</key>
         <dict>
             <key>spriteSize</key>
-            <string>{12.0,12.0}</string>
+            <string>{13.0,12.0}</string>
             <key>spriteOffset</key>
-            <string>{0.0,-2.0}</string>
+            <string>{0.5,-2.0}</string>
             <key>spriteSourceSize</key>
             <string>{16.0,16.0}</string>
             <key>spriteSourceColorRect</key>
-            <string>{{2.0,4.0},{12.0,12.0}}</string>
+            <string>{{2.0,4.0},{13.0,12.0}}</string>
             <key>spriteTrimmed</key>
             <true/>
             <key>textureRect</key>
-            <string>{{86.0,260.0},{12.0,12.0}}</string>
+            <string>{{247.0,30.0},{13.0,12.0}}</string>
             <key>textureRotated</key>
             <false/>
             <key>aliases</key>
@@ -680,17 +700,17 @@
         <key>pill_31.png</key>
         <dict>
             <key>spriteSize</key>
-            <string>{12.0,12.0}</string>
+            <string>{13.0,12.0}</string>
             <key>spriteOffset</key>
-            <string>{0.0,-1.0}</string>
+            <string>{0.5,-1.0}</string>
             <key>spriteSourceSize</key>
             <string>{16.0,16.0}</string>
             <key>spriteSourceColorRect</key>
-            <string>{{2.0,3.0},{12.0,12.0}}</string>
+            <string>{{2.0,3.0},{13.0,12.0}}</string>
             <key>spriteTrimmed</key>
             <true/>
             <key>textureRect</key>
-            <string>{{2.0,264.0},{12.0,12.0}}</string>
+            <string>{{247.0,44.0},{13.0,12.0}}</string>
             <key>textureRotated</key>
             <false/>
             <key>aliases</key>
@@ -710,7 +730,7 @@
             <key>spriteTrimmed</key>
             <true/>
             <key>textureRect</key>
-            <string>{{20.0,232.0},{16.0,16.0}}</string>
+            <string>{{95.0,232.0},{16.0,16.0}}</string>
             <key>textureRotated</key>
             <false/>
             <key>aliases</key>
@@ -720,17 +740,17 @@
         <key>playerHappy.png</key>
         <dict>
             <key>spriteSize</key>
-            <string>{16.0,16.0}</string>
+            <string>{18.0,16.0}</string>
             <key>spriteOffset</key>
             <string>{0.0,-0.0}</string>
             <key>spriteSourceSize</key>
-            <string>{16.0,16.0}</string>
+            <string>{18.0,16.0}</string>
             <key>spriteSourceColorRect</key>
-            <string>{{0.0,0.0},{16.0,16.0}}</string>
+            <string>{{0.0,0.0},{18.0,16.0}}</string>
             <key>spriteTrimmed</key>
             <true/>
             <key>textureRect</key>
-            <string>{{38.0,232.0},{16.0,16.0}}</string>
+            <string>{{55.0,232.0},{18.0,16.0}}</string>
             <key>textureRotated</key>
             <false/>
             <key>aliases</key>
@@ -740,17 +760,17 @@
         <key>playerIdle.png</key>
         <dict>
             <key>spriteSize</key>
-            <string>{16.0,16.0}</string>
+            <string>{18.0,16.0}</string>
             <key>spriteOffset</key>
             <string>{0.0,-0.0}</string>
             <key>spriteSourceSize</key>
-            <string>{16.0,16.0}</string>
+            <string>{18.0,16.0}</string>
             <key>spriteSourceColorRect</key>
-            <string>{{0.0,0.0},{16.0,16.0}}</string>
+            <string>{{0.0,0.0},{18.0,16.0}}</string>
             <key>spriteTrimmed</key>
             <true/>
             <key>textureRect</key>
-            <string>{{56.0,232.0},{16.0,16.0}}</string>
+            <string>{{75.0,232.0},{18.0,16.0}}</string>
             <key>textureRotated</key>
             <false/>
             <key>aliases</key>
@@ -760,17 +780,17 @@
         <key>playerWin.png</key>
         <dict>
             <key>spriteSize</key>
-            <string>{16.0,16.0}</string>
+            <string>{18.0,16.0}</string>
             <key>spriteOffset</key>
             <string>{0.0,-0.0}</string>
             <key>spriteSourceSize</key>
-            <string>{16.0,16.0}</string>
+            <string>{18.0,16.0}</string>
             <key>spriteSourceColorRect</key>
-            <string>{{0.0,0.0},{16.0,16.0}}</string>
+            <string>{{0.0,0.0},{18.0,16.0}}</string>
             <key>spriteTrimmed</key>
             <true/>
             <key>textureRect</key>
-            <string>{{74.0,232.0},{16.0,16.0}}</string>
+            <string>{{35.0,232.0},{18.0,16.0}}</string>
             <key>textureRotated</key>
             <false/>
             <key>aliases</key>

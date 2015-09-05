@@ -3,9 +3,9 @@
         { 
             "coordinatesFileName": "sprites-0001-default.plist",
             "textureFileName": "sprites-0001-default.png",
-            "width": 234.0,
-            "height": 280.0
+            "width": 264.0,
+            "height": 255.0
         }
     ],
-    "signature": "aa614876b02c70cca3a06093cee6ce866c096c90"
+    "signature": "ee58f9a7f37a619eb33483fddb189d527d91375d"
 }

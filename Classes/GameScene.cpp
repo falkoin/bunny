@@ -6,6 +6,7 @@
 #include "Consumable.h"
 #include "ShadowLayer.h"
 #include "SimpleAudioEngine.h"
+#include "Movable.h"
 
 USING_NS_CC;
 
@@ -206,8 +207,8 @@ void GameScene::checkCollisionY()
         if ((tile.containsPoint(tmp1pos)) || (tile.containsPoint(tmp2pos)))
         {
             float mapheight = ((float)level->getMap()->getMapSize().height - 3) * 16 * SCALE_FACTOR;
-            log("Position Y: %f", player->getPositionY());
-            log("Mapheight: %f", mapheight);
+//            log("Position Y: %f", player->getPositionY());
+//            log("Mapheight: %f", mapheight);
             if (player->getPlayerVelocity().y > 0 && player->getPosition().y+player->getContentSize().height >= mapheight)
             {
                 int topCollisionPosition = tile.getMinY() - (player->getContentSize().height) * SCALE_FACTOR;
@@ -324,8 +325,9 @@ void GameScene::updateCamera()
             cameraTarget->setPositionX(playerPosition.x - cameraSpaceFactor * SCALE_FACTOR);
             if (parallaxOne != NULL)
             {
-                parallaxOne->setPosition(Point(parallaxOne->getPositionX()+positionDiff.x*0.8,parallaxOne->getPositionY()));
-                parallaxTwo->setPosition(Point(parallaxTwo->getPositionX()+positionDiff.x*0.9,parallaxTwo->getPositionY()));
+                parallaxOne->setPosition(Point(parallaxOne->getPositionX()+positionDiff.x*0.9,parallaxOne->getPositionY()));
+                parallaxTwo->setPosition(Point(parallaxTwo->getPositionX()+positionDiff.x*0.8,parallaxTwo->getPositionY()));
+                parallaxThree->setPosition(Point(parallaxThree->getPositionX()+positionDiff.x*0.7,parallaxThree->getPositionY()));
             }
         }
         if (playerPosition.x-cameraPosition.x < -cameraSpaceFactor * SCALE_FACTOR)
@@ -333,8 +335,9 @@ void GameScene::updateCamera()
             cameraTarget->setPositionX(playerPosition.x + cameraSpaceFactor * SCALE_FACTOR);
             if (parallaxOne != NULL)
             {
-                parallaxOne->setPosition(Point(parallaxOne->getPositionX()+positionDiff.x*0.8,parallaxOne->getPositionY()));
-                parallaxTwo->setPosition(Point(parallaxTwo->getPositionX()+positionDiff.x*0.9,parallaxTwo->getPositionY()));
+                parallaxOne->setPosition(Point(parallaxOne->getPositionX()+positionDiff.x*0.9,parallaxOne->getPositionY()));
+                parallaxTwo->setPosition(Point(parallaxTwo->getPositionX()+positionDiff.x*0.8,parallaxTwo->getPositionY()));
+                parallaxThree->setPosition(Point(parallaxThree->getPositionX()+positionDiff.x*0.7,parallaxThree->getPositionY()));
             }
         }
     }
@@ -354,8 +357,9 @@ void GameScene::updateCamera()
             cameraTarget->setPositionY(playerPosition.y - cameraSpaceFactor * SCALE_FACTOR);
             if (parallaxOne != NULL)
             {
-                parallaxOne->setPosition(Point(parallaxOne->getPositionX(),parallaxOne->getPositionY()+positionDiff.y*0.8));
-                parallaxTwo->setPosition(Point(parallaxTwo->getPositionX(),parallaxTwo->getPositionY()+positionDiff.y*0.9));
+                parallaxOne->setPosition(Point(parallaxOne->getPositionX(),parallaxOne->getPositionY()+positionDiff.y*0.9));
+                parallaxTwo->setPosition(Point(parallaxTwo->getPositionX(),parallaxTwo->getPositionY()+positionDiff.y*0.7));
+                parallaxThree->setPosition(Point(parallaxThree->getPositionX(),parallaxThree->getPositionY()+positionDiff.y*0.5));
             }
         }
         if (playerPosition.y-cameraPosition.y < -cameraSpaceFactor * SCALE_FACTOR)
@@ -363,8 +367,9 @@ void GameScene::updateCamera()
             cameraTarget->setPositionY(playerPosition.y + cameraSpaceFactor * SCALE_FACTOR);
             if (parallaxOne != NULL)
             {
-                parallaxOne->setPosition(Point(parallaxOne->getPositionX(),parallaxOne->getPositionY()+positionDiff.y*0.8));
-                parallaxTwo->setPosition(Point(parallaxTwo->getPositionX(),parallaxTwo->getPositionY()+positionDiff.y*0.9));
+                parallaxOne->setPosition(Point(parallaxOne->getPositionX(),parallaxOne->getPositionY()+positionDiff.y*0.9));
+                parallaxTwo->setPosition(Point(parallaxTwo->getPositionX(),parallaxTwo->getPositionY()+positionDiff.y*0.7));
+                parallaxThree->setPosition(Point(parallaxThree->getPositionX(),parallaxThree->getPositionY()+positionDiff.y*0.5));
             }
         }
     } 
@@ -410,6 +415,32 @@ void GameScene::shader()
     }
     _shadowLayer->setLightPosition(lastPoint);
     _shadowLayer->setPosition(this->convertToNodeSpace(Point(0,0)));
+    
+    for (auto *clouds : cloudVec)
+    {
+        if (clouds != NULL)
+        {
+            clouds->setPositionX(clouds->getPositionX()+clouds->getSpeed());
+            if (clouds->getPositionX() > level->getMap()->getMapSize().width*16*SCALE_FACTOR)
+            {
+                cloudVec.eraseObject(clouds);
+                clouds->removeFromParent();
+            }
+        }
+    }
+    // clouds
+    
+    if (cloudVec.size() < nMaxClouds)
+    {
+        auto clouds = Movable::create(random(0.1, 0.4));
+        clouds->setPosition(Point(0-clouds->getContentSize().width, level->getMap()->getMapSize().height*16*SCALE_FACTOR*random(0.2,0.9)));
+        clouds->setScale(random(SCALE_FACTOR, SCALE_FACTOR*2));
+        clouds->setGlobalZOrder(3);
+        clouds->retain();
+        addChild(clouds);
+        cloudVec.pushBack(clouds);
+    }
+//    log("n clouds = %i", cloudVec.size());
 //    _hud->setPosition(this->convertToNodeSpace(Point(3*SCALE_FACTOR,visibleSize.height-10*SCALE_FACTOR  )));
 //    auto tempPosition = player->getPosition();
 //    parallaxOne->setPosition(this->convertToNodeSpace(Point(0.5,0.5)));

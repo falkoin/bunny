@@ -111,6 +111,22 @@
 		AEB344D31B979D39000F6277 /* level3.tmx in Resources */ = {isa = PBXBuildFile; fileRef = AEB344D11B979D39000F6277 /* level3.tmx */; };
 		AEB344D61B97A698000F6277 /* bloop.wav in Resources */ = {isa = PBXBuildFile; fileRef = AEB344D51B97A698000F6277 /* bloop.wav */; };
 		AEB344D71B97A698000F6277 /* bloop.wav in Resources */ = {isa = PBXBuildFile; fileRef = AEB344D51B97A698000F6277 /* bloop.wav */; };
+		AEBDBC321B9AE02700119201 /* parallaxHill003.png in Resources */ = {isa = PBXBuildFile; fileRef = AEBDBC2F1B9AE02700119201 /* parallaxHill003.png */; };
+		AEBDBC331B9AE02700119201 /* parallaxHill003.png in Resources */ = {isa = PBXBuildFile; fileRef = AEBDBC2F1B9AE02700119201 /* parallaxHill003.png */; };
+		AEBDBC341B9AE02700119201 /* parallaxHill002.png in Resources */ = {isa = PBXBuildFile; fileRef = AEBDBC301B9AE02700119201 /* parallaxHill002.png */; };
+		AEBDBC351B9AE02700119201 /* parallaxHill002.png in Resources */ = {isa = PBXBuildFile; fileRef = AEBDBC301B9AE02700119201 /* parallaxHill002.png */; };
+		AEBDBC361B9AE02700119201 /* parallaxHill001.png in Resources */ = {isa = PBXBuildFile; fileRef = AEBDBC311B9AE02700119201 /* parallaxHill001.png */; };
+		AEBDBC371B9AE02700119201 /* parallaxHill001.png in Resources */ = {isa = PBXBuildFile; fileRef = AEBDBC311B9AE02700119201 /* parallaxHill001.png */; };
+		AEBDBC3B1B9B082700119201 /* Light.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AEBDBC391B9B082700119201 /* Light.cpp */; };
+		AEBDBC3C1B9B082700119201 /* Light.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AEBDBC391B9B082700119201 /* Light.cpp */; };
+		AEBDBC3E1B9B08C100119201 /* light.png in Resources */ = {isa = PBXBuildFile; fileRef = AEBDBC3D1B9B08C100119201 /* light.png */; };
+		AEBDBC3F1B9B08C100119201 /* light.png in Resources */ = {isa = PBXBuildFile; fileRef = AEBDBC3D1B9B08C100119201 /* light.png */; };
+		AEBDBC421B9B0DEB00119201 /* lightCyan.png in Resources */ = {isa = PBXBuildFile; fileRef = AEBDBC401B9B0DEB00119201 /* lightCyan.png */; };
+		AEBDBC431B9B0DEB00119201 /* lightCyan.png in Resources */ = {isa = PBXBuildFile; fileRef = AEBDBC401B9B0DEB00119201 /* lightCyan.png */; };
+		AEBDBC441B9B0DEB00119201 /* lightPink.png in Resources */ = {isa = PBXBuildFile; fileRef = AEBDBC411B9B0DEB00119201 /* lightPink.png */; };
+		AEBDBC451B9B0DEB00119201 /* lightPink.png in Resources */ = {isa = PBXBuildFile; fileRef = AEBDBC411B9B0DEB00119201 /* lightPink.png */; };
+		AEBDBC481B9B17C000119201 /* Movable.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AEBDBC461B9B17C000119201 /* Movable.cpp */; };
+		AEBDBC491B9B17C000119201 /* Movable.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AEBDBC461B9B17C000119201 /* Movable.cpp */; };
 		AEC84E261B8DF578006ACFAC /* player-animations.plist in Resources */ = {isa = PBXBuildFile; fileRef = AEC84E251B8DF578006ACFAC /* player-animations.plist */; };
 		AEC84E271B8DF578006ACFAC /* player-animations.plist in Resources */ = {isa = PBXBuildFile; fileRef = AEC84E251B8DF578006ACFAC /* player-animations.plist */; };
 		AEC84E2A1B8DF58A006ACFAC /* sprites-0001-default.plist in Resources */ = {isa = PBXBuildFile; fileRef = AEC84E281B8DF58A006ACFAC /* sprites-0001-default.plist */; };
@@ -285,6 +301,16 @@
 		AEB344CC1B979D2D000F6277 /* lvl03pressed.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = lvl03pressed.png; sourceTree = "<group>"; };
 		AEB344D11B979D39000F6277 /* level3.tmx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = level3.tmx; sourceTree = "<group>"; };
 		AEB344D51B97A698000F6277 /* bloop.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = bloop.wav; sourceTree = "<group>"; };
+		AEBDBC2F1B9AE02700119201 /* parallaxHill003.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = parallaxHill003.png; sourceTree = "<group>"; };
+		AEBDBC301B9AE02700119201 /* parallaxHill002.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = parallaxHill002.png; sourceTree = "<group>"; };
+		AEBDBC311B9AE02700119201 /* parallaxHill001.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = parallaxHill001.png; sourceTree = "<group>"; };
+		AEBDBC391B9B082700119201 /* Light.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Light.cpp; sourceTree = "<group>"; };
+		AEBDBC3A1B9B082700119201 /* Light.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Light.h; sourceTree = "<group>"; };
+		AEBDBC3D1B9B08C100119201 /* light.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = light.png; sourceTree = "<group>"; };
+		AEBDBC401B9B0DEB00119201 /* lightCyan.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = lightCyan.png; sourceTree = "<group>"; };
+		AEBDBC411B9B0DEB00119201 /* lightPink.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = lightPink.png; sourceTree = "<group>"; };
+		AEBDBC461B9B17C000119201 /* Movable.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Movable.cpp; sourceTree = "<group>"; };
+		AEBDBC471B9B17C000119201 /* Movable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Movable.h; sourceTree = "<group>"; };
 		AEC84E251B8DF578006ACFAC /* player-animations.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "player-animations.plist"; sourceTree = "<group>"; };
 		AEC84E281B8DF58A006ACFAC /* sprites-0001-default.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "sprites-0001-default.plist"; sourceTree = "<group>"; };
 		AEC84E291B8DF58A006ACFAC /* sprites-0001-default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "sprites-0001-default.png"; sourceTree = "<group>"; };
@@ -439,6 +465,12 @@
 		46880B7519C43A67006E1F66 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				AEBDBC401B9B0DEB00119201 /* lightCyan.png */,
+				AEBDBC411B9B0DEB00119201 /* lightPink.png */,
+				AEBDBC3D1B9B08C100119201 /* light.png */,
+				AEBDBC2F1B9AE02700119201 /* parallaxHill003.png */,
+				AEBDBC301B9AE02700119201 /* parallaxHill002.png */,
+				AEBDBC311B9AE02700119201 /* parallaxHill001.png */,
 				AE624CC81B996B9C000186FA /* parallax22.png */,
 				AE624CC91B996B9C000186FA /* parallax21.png */,
 				AE38BA081B98DA30005B48E8 /* parallax2.png */,
@@ -510,6 +542,10 @@
 				AEB344CA1B979C93000F6277 /* TestSceneThree.h */,
 				46880B8419C43A87006E1F66 /* AppDelegate.cpp */,
 				46880B8519C43A87006E1F66 /* AppDelegate.h */,
+				AEBDBC391B9B082700119201 /* Light.cpp */,
+				AEBDBC461B9B17C000119201 /* Movable.cpp */,
+				AEBDBC471B9B17C000119201 /* Movable.h */,
+				AEBDBC3A1B9B082700119201 /* Light.h */,
 				AE5A96C71B97A93D009CE82F /* Player.cpp */,
 				AE5A96C81B97A93D009CE82F /* Player.h */,
 				AEC84E331B8DF882006ACFAC /* Level.cpp */,
@@ -686,12 +722,14 @@
 				AEC84E381B8DFE03006ACFAC /* tiles.png in Resources */,
 				AEC965A11B9487B700DB2AB0 /* shadow.fsh in Resources */,
 				AEC9658A1B945D6200DB2AB0 /* explosion.png in Resources */,
+				AEBDBC441B9B0DEB00119201 /* lightPink.png in Resources */,
 				5087E78317EB970100C73F5D /* Icon-152.png in Resources */,
 				AE38BA031B98BE2C005B48E8 /* ouch.wav in Resources */,
 				AE11FE071B925BDD00F52CD4 /* retry.png in Resources */,
 				AEB344D21B979D39000F6277 /* level3.tmx in Resources */,
 				AEC965AA1B94942100DB2AB0 /* explosionPlayer.plist in Resources */,
 				AEB344BC1B979927000F6277 /* lvl01pressed.png in Resources */,
+				AEBDBC361B9AE02700119201 /* parallaxHill001.png in Resources */,
 				5087E77D17EB970100C73F5D /* Default-568h@2x.png in Resources */,
 				AEC84E261B8DF578006ACFAC /* player-animations.plist in Resources */,
 				5087E78517EB970100C73F5D /* Icon-72.png in Resources */,
@@ -699,12 +737,14 @@
 				AE11FE051B925BDD00F52CD4 /* backPressed.png in Resources */,
 				521A8E6519F0C34300D177D7 /* Default-736h@3x.png in Resources */,
 				AEC9658E1B94804D00DB2AB0 /* explosionGreen.plist in Resources */,
+				AEBDBC3E1B9B08C100119201 /* light.png in Resources */,
 				521A8EA919F11F5000D177D7 /* fonts in Resources */,
 				AEFDA3381B94BA6A00EFEE71 /* testLevel2.tmx in Resources */,
 				AEC9659F1B9487B700DB2AB0 /* test.vert in Resources */,
 				AE38BA061B98CAFD005B48E8 /* parallax.png in Resources */,
 				AE38BA091B98DA30005B48E8 /* parallax2.png in Resources */,
 				AEED3C711B981EFB009D7057 /* woooh.wav in Resources */,
+				AEBDBC421B9B0DEB00119201 /* lightCyan.png in Resources */,
 				AEC84E2C1B8DF58A006ACFAC /* sprites-0001-default.png in Resources */,
 				AEDF47CF1B934C1500AAFFD4 /* doublePoints-animations.plist in Resources */,
 				AEC965911B94805800DB2AB0 /* explosionCyan.plist in Resources */,
@@ -717,6 +757,7 @@
 				5087E78017EB970100C73F5D /* Icon-114.png in Resources */,
 				AE0C856F1B91FBA4001D40DF /* titleClicked.png in Resources */,
 				50EF62A217ECD613001EB2F8 /* Icon-29.png in Resources */,
+				AEBDBC321B9AE02700119201 /* parallaxHill003.png in Resources */,
 				50EF629617ECD46A001EB2F8 /* Icon-40.png in Resources */,
 				AEDF47CC1B934C0500AAFFD4 /* highJump-animations.plist in Resources */,
 				AEB344C51B9799FF000F6277 /* lvl02.png in Resources */,
@@ -725,6 +766,7 @@
 				50EF629817ECD46A001EB2F8 /* Icon-80.png in Resources */,
 				AEB344CD1B979D2D000F6277 /* lvl03.png in Resources */,
 				5087E78417EB970100C73F5D /* Icon-57.png in Resources */,
+				AEBDBC341B9AE02700119201 /* parallaxHill002.png in Resources */,
 				5087E77E17EB970100C73F5D /* Default.png in Resources */,
 				AE0C85641B91FA7E001D40DF /* CartonSixBMP.fnt in Resources */,
 				AEC965881B945D6200DB2AB0 /* explosionPink.plist in Resources */,
@@ -745,14 +787,17 @@
 			files = (
 				AE38BA071B98CAFD005B48E8 /* parallax.png in Resources */,
 				AE624CCD1B996B9C000186FA /* parallax21.png in Resources */,
+				AEBDBC351B9AE02700119201 /* parallaxHill002.png in Resources */,
 				503AE0F817EB97AB00D1A890 /* Icon.icns in Resources */,
 				AEC9658F1B94804D00DB2AB0 /* explosionGreen.plist in Resources */,
+				AEBDBC451B9B0DEB00119201 /* lightPink.png in Resources */,
 				AEB344D01B979D2D000F6277 /* lvl03pressed.png in Resources */,
 				AEC9659C1B94857700DB2AB0 /* test2.fsh in Resources */,
 				AEB344BF1B979927000F6277 /* lvl01.png in Resources */,
 				AE0C85721B91FBA4001D40DF /* background.png in Resources */,
 				AE11FE041B925BDD00F52CD4 /* back.png in Resources */,
 				AEDF47D01B934C1500AAFFD4 /* doublePoints-animations.plist in Resources */,
+				AEBDBC3F1B9B08C100119201 /* light.png in Resources */,
 				AE11FE061B925BDD00F52CD4 /* backPressed.png in Resources */,
 				AEC965A01B9487B700DB2AB0 /* test.vert in Resources */,
 				AEB344C31B979927000F6277 /* lvl02pressed.png in Resources */,
@@ -772,6 +817,7 @@
 				AE0C85631B91FA7E001D40DF /* CartonSixBMP.png in Resources */,
 				AE38BA0A1B98DA30005B48E8 /* parallax2.png in Resources */,
 				AEC84E3C1B8DFE29006ACFAC /* testLevel.tmx in Resources */,
+				AEBDBC431B9B0DEB00119201 /* lightCyan.png in Resources */,
 				AE0C855A1B91A7D2001D40DF /* consumable-animations.plist in Resources */,
 				AEFC4E211B90801D00C1F4D6 /* pill.png in Resources */,
 				AE11FE0A1B925BDD00F52CD4 /* retryPressed.png in Resources */,
@@ -782,12 +828,14 @@
 				AEB344C61B9799FF000F6277 /* lvl02.png in Resources */,
 				AE0C85651B91FA7E001D40DF /* CartonSixBMP.fnt in Resources */,
 				AEC965891B945D6200DB2AB0 /* explosionPink.plist in Resources */,
+				AEBDBC331B9AE02700119201 /* parallaxHill003.png in Resources */,
 				AEC965AB1B94942100DB2AB0 /* explosionPlayer.plist in Resources */,
 				AEC9659A1B94857700DB2AB0 /* test2.vert in Resources */,
 				AEC84E2B1B8DF58A006ACFAC /* sprites-0001-default.plist in Resources */,
 				AE38BA041B98BE2C005B48E8 /* ouch.wav in Resources */,
 				521A8EAA19F11F5000D177D7 /* fonts in Resources */,
 				AEC965921B94805800DB2AB0 /* explosionCyan.plist in Resources */,
+				AEBDBC371B9AE02700119201 /* parallaxHill001.png in Resources */,
 				AEB344BD1B979927000F6277 /* lvl01pressed.png in Resources */,
 				AEFDA3391B94BA6A00EFEE71 /* testLevel2.tmx in Resources */,
 			);
@@ -806,6 +854,7 @@
 				AEC84E351B8DF882006ACFAC /* Level.cpp in Sources */,
 				AEFDA3321B94B80700EFEE71 /* TestSceneTwo.cpp in Sources */,
 				AEC84E311B8DF617006ACFAC /* TestScene.cpp in Sources */,
+				AEBDBC481B9B17C000119201 /* Movable.cpp in Sources */,
 				503AE10017EB989F00D1A890 /* AppController.mm in Sources */,
 				AEC965951B94855200DB2AB0 /* ShadowLayer.cpp in Sources */,
 				AE5A96C91B97A93D009CE82F /* Player.cpp in Sources */,
@@ -815,6 +864,7 @@
 				503AE10117EB989F00D1A890 /* main.m in Sources */,
 				AE0C85781B923006001D40DF /* GameOverScene.cpp in Sources */,
 				AE0C85681B91FB73001D40DF /* MainMenuScene.cpp in Sources */,
+				AEBDBC3B1B9B082700119201 /* Light.cpp in Sources */,
 				AEFDA3351B94B88900EFEE71 /* LevelMenuScene.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -823,6 +873,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AEBDBC3C1B9B082700119201 /* Light.cpp in Sources */,
 				AE0C855F1B91FA29001D40DF /* OverlayLayer.cpp in Sources */,
 				AE0C85691B91FB73001D40DF /* MainMenuScene.cpp in Sources */,
 				AEC965961B94855200DB2AB0 /* ShadowLayer.cpp in Sources */,
@@ -831,6 +882,7 @@
 				AEC84E361B8DF882006ACFAC /* Level.cpp in Sources */,
 				AEB344C91B979C8D000F6277 /* TestSceneThree.cpp in Sources */,
 				46880B8919C43A87006E1F66 /* AppDelegate.cpp in Sources */,
+				AEBDBC491B9B17C000119201 /* Movable.cpp in Sources */,
 				AE5A96CA1B97A93D009CE82F /* Player.cpp in Sources */,
 				AEC84E321B8DF617006ACFAC /* TestScene.cpp in Sources */,
 				503AE10517EB98FF00D1A890 /* main.cpp in Sources */,

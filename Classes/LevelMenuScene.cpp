@@ -41,7 +41,7 @@ bool LevelMenuScene::init()
     CocosDenshion::SimpleAudioEngine::getInstance()->preloadEffect("bloop.wav");
     CocosDenshion::SimpleAudioEngine::getInstance()->preloadEffect("woooh.wav");
     CocosDenshion::SimpleAudioEngine::getInstance()->preloadEffect("ouch.wav");
-    CocosDenshion::SimpleAudioEngine::getInstance()->setEffectsVolume(0.05);
+    CocosDenshion::SimpleAudioEngine::getInstance()->setEffectsVolume(0.2);
     
     auto backgroundSprite = Sprite::create("background.png");
     backgroundSprite->setPosition(Point(visibleSize.width / 2 + origin.x, visibleSize.height / 2 + origin.y));
