@@ -8,6 +8,7 @@
 #include "OverlayLayer.h"
 #include "ShadowLayer.h"
 #include "Movable.h"
+#include "Enemy.h"
 
 class GameScene : public cocos2d::Layer
 {
@@ -32,6 +33,7 @@ protected:
     OverlayLayer *_hud;
     ShadowLayer* _shadowLayer;
     Movable* cloud;
+    Enemy* enemy;
     Sprite* parallaxOne;
     Sprite* parallaxTwo;
     Sprite* parallaxThree;
@@ -48,16 +50,21 @@ protected:
     void checkCollisionX();
     void checkCollisionY();
     void checkHit();
-    void shader();
+    void updateGameobjects();
     virtual void gameOver();
     
     int score;
     int nMaxClouds;
+    int nMaxFallingObjects;
     bool _win;
     Vector<Sprite*> pillVec;
+    Vector<Sprite*> enemyVec;
     Vector<Movable*> cloudVec;
+    Vector<Movable*> fallingVec;
     cocos2d::Point lastPoint;
     cocos2d::Point lastPlayerPosition;
+    
+    bool enemyPresent;
 
     
 };

@@ -98,12 +98,13 @@ void Player::moveUp()
 void Player::moveUpDouble()
 {
     _velocity.y = PLAYER_MAX_JUMP_VELOCITY * 2 * SCALE_FACTOR;
-    if (state != State::Jumping)
-    {
+    if (state == State::Idle)
         stopAction(idleAnimation);
-        runAction(happyAnimation);
-        state = State::Jumping;
-    }
+    else if (state == State::Jumping)
+        stopAction(happyAnimation);
+    runAction(happyAnimation);
+    //        state = State::Jumping;
+
 }
 
 void Player::moveRight(float factor)

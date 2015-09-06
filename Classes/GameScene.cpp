@@ -45,14 +45,22 @@ void GameScene::update(float dt)
 {
     if (!_gameOver)
     {
-        player->setPlayerVelocity(Point(player->getPlayerVelocity().x, player->getPlayerVelocity().y + WORLD_GRAVITY * SCALE_FACTOR));
+        if (player->getPlayerVelocity().y < MAX_GRAVITY * SCALE_FACTOR)
+        {
+            player->setPlayerVelocity(Point(player->getPlayerVelocity().x, MAX_GRAVITY * SCALE_FACTOR));
+        }
+        else
+        {
+            player->setPlayerVelocity(Point(player->getPlayerVelocity().x, player->getPlayerVelocity().y + WORLD_GRAVITY * SCALE_FACTOR));
+        }
     }
     checkCollisionX();
     updatePlayerX(dt);
     checkCollisionY();
     updatePlayerY(dt);
+    checkHit();
     updateCamera();
-    shader();
+    updateGameobjects();
     _hud->setPosition(this->convertToNodeSpace(Point(1,1)));
     _hud->updateScore(score);
 }
@@ -165,8 +173,6 @@ void GameScene::checkCollisionX()
             break;
         }
     }
-    
-    checkHit();
 }
 
 void GameScene::checkCollisionY()
@@ -175,6 +181,8 @@ void GameScene::checkCollisionY()
     Rect player_rect = player->getBoundingBox();
     int nextPositionX = player_rect.getMinX();
     int nextPositionY = player_rect.getMinY() + player->getPlayerVelocity().y;
+    if (nextPositionY < 16*SCALE_FACTOR)
+        nextPositionY = 1;
     int playerWidth   = (player_rect.getMaxX() - player_rect.getMinX());
     int playerHeight  = (player_rect.getMaxY() - player_rect.getMinY()) + player->getPlayerVelocity().y;
     
@@ -231,7 +239,6 @@ void GameScene::checkCollisionY()
             player->setPlayerVelocity(Point(player->getPlayerVelocity().x,0));
         }
     }
-    checkHit();
 }
 
 void GameScene::checkHit()
@@ -328,6 +335,14 @@ void GameScene::updateCamera()
                 parallaxOne->setPosition(Point(parallaxOne->getPositionX()+positionDiff.x*0.9,parallaxOne->getPositionY()));
                 parallaxTwo->setPosition(Point(parallaxTwo->getPositionX()+positionDiff.x*0.8,parallaxTwo->getPositionY()));
                 parallaxThree->setPosition(Point(parallaxThree->getPositionX()+positionDiff.x*0.7,parallaxThree->getPositionY()));
+                
+                for (auto *clouds : cloudVec)
+                {
+                    if (clouds != NULL)
+                    {
+                        clouds->setPositionX(clouds->getPositionX()+positionDiff.x*0.9);
+                    }
+                }
             }
         }
         if (playerPosition.x-cameraPosition.x < -cameraSpaceFactor * SCALE_FACTOR)
@@ -338,6 +353,14 @@ void GameScene::updateCamera()
                 parallaxOne->setPosition(Point(parallaxOne->getPositionX()+positionDiff.x*0.9,parallaxOne->getPositionY()));
                 parallaxTwo->setPosition(Point(parallaxTwo->getPositionX()+positionDiff.x*0.8,parallaxTwo->getPositionY()));
                 parallaxThree->setPosition(Point(parallaxThree->getPositionX()+positionDiff.x*0.7,parallaxThree->getPositionY()));
+                
+                for (auto *clouds : cloudVec)
+                {
+                    if (clouds != NULL)
+                    {
+                        clouds->setPositionX(clouds->getPositionX()+positionDiff.x*0.9);
+                    }
+                }
             }
         }
     }
@@ -357,9 +380,17 @@ void GameScene::updateCamera()
             cameraTarget->setPositionY(playerPosition.y - cameraSpaceFactor * SCALE_FACTOR);
             if (parallaxOne != NULL)
             {
-                parallaxOne->setPosition(Point(parallaxOne->getPositionX(),parallaxOne->getPositionY()+positionDiff.y*0.9));
-                parallaxTwo->setPosition(Point(parallaxTwo->getPositionX(),parallaxTwo->getPositionY()+positionDiff.y*0.7));
+                parallaxOne->setPosition(Point(parallaxOne->getPositionX(),parallaxOne->getPositionY()+positionDiff.y*0.7));
+                parallaxTwo->setPosition(Point(parallaxTwo->getPositionX(),parallaxTwo->getPositionY()+positionDiff.y*0.6));
                 parallaxThree->setPosition(Point(parallaxThree->getPositionX(),parallaxThree->getPositionY()+positionDiff.y*0.5));
+                
+//                for (auto *clouds : cloudVec)
+//                {
+//                    if (clouds != NULL)
+//                    {
+//                        clouds->setPositionY(clouds->getPositionY()+positionDiff.x*0.5);
+//                    }
+//                }
             }
         }
         if (playerPosition.y-cameraPosition.y < -cameraSpaceFactor * SCALE_FACTOR)
@@ -367,9 +398,17 @@ void GameScene::updateCamera()
             cameraTarget->setPositionY(playerPosition.y + cameraSpaceFactor * SCALE_FACTOR);
             if (parallaxOne != NULL)
             {
-                parallaxOne->setPosition(Point(parallaxOne->getPositionX(),parallaxOne->getPositionY()+positionDiff.y*0.9));
-                parallaxTwo->setPosition(Point(parallaxTwo->getPositionX(),parallaxTwo->getPositionY()+positionDiff.y*0.7));
+                parallaxOne->setPosition(Point(parallaxOne->getPositionX(),parallaxOne->getPositionY()+positionDiff.y*0.7));
+                parallaxTwo->setPosition(Point(parallaxTwo->getPositionX(),parallaxTwo->getPositionY()+positionDiff.y*0.6));
                 parallaxThree->setPosition(Point(parallaxThree->getPositionX(),parallaxThree->getPositionY()+positionDiff.y*0.5));
+                
+//                for (auto *clouds : cloudVec)
+//                {
+//                    if (clouds != NULL)
+//                    {
+//                        clouds->setPositionY(clouds->getPositionY()+positionDiff.x*0.5);
+//                    }
+//                }
             }
         }
     } 
@@ -406,8 +445,9 @@ void GameScene::gameOver()
     }
 }
 
-void GameScene::shader()
+void GameScene::updateGameobjects()
 {
+    // shader
     Point playerInWorld = this->convertToWorldSpace(Point(player->getPositionX()+player->getContentSize().width/2*SCALE_FACTOR,player->getPositionY()+player->getContentSize().height/2*SCALE_FACTOR));
     if (abs(playerInWorld.x - lastPoint.x) > 2 * SCALE_FACTOR || abs(playerInWorld.y - lastPoint.y) > 2 * SCALE_FACTOR)
     {
@@ -428,11 +468,11 @@ void GameScene::shader()
             }
         }
     }
-    // clouds
     
+    // clouds
     if (cloudVec.size() < nMaxClouds)
     {
-        auto clouds = Movable::create(random(0.1, 0.4));
+        auto clouds = Movable::create(random(0.1, 0.4),"cloud.png");
         clouds->setPosition(Point(0-clouds->getContentSize().width, level->getMap()->getMapSize().height*16*SCALE_FACTOR*random(0.2,0.9)));
         clouds->setScale(random(SCALE_FACTOR, SCALE_FACTOR*2));
         clouds->setGlobalZOrder(3);
@@ -441,7 +481,11 @@ void GameScene::shader()
         cloudVec.pushBack(clouds);
     }
 //    log("n clouds = %i", cloudVec.size());
-//    _hud->setPosition(this->convertToNodeSpace(Point(3*SCALE_FACTOR,visibleSize.height-10*SCALE_FACTOR  )));
-//    auto tempPosition = player->getPosition();
-//    parallaxOne->setPosition(this->convertToNodeSpace(Point(0.5,0.5)));
+    
+    // falling objects
+    
+    if (fallingVec.size() < nMaxFallingObjects)
+    {
+        
+    }
 }

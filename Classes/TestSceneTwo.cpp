@@ -54,6 +54,8 @@ bool TestSceneTwo::init()
     walls->setGlobalZOrder(7);
     auto mg = level->getMap()->getLayer("midground");
     mg->setGlobalZOrder(6);
+    auto fg = level->getMap()->getLayer("foreground");
+    fg->setGlobalZOrder(16);
     
 
     // level objects
@@ -84,10 +86,32 @@ bool TestSceneTwo::init()
         pillVec.pushBack(pill);
     }
     
+//    // level objects
+//    auto *levelEnemy = level->getMap()->getObjectGroup("enemys");
+//    if(levelEnemy == NULL){
+//        log("tile map has no enemys object layer");
+//        return false;
+//    }
+//    
+//    ValueVector enemyPosition = levelEnemy->getObjects();
+//    for (auto current : enemyPosition)
+//    {
+//        float x = current.asValueMap()["x"].asFloat();
+//        float y = current.asValueMap()["y"].asFloat();
+//        int taste = current.asValueMap()["type"].asInt();
+//        enemy = Enemy::create();
+//        enemy->setTag(taste);
+//        enemy->retain();
+//        enemy->setPosition(Point(x*SCALE_FACTOR,y*SCALE_FACTOR));
+//        addChild(enemy);
+//        enemy->setGlobalZOrder(17);
+//        enemyVec.pushBack(enemy);
+//    }
+    
     // clouds
     nMaxClouds = 50;
     for (int it = 0; it < nMaxClouds; it++) {
-        auto clouds = Movable::create(random(0.1, 0.4));
+        auto clouds = Movable::create(random(0.1, 0.4),"cloud.png");
         clouds->setScale(SCALE_FACTOR);
         clouds->setPosition(Point(random(0.0,1.0)*level->getMap()->getMapSize().width*16*SCALE_FACTOR-clouds->getContentSize().width, level->getMap()->getMapSize().height*16*SCALE_FACTOR*random(0.4,0.9)));
         clouds->setGlobalZOrder(3);

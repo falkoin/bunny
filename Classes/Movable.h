@@ -16,7 +16,7 @@ class Movable : public cocos2d::Sprite
 public:
     Movable();
     virtual ~Movable();
-    static Movable* create(float speed);
+    static Movable* create(float speed, std::string png);
     float getSpeed();
 private:
     void initOptions(float speed);

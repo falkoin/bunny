@@ -53,6 +53,10 @@
 		521A8EA919F11F5000D177D7 /* fonts in Resources */ = {isa = PBXBuildFile; fileRef = 521A8EA819F11F5000D177D7 /* fonts */; };
 		521A8EAA19F11F5000D177D7 /* fonts in Resources */ = {isa = PBXBuildFile; fileRef = 521A8EA819F11F5000D177D7 /* fonts */; };
 		52B47A471A53D09C004E4C60 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 52B47A461A53D09B004E4C60 /* Security.framework */; };
+		AE0B9FDC1B9C2C0C00DE01E3 /* FallingObject.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AE0B9FDA1B9C2C0C00DE01E3 /* FallingObject.cpp */; };
+		AE0B9FDD1B9C2C0C00DE01E3 /* FallingObject.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AE0B9FDA1B9C2C0C00DE01E3 /* FallingObject.cpp */; };
+		AE0B9FDF1B9C399D00DE01E3 /* tilesFG.png in Resources */ = {isa = PBXBuildFile; fileRef = AE0B9FDE1B9C399D00DE01E3 /* tilesFG.png */; };
+		AE0B9FE01B9C399D00DE01E3 /* tilesFG.png in Resources */ = {isa = PBXBuildFile; fileRef = AE0B9FDE1B9C399D00DE01E3 /* tilesFG.png */; };
 		AE0C85561B91A68C001D40DF /* Consumable.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AE0C85541B91A68C001D40DF /* Consumable.cpp */; };
 		AE0C85571B91A68C001D40DF /* Consumable.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AE0C85541B91A68C001D40DF /* Consumable.cpp */; };
 		AE0C85591B91A7D2001D40DF /* consumable-animations.plist in Resources */ = {isa = PBXBuildFile; fileRef = AE0C85581B91A7D2001D40DF /* consumable-animations.plist */; };
@@ -93,6 +97,8 @@
 		AE624CCB1B996B9C000186FA /* parallax22.png in Resources */ = {isa = PBXBuildFile; fileRef = AE624CC81B996B9C000186FA /* parallax22.png */; };
 		AE624CCC1B996B9C000186FA /* parallax21.png in Resources */ = {isa = PBXBuildFile; fileRef = AE624CC91B996B9C000186FA /* parallax21.png */; };
 		AE624CCD1B996B9C000186FA /* parallax21.png in Resources */ = {isa = PBXBuildFile; fileRef = AE624CC91B996B9C000186FA /* parallax21.png */; };
+		AE9659A61B9B4931008D688C /* Enemy.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AE9659A41B9B4931008D688C /* Enemy.cpp */; };
+		AE9659A71B9B4931008D688C /* Enemy.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AE9659A41B9B4931008D688C /* Enemy.cpp */; };
 		AEB344BC1B979927000F6277 /* lvl01pressed.png in Resources */ = {isa = PBXBuildFile; fileRef = AEB344B81B979927000F6277 /* lvl01pressed.png */; };
 		AEB344BD1B979927000F6277 /* lvl01pressed.png in Resources */ = {isa = PBXBuildFile; fileRef = AEB344B81B979927000F6277 /* lvl01pressed.png */; };
 		AEB344BE1B979927000F6277 /* lvl01.png in Resources */ = {isa = PBXBuildFile; fileRef = AEB344B91B979927000F6277 /* lvl01.png */; };
@@ -266,6 +272,9 @@
 		521A8E6319F0C34300D177D7 /* Default-736h@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-736h@3x.png"; sourceTree = "<group>"; };
 		521A8EA819F11F5000D177D7 /* fonts */ = {isa = PBXFileReference; lastKnownFileType = folder; path = fonts; sourceTree = "<group>"; };
 		52B47A461A53D09B004E4C60 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS8.1.sdk/System/Library/Frameworks/Security.framework; sourceTree = DEVELOPER_DIR; };
+		AE0B9FDA1B9C2C0C00DE01E3 /* FallingObject.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = FallingObject.cpp; sourceTree = "<group>"; };
+		AE0B9FDB1B9C2C0C00DE01E3 /* FallingObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FallingObject.h; sourceTree = "<group>"; };
+		AE0B9FDE1B9C399D00DE01E3 /* tilesFG.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tilesFG.png; sourceTree = "<group>"; };
 		AE0C85541B91A68C001D40DF /* Consumable.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Consumable.cpp; sourceTree = "<group>"; };
 		AE0C85551B91A68C001D40DF /* Consumable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Consumable.h; sourceTree = "<group>"; };
 		AE0C85581B91A7D2001D40DF /* consumable-animations.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "consumable-animations.plist"; sourceTree = "<group>"; };
@@ -291,6 +300,8 @@
 		AE5A96C81B97A93D009CE82F /* Player.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Player.h; sourceTree = "<group>"; };
 		AE624CC81B996B9C000186FA /* parallax22.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = parallax22.png; sourceTree = "<group>"; };
 		AE624CC91B996B9C000186FA /* parallax21.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = parallax21.png; sourceTree = "<group>"; };
+		AE9659A41B9B4931008D688C /* Enemy.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Enemy.cpp; sourceTree = "<group>"; };
+		AE9659A51B9B4931008D688C /* Enemy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Enemy.h; sourceTree = "<group>"; };
 		AEB344B81B979927000F6277 /* lvl01pressed.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = lvl01pressed.png; sourceTree = "<group>"; };
 		AEB344B91B979927000F6277 /* lvl01.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = lvl01.png; sourceTree = "<group>"; };
 		AEB344BB1B979927000F6277 /* lvl02pressed.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = lvl02pressed.png; sourceTree = "<group>"; };
@@ -505,6 +516,7 @@
 				AE0C85601B91FA7E001D40DF /* CartonSixBMP.png */,
 				AE0C85611B91FA7E001D40DF /* CartonSixBMP.fnt */,
 				AEFC4E1F1B90801D00C1F4D6 /* pill.png */,
+				AE0B9FDE1B9C399D00DE01E3 /* tilesFG.png */,
 				AEFC4E1C1B907F0C00C1F4D6 /* player.png */,
 				AEC84E3A1B8DFE29006ACFAC /* testLevel.tmx */,
 				AEC84E371B8DFE03006ACFAC /* tiles.png */,
@@ -532,6 +544,8 @@
 				AEFDA3331B94B88200EFEE71 /* LevelMenuScene.h */,
 				46880B8619C43A87006E1F66 /* GameScene.cpp */,
 				46880B8719C43A87006E1F66 /* GameScene.h */,
+				AE9659A41B9B4931008D688C /* Enemy.cpp */,
+				AE9659A51B9B4931008D688C /* Enemy.h */,
 				AE0C85761B923006001D40DF /* GameOverScene.cpp */,
 				AE0C85771B923006001D40DF /* GameOverScene.h */,
 				AEC84E2F1B8DF617006ACFAC /* TestScene.cpp */,
@@ -543,9 +557,11 @@
 				46880B8419C43A87006E1F66 /* AppDelegate.cpp */,
 				46880B8519C43A87006E1F66 /* AppDelegate.h */,
 				AEBDBC391B9B082700119201 /* Light.cpp */,
+				AEBDBC3A1B9B082700119201 /* Light.h */,
 				AEBDBC461B9B17C000119201 /* Movable.cpp */,
 				AEBDBC471B9B17C000119201 /* Movable.h */,
-				AEBDBC3A1B9B082700119201 /* Light.h */,
+				AE0B9FDA1B9C2C0C00DE01E3 /* FallingObject.cpp */,
+				AE0B9FDB1B9C2C0C00DE01E3 /* FallingObject.h */,
 				AE5A96C71B97A93D009CE82F /* Player.cpp */,
 				AE5A96C81B97A93D009CE82F /* Player.h */,
 				AEC84E331B8DF882006ACFAC /* Level.cpp */,
@@ -738,6 +754,7 @@
 				521A8E6519F0C34300D177D7 /* Default-736h@3x.png in Resources */,
 				AEC9658E1B94804D00DB2AB0 /* explosionGreen.plist in Resources */,
 				AEBDBC3E1B9B08C100119201 /* light.png in Resources */,
+				AE0B9FDF1B9C399D00DE01E3 /* tilesFG.png in Resources */,
 				521A8EA919F11F5000D177D7 /* fonts in Resources */,
 				AEFDA3381B94BA6A00EFEE71 /* testLevel2.tmx in Resources */,
 				AEC9659F1B9487B700DB2AB0 /* test.vert in Resources */,
@@ -821,6 +838,7 @@
 				AE0C855A1B91A7D2001D40DF /* consumable-animations.plist in Resources */,
 				AEFC4E211B90801D00C1F4D6 /* pill.png in Resources */,
 				AE11FE0A1B925BDD00F52CD4 /* retryPressed.png in Resources */,
+				AE0B9FE01B9C399D00DE01E3 /* tilesFG.png in Resources */,
 				AEB344CE1B979D2D000F6277 /* lvl03.png in Resources */,
 				AEC9658B1B945D6200DB2AB0 /* explosion.png in Resources */,
 				AEC84E391B8DFE03006ACFAC /* tiles.png in Resources */,
@@ -854,12 +872,14 @@
 				AEC84E351B8DF882006ACFAC /* Level.cpp in Sources */,
 				AEFDA3321B94B80700EFEE71 /* TestSceneTwo.cpp in Sources */,
 				AEC84E311B8DF617006ACFAC /* TestScene.cpp in Sources */,
+				AE0B9FDC1B9C2C0C00DE01E3 /* FallingObject.cpp in Sources */,
 				AEBDBC481B9B17C000119201 /* Movable.cpp in Sources */,
 				503AE10017EB989F00D1A890 /* AppController.mm in Sources */,
 				AEC965951B94855200DB2AB0 /* ShadowLayer.cpp in Sources */,
 				AE5A96C91B97A93D009CE82F /* Player.cpp in Sources */,
 				AEB344C81B979C8D000F6277 /* TestSceneThree.cpp in Sources */,
 				AE0C85561B91A68C001D40DF /* Consumable.cpp in Sources */,
+				AE9659A61B9B4931008D688C /* Enemy.cpp in Sources */,
 				503AE10217EB989F00D1A890 /* RootViewController.mm in Sources */,
 				503AE10117EB989F00D1A890 /* main.m in Sources */,
 				AE0C85781B923006001D40DF /* GameOverScene.cpp in Sources */,
@@ -881,6 +901,7 @@
 				AE0C85571B91A68C001D40DF /* Consumable.cpp in Sources */,
 				AEC84E361B8DF882006ACFAC /* Level.cpp in Sources */,
 				AEB344C91B979C8D000F6277 /* TestSceneThree.cpp in Sources */,
+				AE9659A71B9B4931008D688C /* Enemy.cpp in Sources */,
 				46880B8919C43A87006E1F66 /* AppDelegate.cpp in Sources */,
 				AEBDBC491B9B17C000119201 /* Movable.cpp in Sources */,
 				AE5A96CA1B97A93D009CE82F /* Player.cpp in Sources */,
@@ -888,6 +909,7 @@
 				503AE10517EB98FF00D1A890 /* main.cpp in Sources */,
 				46880B8B19C43A87006E1F66 /* GameScene.cpp in Sources */,
 				AEFDA3361B94B88900EFEE71 /* LevelMenuScene.cpp in Sources */,
+				AE0B9FDD1B9C2C0C00DE01E3 /* FallingObject.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -85,7 +85,7 @@ bool TestSceneThree::init()
     // clouds
     nMaxClouds = 30;
     for (int it = 0; it < nMaxClouds; it++) {
-        auto clouds = Movable::create(random(0.1, 0.4));
+        auto clouds = Movable::create(random(0.1, 0.4),"cloud.png");
         clouds->setScale(SCALE_FACTOR);
         clouds->setPosition(Point(random(0.0,1.0)*level->getMap()->getMapSize().width*16*SCALE_FACTOR-clouds->getContentSize().width, level->getMap()->getMapSize().height*16*SCALE_FACTOR*random(0.4,0.9)));
         clouds->setGlobalZOrder(3);

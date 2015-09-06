@@ -19,12 +19,12 @@ Movable::~Movable()
 {
 }
 
-Movable* Movable::create(float speed)
+Movable* Movable::create(float speed, std::string png)
 {
     SpriteFrameCache::getInstance()->addSpriteFramesWithFile("sprites-0001-default.plist");
     Movable* pSprite = new Movable();
     
-    if (pSprite->initWithSpriteFrameName("cloud.png"))
+    if (pSprite->initWithSpriteFrameName(png))
     {
         pSprite->initOptions(speed);
         pSprite->autorelease();
