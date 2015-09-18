@@ -25,11 +25,13 @@ public:
     void stop();
     void idle();
     void win();
+    void falling();
     void setPlayerVelocity(cocos2d::Vec2 velocity);
+    void animate();
     bool grounded;
     
     enum State {
-        Idle, Jumping, Dead, Win
+        Idle, Jumping, Dead, Win, Falling, FallingDeep, SuperJumping
     };
     State state;
     
@@ -46,6 +48,9 @@ private:
     CC_SYNTHESIZE(cocos2d::Action*, winAnimation, WinAnimation);
     cocos2d::AnimationCache *_winCache;
     cocos2d::Animation *_winAnimation;
+    CC_SYNTHESIZE(cocos2d::Action*, cryAnimation, CryAnimation);
+    cocos2d::AnimationCache *_cryCache;
+    cocos2d::Animation *_cryAnimation;
 };
 
 

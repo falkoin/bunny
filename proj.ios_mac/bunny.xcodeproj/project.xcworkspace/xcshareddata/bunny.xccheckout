@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>9596F779-6B73-4790-84E9-3E685284E69B</string>
+	<key>IDESourceControlProjectName</key>
+	<string>bunny</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>ED0ED6A86FDF9351526583E1CB926D39102CCB33</key>
+		<string>ssh://phrkinc.no-ip.org:2022/root/projects/bunnyGame.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>proj.ios_mac/bunny.xcodeproj</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>ED0ED6A86FDF9351526583E1CB926D39102CCB33</key>
+		<string>../../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>ssh://phrkinc.no-ip.org:2022/root/projects/bunnyGame.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>ED0ED6A86FDF9351526583E1CB926D39102CCB33</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>ED0ED6A86FDF9351526583E1CB926D39102CCB33</string>
+			<key>IDESourceControlWCCName</key>
+			<string>bunny</string>
+		</dict>
+	</array>
+</dict>
+</plist>

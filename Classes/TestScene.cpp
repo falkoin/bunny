@@ -49,9 +49,17 @@ bool TestScene::init()
     level->getMap()->setScale(SCALE_FACTOR);
     this->addChild(level->getMap(),-1);
     auto bg = level->getMap()->getLayer("background");
-    bg->setGlobalZOrder(1);
+//    auto bg = Sprite::create("bgTest.png");
+//    bg->setAnchorPoint(Point(0,0));
+//    bg->setPosition(Point(0,0));
+//    bg->setScale(SCALE_FACTOR);
+//    addChild(bg);
+    bg->setGlobalZOrder(2);
+    
     auto walls = level->getMap()->getLayer("walls");
     walls->setGlobalZOrder(7);
+    auto wallShadow = level->getMap()->getLayer("wallShadow");
+    wallShadow->setGlobalZOrder(7);
 //    auto mg = level->getMap()->getLayer("midground");
 //    mg->setGlobalZOrder(6);
     
@@ -85,15 +93,17 @@ bool TestScene::init()
     }
     
     // parallax
-    parallaxOne = Sprite::create("parallax.png");
-    parallaxOne->setGlobalZOrder(2);
+    parallaxOne = Sprite::create("parallaxHill001.png");
+    parallaxOne->setColor(Color3B(255,100,180));
+    parallaxOne->setGlobalZOrder(3);
     parallaxOne->setScale(SCALE_FACTOR);
     parallaxOne->getTexture()->setAliasTexParameters();
     parallaxOne->setPosition(Point(visibleSize.width*0.5+origin.x,visibleSize.height*0.5+origin.y));
     parallaxOne->setAnchorPoint(Point(0.5, 0.5));
     this->addChild(parallaxOne);
     
-    parallaxTwo = Sprite::create("parallax2.png");
+    parallaxTwo = Sprite::create("parallaxHill002.png");
+    parallaxTwo->setColor(Color3B(255,100,180));
     parallaxTwo->setGlobalZOrder(4);
     parallaxTwo->setScale(SCALE_FACTOR);
     parallaxTwo->getTexture()->setAliasTexParameters();
@@ -102,12 +112,22 @@ bool TestScene::init()
     this->addChild(parallaxTwo);
     
     parallaxThree = Sprite::create("parallaxHill003.png");
+    parallaxThree->setColor(Color3B(255,100,180));
     parallaxThree->setGlobalZOrder(5);
     parallaxThree->setScale(SCALE_FACTOR);
     parallaxThree->getTexture()->setAliasTexParameters();
-    parallaxThree->setPosition(Point(128*16*SCALE_FACTOR-parallaxOne->getContentSize().width*0.5*SCALE_FACTOR,visibleSize.height*0.5+origin.y));
+    parallaxThree->setPosition(Point(visibleSize.width*0.5+origin.x,visibleSize.height*0.5+origin.y));
     parallaxThree->setAnchorPoint(Point(0.5, 0.5));
     this->addChild(parallaxThree);
+    
+    parallaxFour = Sprite::create("parallaxFront001.png");
+    parallaxFour->setColor(Color3B(255,100,180));
+    parallaxFour->setGlobalZOrder(6);
+    parallaxFour->setScale(SCALE_FACTOR);
+    parallaxFour->getTexture()->setAliasTexParameters();
+    parallaxFour->setPosition(Point(visibleSize.width*0.5+origin.x,visibleSize.height*0.5+origin.y));
+    parallaxFour->setAnchorPoint(Point(0.5, 0.5));
+    this->addChild(parallaxFour);
     
     // clouds
     nMaxClouds = 20;
@@ -165,11 +185,18 @@ bool TestScene::init()
     Device::setAccelerometerEnabled(true);
     auto listener = EventListenerAcceleration::create(CC_CALLBACK_2(TestScene::onAcceleration, this));
     _eventDispatcher->addEventListenerWithSceneGraphPriority(listener, this);
-    Device::setAccelerometerInterval(1/60);
+    Device::setAccelerometerInterval(1/100);
     
     // parameters
     score = 0;
     _win = false;
+    
+    
+    lastPlayerFallingPosition = player->getPositionY();
+    playerFallDistance = 0.0f;
+    awesomePlayed = false;
+    nPills = pillVec.size();
+    cameraOff = false;
     
     this->scheduleUpdate();
     return true;

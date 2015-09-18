@@ -51,9 +51,11 @@ bool TestSceneTwo::init()
     auto bg = level->getMap()->getLayer("background");
     bg->setGlobalZOrder(1);
     auto walls = level->getMap()->getLayer("walls");
-    walls->setGlobalZOrder(7);
+    walls->setGlobalZOrder(8);
+    auto wallShadow = level->getMap()->getLayer("wallShadow");
+    wallShadow->setGlobalZOrder(8);
     auto mg = level->getMap()->getLayer("midground");
-    mg->setGlobalZOrder(6);
+    mg->setGlobalZOrder(7);
     auto fg = level->getMap()->getLayer("foreground");
     fg->setGlobalZOrder(16);
     
@@ -145,6 +147,14 @@ bool TestSceneTwo::init()
     parallaxThree->setPosition(Point(128*16*SCALE_FACTOR-parallaxOne->getContentSize().width*0.5*SCALE_FACTOR,visibleSize.height*0.5+origin.y));
     parallaxThree->setAnchorPoint(Point(0.5, 0.5));
     this->addChild(parallaxThree);
+
+    parallaxFour = Sprite::create("parallaxFront001.png");
+    parallaxFour->setGlobalZOrder(6);
+    parallaxFour->setScale(SCALE_FACTOR);
+    parallaxFour->getTexture()->setAliasTexParameters();
+    parallaxFour->setPosition(Point(128*16*SCALE_FACTOR-parallaxOne->getContentSize().width*0.5*SCALE_FACTOR,visibleSize.height*0.5+origin.y));
+    parallaxFour->setAnchorPoint(Point(0.5, 0.5));
+    this->addChild(parallaxFour);
     
     // player
     player = Player::create();
@@ -188,13 +198,15 @@ bool TestSceneTwo::init()
     Device::setAccelerometerEnabled(true);
     auto listener = EventListenerAcceleration::create(CC_CALLBACK_2(TestSceneTwo::onAcceleration, this));
     _eventDispatcher->addEventListenerWithSceneGraphPriority(listener, this);
-    Device::setAccelerometerInterval(1/60);
+    Device::setAccelerometerInterval(1/100);
     
     // parameters
     score = 0;
     _win = false;
     lastPlayerPosition = player->getPosition();
-    
+    awesomePlayed = false;
+    cameraOff = false;
+    nPills = pillVec.size();
     this->scheduleUpdate();
     return true;
 }

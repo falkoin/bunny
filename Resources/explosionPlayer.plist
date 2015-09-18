@@ -67,9 +67,9 @@
 	<key>rotationStartVariance</key>
 	<real>0</real>
 	<key>sourcePositionVariancex</key>
-	<real>15</real>
+	<integer>30</integer>
 	<key>sourcePositionVariancey</key>
-	<integer>20</integer>
+	<integer>30</integer>
 	<key>sourcePositionx</key>
 	<real>173.1764705882353</real>
 	<key>sourcePositiony</key>
@@ -81,17 +81,17 @@
 	<key>startColorAlpha</key>
 	<real>1</real>
 	<key>startColorBlue</key>
-	<real>0.35</real>
+	<integer>0</integer>
 	<key>startColorGreen</key>
-	<real>0.86</real>
+	<integer>0</integer>
 	<key>startColorRed</key>
-	<real>0.57</real>
+	<integer>0</integer>
 	<key>startColorVarianceAlpha</key>
-	<real>0.1</real>
+	<integer>0</integer>
 	<key>startColorVarianceBlue</key>
-	<real>0.2</real>
+	<integer>0</integer>
 	<key>startColorVarianceGreen</key>
-	<real>0</real>
+	<integer>1</integer>
 	<key>startColorVarianceRed</key>
 	<real>0</real>
 	<key>startParticleSize</key>

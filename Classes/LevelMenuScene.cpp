@@ -41,6 +41,7 @@ bool LevelMenuScene::init()
     CocosDenshion::SimpleAudioEngine::getInstance()->preloadEffect("bloop.wav");
     CocosDenshion::SimpleAudioEngine::getInstance()->preloadEffect("woooh.wav");
     CocosDenshion::SimpleAudioEngine::getInstance()->preloadEffect("ouch.wav");
+    CocosDenshion::SimpleAudioEngine::getInstance()->preloadEffect("awesome.wav");
     CocosDenshion::SimpleAudioEngine::getInstance()->setEffectsVolume(0.2);
     
     auto backgroundSprite = Sprite::create("background.png");
@@ -74,19 +75,19 @@ void LevelMenuScene::goToLevelOne(Ref *sender)
 {
     UserDefault::getInstance()->setIntegerForKey("currentLevel", 1);
     auto scene = TestScene::createScene();
-    Director::getInstance()->replaceScene(TransitionFade::create(2.0, scene));
+    Director::getInstance()->replaceScene(TransitionFade::create(LEVEL_TRANSITION_TIME, scene));
 }
 
 void LevelMenuScene::goToLevelTwo(Ref *sender)
 {
     UserDefault::getInstance()->setIntegerForKey("currentLevel", 2);
     auto scene = TestSceneTwo::createScene();
-    Director::getInstance()->replaceScene(TransitionFade::create(2.0, scene));
+    Director::getInstance()->replaceScene(TransitionFade::create(LEVEL_TRANSITION_TIME, scene));
 }
 
 void LevelMenuScene::goToLevelThree(Ref *sender)
 {
     UserDefault::getInstance()->setIntegerForKey("currentLevel", 3);
     auto scene = TestSceneThree::createScene();
-    Director::getInstance()->replaceScene(TransitionFade::create(2.0, scene));
+    Director::getInstance()->replaceScene(TransitionFade::create(LEVEL_TRANSITION_TIME, scene));
 }

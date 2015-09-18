@@ -46,7 +46,7 @@ Light* Light::create(int taste)
         pSprite->setScale(SCALE_FACTOR);
         pSprite->setFlippedX(false);
         pSprite->setAnchorPoint(Point(0.5,0.5));
-        pSprite->setOpacity(40);
+        pSprite->setOpacity(60);
         pSprite->autorelease();
         
         return pSprite;

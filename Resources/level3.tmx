@@ -1,16 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <map version="1.0" orientation="orthogonal" renderorder="right-down" width="64" height="128" tilewidth="16" tileheight="16" nextobjectid="45">
  <tileset firstgid="1" name="tiles" tilewidth="16" tileheight="16">
-  <image source="tiles.png" width="128" height="16"/>
+  <image source="tiles.png" width="128" height="48"/>
  </tileset>
  <layer name="background" width="64" height="128">
   <data encoding="base64" compression="zlib">
    eJztw0ENAAAMA6F71L/mCRkkrJqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqPn9gLYAB
   </data>
  </layer>
+ <layer name="wallShadow" width="64" height="128">
+  <data encoding="base64" compression="zlib">
+   eJzt0MEJwCAUBcEUkP7rzV3wJEFlZwv4z/F59O5+wOb42/G342/H346/HX87/nb87fjb8bfjb8ffjr8dfzv+dvzt+Nvxt3bH+Fu7Y/yt3TH+1u4Yfzv+dvzt+Nvxt+Nvx9+Ovx1/O/52/O12+E/6c/7G5iz+xuYs/sbmLP52/O342/G342/H346/HX87/nb87fjb8bc73f/3+/jPjv/u+6vx331/Nf67758efzv+dvzt+Nvxt+Nvx9+Ovx1/O/52dX+5D+1zBwk=
+  </data>
+ </layer>
  <layer name="walls" width="64" height="128">
   <data encoding="base64" compression="zlib">
-   eJzt0MENACAIADHdf2mnMJBcL+Er1HvOufGpxs/P342fn78bPz9/N35+/m78/Pzd+Pn5u/Hz83fj5+fvxs/PP7d7On5+/rnd0/Hz83fj5+fvxs/P342fn78bPz9/N35+/m5T/i1/zs/PP7N3Q/z8/N34+fm78fPzd+Pn5+/Gz8/fjZ+fvxs//3b/z/v4+fl3x//3bf7d1f0/4+fn78bPz9+Nn5+/Gz8/fzd+fv5u/OYB6HQBlQ==
+   eJzt3bENwyAUQEEWSJo43n/UxErjBRyw3j3p1+gqEBTsY4xXdPbvPEa35+Dn78bPz9+Nn5+/Gz8/fzd+fv5u/Pz83fj5+bvx8/N34+fn7zbTv01a99xM/3vSuuf4+fnnxD8/+5/zD383fn7+bvz8/N34+fm78fPzd+Pnn+Ff4e73aJZ/hbv/I35+/v/Hv0b2P+cf/m78/Pzd+Pn5u/Hz83fj5+fvxs/P3+0O/ivfCu7gv/KtiJ+ff+34r+sO/vr+d2X8/Pzd+Pn5u/Hz83fj5+fvxs/P343/9wf8Fp3D/gHrhxkH
   </data>
  </layer>
  <objectgroup name="objects">

@@ -37,6 +37,7 @@ protected:
     Sprite* parallaxOne;
     Sprite* parallaxTwo;
     Sprite* parallaxThree;
+    Sprite* parallaxFour;
     
     bool _touchEnabled;
     bool _gameOver;
@@ -65,6 +66,16 @@ protected:
     cocos2d::Point lastPlayerPosition;
     
     bool enemyPresent;
+    
+    float lastPlayerVelocity;
+    float lastPlayerFallingPosition;;
+    float playerFallDistance;
+    
+    int nPills;
+    bool awesomePlayed;
+    bool cameraOff;
+    
+    std::vector<float> accelBuffer;
 
     
 };

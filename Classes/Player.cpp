@@ -54,7 +54,7 @@ void Player::initOptions()
     
     idleAnimation = RepeatForever::create(Animate::create(_idleAnimation));
     idleAnimation->retain();
-    runAction(idleAnimation);
+//    runAction(idleAnimation);
     
     // happy animation
     _happyCache = AnimationCache::getInstance();
@@ -72,6 +72,14 @@ void Player::initOptions()
     winAnimation = RepeatForever::create(Animate::create(_winAnimation));
     winAnimation->retain();
     
+    // cry animation
+    _cryCache = AnimationCache::getInstance();
+    _cryAnimation = _cryCache->getAnimation("cry");
+    _cryAnimation->setRestoreOriginalFrame(true);
+    
+    cryAnimation = RepeatForever::create(Animate::create(_cryAnimation));
+    cryAnimation->retain();
+    
 }
 
 void Player::setPlayerVelocity(cocos2d::Vec2 velocity)
@@ -87,64 +95,42 @@ Vec2 Player::getPlayerVelocity()
 void Player::moveUp()
 {
     _velocity.y = PLAYER_MAX_JUMP_VELOCITY * SCALE_FACTOR;
-    if (state != State::Jumping)
-    {
-        stopAction(idleAnimation);
-        runAction(happyAnimation);
-        state = State::Jumping;
-    }
-    
 }
 void Player::moveUpDouble()
 {
     _velocity.y = PLAYER_MAX_JUMP_VELOCITY * 2 * SCALE_FACTOR;
-    if (state == State::Idle)
-        stopAction(idleAnimation);
-    else if (state == State::Jumping)
-        stopAction(happyAnimation);
-    runAction(happyAnimation);
-    //        state = State::Jumping;
-
 }
 
 void Player::moveRight(float factor)
 {
-//    _velocity.x = ACCELSENSITIVITY+0.1;
-    if (_velocity.x > (PLAYER_MAX_VELOCITY * SCALE_FACTOR) * 0.5)
-        _velocity.x = _velocity.x + 0.175f;
-    else
+    if (_velocity.x < 0)
+        _velocity.x = 0;
+    if (_velocity.x > (PLAYER_MAX_VELOCITY * SCALE_FACTOR) * 0.25)
+        _velocity.x = _velocity.x + 0.075f;
+    else if (_velocity.x > (PLAYER_MAX_VELOCITY * SCALE_FACTOR) * 0.5)
         _velocity.x = _velocity.x + 0.125f;
+    else
+        _velocity.x = _velocity.x + 0.175f;
     if (_velocity.x >= PLAYER_MAX_VELOCITY * SCALE_FACTOR)
     {
         _velocity.x = PLAYER_MAX_VELOCITY * SCALE_FACTOR;
     }
-//    factor = factor * 0.2f;
-//    _velocity.x = _velocity.x + factor;
-//    if (_velocity.x >= PLAYER_MAX_VELOCITY * SCALE_FACTOR)
-//    {
-//        _velocity.x = PLAYER_MAX_VELOCITY * SCALE_FACTOR;
-//    }
 }
 
 void Player::moveLeft(float factor)
 {
-//    _velocity.x = -ACCELSENSITIVITY-0.1;
-    if (_velocity.x < (-PLAYER_MAX_VELOCITY * SCALE_FACTOR) * 0.5)
-        _velocity.x = _velocity.x - 0.175f;
-    else
+    if (_velocity.x > 0)
+        _velocity.x = 0;
+    if (_velocity.x < (-PLAYER_MAX_VELOCITY * SCALE_FACTOR) * 0.25)
+        _velocity.x = _velocity.x - 0.075f;
+    else if (_velocity.x < (-PLAYER_MAX_VELOCITY * SCALE_FACTOR) * 0.5)
         _velocity.x = _velocity.x - 0.125f;
+    else
+        _velocity.x = _velocity.x - 0.175f;
     if (_velocity.x <= -PLAYER_MAX_VELOCITY * SCALE_FACTOR)
     {
         _velocity.x = -PLAYER_MAX_VELOCITY * SCALE_FACTOR;
     }
-//
-//    factor = factor * 0.2f;
-//    _velocity.x = _velocity.x + factor;
-//    if (_velocity.x <= -PLAYER_MAX_VELOCITY * SCALE_FACTOR)
-//    {
-//        _velocity.x = -PLAYER_MAX_VELOCITY * SCALE_FACTOR;
-//    }
-
 }
 
 void Player::stop()
@@ -154,12 +140,6 @@ void Player::stop()
 
 void Player::idle()
 {
-    if (state != State::Idle && happyAnimation->isDone() && state != State::Win)
-    {
-        stopAction(happyAnimation);
-        runAction(idleAnimation);
-        state = State::Idle;
-    }
 }
 
 void Player::win()
@@ -168,5 +148,53 @@ void Player::win()
     {
         runAction(winAnimation);
         state = State::Win;
+    }
+}
+
+void Player::falling()
+{
+}
+
+void Player::animate()
+{
+    if (_velocity.y > 0 && _velocity.y <= PLAYER_MAX_JUMP_VELOCITY * SCALE_FACTOR)
+    {
+        if (state != State::Jumping && state != State::Win)
+        {
+            this->setSpriteFrame("playerHappy.png");
+            state = State::Jumping;
+        }
+    }
+    if (_velocity.y > 0 && _velocity.y > PLAYER_MAX_JUMP_VELOCITY * SCALE_FACTOR)
+    {
+        if (state != State::SuperJumping && state != State::Win)
+        {
+            this->setSpriteFrame("playerSuperhappy.png");
+            state = State::SuperJumping;
+        }
+    }
+    else if (_velocity.y < 0 && _velocity.y > MAX_GRAVITY * SCALE_FACTOR * 0.65)
+    {
+        if (state != State::Idle && state != State::Win)
+        {
+            this->setSpriteFrame("playerIdle.png");
+            state = State::Idle;
+        }
+    }
+    else if (_velocity.y <= MAX_GRAVITY * SCALE_FACTOR * 0.65 && _velocity.y > MAX_GRAVITY * SCALE_FACTOR)
+    {
+        if (state != State::Falling && state != State::Win)
+        {
+            this->setSpriteFrame("playerUnhappy.png");
+            state = State::Falling;
+        }
+    }
+    else if (_velocity.y <= MAX_GRAVITY * SCALE_FACTOR)
+    {
+        if (state != State::FallingDeep && state != State::Win)
+        {
+            this->setSpriteFrame("playerCrying.png");
+            state = State::FallingDeep;
+        }
     }
 }

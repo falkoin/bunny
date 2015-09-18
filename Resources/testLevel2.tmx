@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <map version="1.0" orientation="orthogonal" renderorder="right-down" width="128" height="64" tilewidth="16" tileheight="16" nextobjectid="46">
  <tileset firstgid="1" name="tiles" tilewidth="16" tileheight="16">
-  <image source="tiles.png" width="128" height="16"/>
+  <image source="tiles.png" width="128" height="48"/>
  </tileset>
- <tileset firstgid="9" name="tilesFG" tilewidth="16" tileheight="16">
+ <tileset firstgid="25" name="tilesFG" tilewidth="16" tileheight="16">
   <image source="tilesFG.png" width="48" height="32"/>
  </tileset>
  <layer name="background" width="128" height="64">
@@ -13,7 +13,12 @@
  </layer>
  <layer name="midground" width="128" height="64">
   <data encoding="base64" compression="zlib">
-   eJztwzENAAAMA6Be9S+57zwMEhIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAADgqi/DAGJvAvU=
+   eJzt0SEKADAMBMGoQvP/B1dFVkfcDKw/uCoAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAH5akY2ryMb2Du3+fxQZPPeuEL0=
+  </data>
+ </layer>
+ <layer name="wallShadow" width="128" height="64">
+  <data encoding="base64" compression="zlib">
+   eJzt0TENAAAIwDAE4F8vMjjWKliyGer2O4BX/rf53+Z/m/9t/rf53+Z/m/9t/rf53+Z/m/9t/rf53+Z/m/9t/rf53+Z/m/9t/rf53+Z/m/9t/rf53+Z/m/9t/rf53+Z/m/9t/rf53+Z/m/9t/rf53+Z/m/9t/rf53+Z/m/9t/rf53+Z/m/9t/rf53+Z/m/9t/rf53+Z/m/9t/rf53+Z/m/8APQc3owLd
   </data>
  </layer>
  <layer name="walls" width="128" height="64">
@@ -156,7 +161,7 @@
  <objectgroup name="enemys"/>
  <layer name="foreground" width="128" height="64">
   <data encoding="base64" compression="zlib">
-   eJztzCkOACAMBEAs5/+fSyUCAQ6SmWTNdtOUAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAP6SIyVSLzdrd/KDN7VIj4zLzdrt7hOfPwEV
+   eJztzLkNACAMA0DW4N1/TFJSUEAH0p3kxrGSEgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAMBfcqRE6uVm7U5+8KYW6ZFxuVm73X0CYV0ClQ==
   </data>
  </layer>
 </map>
