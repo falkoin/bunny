@@ -87,6 +87,13 @@
 		AE22E5E81BA5B209008AD7FF /* parallaxCity001.png in Resources */ = {isa = PBXBuildFile; fileRef = AE22E5E61BA5B209008AD7FF /* parallaxCity001.png */; };
 		AE22E5EA1BA5BAA2008AD7FF /* parallaxFront001.png in Resources */ = {isa = PBXBuildFile; fileRef = AE22E5E91BA5BAA2008AD7FF /* parallaxFront001.png */; };
 		AE22E5EB1BA5BAA2008AD7FF /* parallaxFront001.png in Resources */ = {isa = PBXBuildFile; fileRef = AE22E5E91BA5BAA2008AD7FF /* parallaxFront001.png */; };
+		AE30C2C71BAD69D1005F5860 /* scanbot-animations.plist in Resources */ = {isa = PBXBuildFile; fileRef = AE30C2C61BAD69D1005F5860 /* scanbot-animations.plist */; settings = {ASSET_TAGS = (); }; };
+		AE30C2C91BAD6B75005F5860 /* lightWhite.png in Resources */ = {isa = PBXBuildFile; fileRef = AE30C2C81BAD6B75005F5860 /* lightWhite.png */; settings = {ASSET_TAGS = (); }; };
+		AE30C2CA1BAD6B75005F5860 /* lightWhite.png in Resources */ = {isa = PBXBuildFile; fileRef = AE30C2C81BAD6B75005F5860 /* lightWhite.png */; settings = {ASSET_TAGS = (); }; };
+		AE30C2CC1BAD7551005F5860 /* saw-animations.plist in Resources */ = {isa = PBXBuildFile; fileRef = AE30C2CB1BAD7551005F5860 /* saw-animations.plist */; settings = {ASSET_TAGS = (); }; };
+		AE30C2CD1BAD7551005F5860 /* saw-animations.plist in Resources */ = {isa = PBXBuildFile; fileRef = AE30C2CB1BAD7551005F5860 /* saw-animations.plist */; settings = {ASSET_TAGS = (); }; };
+		AE30C2CF1BAD76E9005F5860 /* sawParticles.plist in Resources */ = {isa = PBXBuildFile; fileRef = AE30C2CE1BAD76E8005F5860 /* sawParticles.plist */; settings = {ASSET_TAGS = (); }; };
+		AE30C2D01BAD76E9005F5860 /* sawParticles.plist in Resources */ = {isa = PBXBuildFile; fileRef = AE30C2CE1BAD76E8005F5860 /* sawParticles.plist */; settings = {ASSET_TAGS = (); }; };
 		AE348F031BAAED6000C365B4 /* awesome.wav in Resources */ = {isa = PBXBuildFile; fileRef = AE348F021BAAED6000C365B4 /* awesome.wav */; settings = {ASSET_TAGS = (); }; };
 		AE348F041BAAED6000C365B4 /* awesome.wav in Resources */ = {isa = PBXBuildFile; fileRef = AE348F021BAAED6000C365B4 /* awesome.wav */; settings = {ASSET_TAGS = (); }; };
 		AE348F091BAAFC0900C365B4 /* tilesFG.png in Resources */ = {isa = PBXBuildFile; fileRef = AE348F081BAAFC0900C365B4 /* tilesFG.png */; settings = {ASSET_TAGS = (); }; };
@@ -97,6 +104,15 @@
 		AE38BA041B98BE2C005B48E8 /* ouch.wav in Resources */ = {isa = PBXBuildFile; fileRef = AE38BA021B98BE2C005B48E8 /* ouch.wav */; };
 		AE5A96C91B97A93D009CE82F /* Player.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AE5A96C71B97A93D009CE82F /* Player.cpp */; };
 		AE5A96CA1B97A93D009CE82F /* Player.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AE5A96C71B97A93D009CE82F /* Player.cpp */; };
+		AE8ADC341BAC73F200B9D788 /* DamageObject.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AE8ADC321BAC73F200B9D788 /* DamageObject.cpp */; settings = {ASSET_TAGS = (); }; };
+		AE8ADC351BAC73F200B9D788 /* DamageObject.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AE8ADC321BAC73F200B9D788 /* DamageObject.cpp */; settings = {ASSET_TAGS = (); }; };
+		AE8ADC371BAC755500B9D788 /* lava-animations.plist in Resources */ = {isa = PBXBuildFile; fileRef = AE8ADC361BAC755500B9D788 /* lava-animations.plist */; settings = {ASSET_TAGS = (); }; };
+		AE8ADC381BAC755500B9D788 /* lava-animations.plist in Resources */ = {isa = PBXBuildFile; fileRef = AE8ADC361BAC755500B9D788 /* lava-animations.plist */; settings = {ASSET_TAGS = (); }; };
+		AE8ADC3A1BAC99D300B9D788 /* burn.wav in Resources */ = {isa = PBXBuildFile; fileRef = AE8ADC391BAC99D300B9D788 /* burn.wav */; settings = {ASSET_TAGS = (); }; };
+		AE8ADC3B1BAC99D300B9D788 /* burn.wav in Resources */ = {isa = PBXBuildFile; fileRef = AE8ADC391BAC99D300B9D788 /* burn.wav */; settings = {ASSET_TAGS = (); }; };
+		AE8ADC421BAC9F8300B9D788 /* startUp.png in Resources */ = {isa = PBXBuildFile; fileRef = AE8ADC411BAC9F8300B9D788 /* startUp.png */; settings = {ASSET_TAGS = (); }; };
+		AE8ADC431BAC9F8300B9D788 /* startUp.png in Resources */ = {isa = PBXBuildFile; fileRef = AE8ADC411BAC9F8300B9D788 /* startUp.png */; settings = {ASSET_TAGS = (); }; };
+		AE8ADC451BACA1D000B9D788 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AE8ADC441BACA1D000B9D788 /* Images.xcassets */; settings = {ASSET_TAGS = (); }; };
 		AE9659A61B9B4931008D688C /* Enemy.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AE9659A41B9B4931008D688C /* Enemy.cpp */; };
 		AE9659A71B9B4931008D688C /* Enemy.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AE9659A41B9B4931008D688C /* Enemy.cpp */; };
 		AEB344BC1B979927000F6277 /* lvl01pressed.png in Resources */ = {isa = PBXBuildFile; fileRef = AEB344B81B979927000F6277 /* lvl01pressed.png */; };
@@ -292,12 +308,22 @@
 		AE11FE021B925BDD00F52CD4 /* retryPressed.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = retryPressed.png; sourceTree = "<group>"; };
 		AE22E5E61BA5B209008AD7FF /* parallaxCity001.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = parallaxCity001.png; sourceTree = "<group>"; };
 		AE22E5E91BA5BAA2008AD7FF /* parallaxFront001.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = parallaxFront001.png; sourceTree = "<group>"; };
+		AE30C2C61BAD69D1005F5860 /* scanbot-animations.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "scanbot-animations.plist"; sourceTree = "<group>"; };
+		AE30C2C81BAD6B75005F5860 /* lightWhite.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = lightWhite.png; sourceTree = "<group>"; };
+		AE30C2CB1BAD7551005F5860 /* saw-animations.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "saw-animations.plist"; sourceTree = "<group>"; };
+		AE30C2CE1BAD76E8005F5860 /* sawParticles.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = sawParticles.plist; sourceTree = "<group>"; };
 		AE348F021BAAED6000C365B4 /* awesome.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = awesome.wav; sourceTree = "<group>"; };
 		AE348F081BAAFC0900C365B4 /* tilesFG.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tilesFG.png; sourceTree = "<group>"; };
 		AE348F0C1BAB0FBE00C365B4 /* bgTest.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bgTest.png; sourceTree = "<group>"; };
 		AE38BA021B98BE2C005B48E8 /* ouch.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = ouch.wav; sourceTree = "<group>"; };
 		AE5A96C71B97A93D009CE82F /* Player.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Player.cpp; sourceTree = "<group>"; };
 		AE5A96C81B97A93D009CE82F /* Player.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Player.h; sourceTree = "<group>"; };
+		AE8ADC321BAC73F200B9D788 /* DamageObject.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = DamageObject.cpp; sourceTree = "<group>"; };
+		AE8ADC331BAC73F200B9D788 /* DamageObject.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = DamageObject.hpp; sourceTree = "<group>"; };
+		AE8ADC361BAC755500B9D788 /* lava-animations.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "lava-animations.plist"; sourceTree = "<group>"; };
+		AE8ADC391BAC99D300B9D788 /* burn.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = burn.wav; sourceTree = "<group>"; };
+		AE8ADC411BAC9F8300B9D788 /* startUp.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = startUp.png; sourceTree = "<group>"; };
+		AE8ADC441BACA1D000B9D788 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = "bunny iOS/Images.xcassets"; sourceTree = SOURCE_ROOT; };
 		AE9659A41B9B4931008D688C /* Enemy.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Enemy.cpp; sourceTree = "<group>"; };
 		AE9659A51B9B4931008D688C /* Enemy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Enemy.h; sourceTree = "<group>"; };
 		AEB344B81B979927000F6277 /* lvl01pressed.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = lvl01pressed.png; sourceTree = "<group>"; };
@@ -473,16 +499,19 @@
 		46880B7519C43A67006E1F66 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				AE8ADC441BACA1D000B9D788 /* Images.xcassets */,
 				AE348F061BAAFB4500C365B4 /* Shader */,
 				AE348F051BAAFB2100C365B4 /* Level */,
 				AE348F011BAAED4100C365B4 /* Sounds */,
 				AE348F071BAAFB8C00C365B4 /* PropertyLists */,
 				AE348F0B1BAAFC2800C365B4 /* Labels */,
 				AEBDBC3D1B9B08C100119201 /* light.png */,
+				AE30C2C81BAD6B75005F5860 /* lightWhite.png */,
+				AE8ADC411BAC9F8300B9D788 /* startUp.png */,
 				AEBDBC411B9B0DEB00119201 /* lightPink.png */,
+				AEBDBC401B9B0DEB00119201 /* lightCyan.png */,
 				AE348F081BAAFC0900C365B4 /* tilesFG.png */,
 				AE348F0C1BAB0FBE00C365B4 /* bgTest.png */,
-				AEBDBC401B9B0DEB00119201 /* lightCyan.png */,
 				AE22E5E91BA5BAA2008AD7FF /* parallaxFront001.png */,
 				AE22E5E61BA5B209008AD7FF /* parallaxCity001.png */,
 				AEBDBC2F1B9AE02700119201 /* parallaxHill003.png */,
@@ -514,6 +543,8 @@
 				46880B8719C43A87006E1F66 /* GameScene.h */,
 				AE9659A41B9B4931008D688C /* Enemy.cpp */,
 				AE9659A51B9B4931008D688C /* Enemy.h */,
+				AE8ADC321BAC73F200B9D788 /* DamageObject.cpp */,
+				AE8ADC331BAC73F200B9D788 /* DamageObject.hpp */,
 				AE0C85761B923006001D40DF /* GameOverScene.cpp */,
 				AE0C85771B923006001D40DF /* GameOverScene.h */,
 				AEC84E2F1B8DF617006ACFAC /* TestScene.cpp */,
@@ -595,6 +626,7 @@
 		AE348F011BAAED4100C365B4 /* Sounds */ = {
 			isa = PBXGroup;
 			children = (
+				AE8ADC391BAC99D300B9D788 /* burn.wav */,
 				AE38BA021B98BE2C005B48E8 /* ouch.wav */,
 				AEED3C701B981EFB009D7057 /* woooh.wav */,
 				AEB344D51B97A698000F6277 /* bloop.wav */,
@@ -630,6 +662,7 @@
 				AEC965861B945D6200DB2AB0 /* explosionPink.plist */,
 				AEC9658D1B94804D00DB2AB0 /* explosionGreen.plist */,
 				AEC965901B94805800DB2AB0 /* explosionCyan.plist */,
+				AE30C2CE1BAD76E8005F5860 /* sawParticles.plist */,
 				AEC965A91B94942100DB2AB0 /* explosionPlayer.plist */,
 				AEC84E281B8DF58A006ACFAC /* sprites-0001-default.plist */,
 				AEFDA33B1B94BDF300EFEE71 /* currentLevel.plist */,
@@ -637,6 +670,9 @@
 				AEDF47CB1B934C0500AAFFD4 /* highJump-animations.plist */,
 				AEDF47CE1B934C1500AAFFD4 /* doublePoints-animations.plist */,
 				AEC84E251B8DF578006ACFAC /* player-animations.plist */,
+				AE8ADC361BAC755500B9D788 /* lava-animations.plist */,
+				AE30C2C61BAD69D1005F5860 /* scanbot-animations.plist */,
+				AE30C2CB1BAD7551005F5860 /* saw-animations.plist */,
 			);
 			name = PropertyLists;
 			sourceTree = "<group>";
@@ -705,7 +741,7 @@
 		29B97313FDCFA39411CA2CEA /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0640;
+				LastUpgradeCheck = 0700;
 				TargetAttributes = {
 					1D6058900D05DD3D006BFB54 = {
 						DevelopmentTeam = 59SD8QK2GF;
@@ -766,7 +802,9 @@
 				5087E78117EB970100C73F5D /* Icon-120.png in Resources */,
 				AE11FE031B925BDD00F52CD4 /* back.png in Resources */,
 				AEFC4E201B90801D00C1F4D6 /* pill.png in Resources */,
+				AE30C2C91BAD6B75005F5860 /* lightWhite.png in Resources */,
 				AE22E5E71BA5B209008AD7FF /* parallaxCity001.png in Resources */,
+				AE8ADC451BACA1D000B9D788 /* Images.xcassets in Resources */,
 				5087E78617EB970100C73F5D /* Icon-76.png in Resources */,
 				5087E77F17EB970100C73F5D /* Default@2x.png in Resources */,
 				AE348F091BAAFC0900C365B4 /* tilesFG.png in Resources */,
@@ -785,6 +823,7 @@
 				AEB344D21B979D39000F6277 /* level3.tmx in Resources */,
 				AEC965AA1B94942100DB2AB0 /* explosionPlayer.plist in Resources */,
 				AEB344BC1B979927000F6277 /* lvl01pressed.png in Resources */,
+				AE30C2CC1BAD7551005F5860 /* saw-animations.plist in Resources */,
 				AEBDBC361B9AE02700119201 /* parallaxHill001.png in Resources */,
 				5087E77D17EB970100C73F5D /* Default-568h@2x.png in Resources */,
 				AEC84E261B8DF578006ACFAC /* player-animations.plist in Resources */,
@@ -792,10 +831,12 @@
 				AE11FE091B925BDD00F52CD4 /* retryPressed.png in Resources */,
 				AE11FE051B925BDD00F52CD4 /* backPressed.png in Resources */,
 				521A8E6519F0C34300D177D7 /* Default-736h@3x.png in Resources */,
+				AE30C2C71BAD69D1005F5860 /* scanbot-animations.plist in Resources */,
 				AEC9658E1B94804D00DB2AB0 /* explosionGreen.plist in Resources */,
 				AEBDBC3E1B9B08C100119201 /* light.png in Resources */,
 				AE348F031BAAED6000C365B4 /* awesome.wav in Resources */,
 				521A8EA919F11F5000D177D7 /* fonts in Resources */,
+				AE30C2CF1BAD76E9005F5860 /* sawParticles.plist in Resources */,
 				AEFDA3381B94BA6A00EFEE71 /* testLevel2.tmx in Resources */,
 				AEC9659F1B9487B700DB2AB0 /* test.vert in Resources */,
 				AEED3C711B981EFB009D7057 /* woooh.wav in Resources */,
@@ -811,6 +852,7 @@
 				5087E78017EB970100C73F5D /* Icon-114.png in Resources */,
 				AE0C856F1B91FBA4001D40DF /* titleClicked.png in Resources */,
 				50EF62A217ECD613001EB2F8 /* Icon-29.png in Resources */,
+				AE8ADC3A1BAC99D300B9D788 /* burn.wav in Resources */,
 				AEBDBC321B9AE02700119201 /* parallaxHill003.png in Resources */,
 				50EF629617ECD46A001EB2F8 /* Icon-40.png in Resources */,
 				AEDF47CC1B934C0500AAFFD4 /* highJump-animations.plist in Resources */,
@@ -826,8 +868,10 @@
 				AEC965881B945D6200DB2AB0 /* explosionPink.plist in Resources */,
 				521A8E6419F0C34300D177D7 /* Default-667h@2x.png in Resources */,
 				50EF629717ECD46A001EB2F8 /* Icon-58.png in Resources */,
+				AE8ADC421BAC9F8300B9D788 /* startUp.png in Resources */,
 				AE0C85711B91FBA4001D40DF /* background.png in Resources */,
 				AE0C85621B91FA7E001D40DF /* CartonSixBMP.png in Resources */,
+				AE8ADC371BAC755500B9D788 /* lava-animations.plist in Resources */,
 				AEC9659B1B94857700DB2AB0 /* test2.fsh in Resources */,
 				AEB344C21B979927000F6277 /* lvl02pressed.png in Resources */,
 			);
@@ -843,10 +887,12 @@
 				AEBDBC451B9B0DEB00119201 /* lightPink.png in Resources */,
 				AEB344D01B979D2D000F6277 /* lvl03pressed.png in Resources */,
 				AEC9659C1B94857700DB2AB0 /* test2.fsh in Resources */,
+				AE30C2CA1BAD6B75005F5860 /* lightWhite.png in Resources */,
 				AEB344BF1B979927000F6277 /* lvl01.png in Resources */,
 				AE0C85721B91FBA4001D40DF /* background.png in Resources */,
 				AE11FE041B925BDD00F52CD4 /* back.png in Resources */,
 				AEDF47D01B934C1500AAFFD4 /* doublePoints-animations.plist in Resources */,
+				AE30C2CD1BAD7551005F5860 /* saw-animations.plist in Resources */,
 				AE348F0A1BAAFC0900C365B4 /* tilesFG.png in Resources */,
 				AE22E5E81BA5B209008AD7FF /* parallaxCity001.png in Resources */,
 				AEBDBC3F1B9B08C100119201 /* light.png in Resources */,
@@ -860,6 +906,7 @@
 				AE11FE081B925BDD00F52CD4 /* retry.png in Resources */,
 				AEC965A21B9487B700DB2AB0 /* shadow.fsh in Resources */,
 				AEFDA33D1B94BDF300EFEE71 /* currentLevel.plist in Resources */,
+				AE8ADC381BAC755500B9D788 /* lava-animations.plist in Resources */,
 				AEB344D71B97A698000F6277 /* bloop.wav in Resources */,
 				3EACC99019EE6D4300EB3C5E /* res in Resources */,
 				AEB344D31B979D39000F6277 /* level3.tmx in Resources */,
@@ -869,6 +916,7 @@
 				AEC84E3C1B8DFE29006ACFAC /* testLevel.tmx in Resources */,
 				AEBDBC431B9B0DEB00119201 /* lightCyan.png in Resources */,
 				AE0C855A1B91A7D2001D40DF /* consumable-animations.plist in Resources */,
+				AE8ADC431BAC9F8300B9D788 /* startUp.png in Resources */,
 				AEFC4E211B90801D00C1F4D6 /* pill.png in Resources */,
 				AE11FE0A1B925BDD00F52CD4 /* retryPressed.png in Resources */,
 				AE22E5EB1BA5BAA2008AD7FF /* parallaxFront001.png in Resources */,
@@ -876,6 +924,7 @@
 				AEC9658B1B945D6200DB2AB0 /* explosion.png in Resources */,
 				AEC84E391B8DFE03006ACFAC /* tiles.png in Resources */,
 				AE348F0E1BAB0FBE00C365B4 /* bgTest.png in Resources */,
+				AE8ADC3B1BAC99D300B9D788 /* burn.wav in Resources */,
 				AEED3C721B981EFB009D7057 /* woooh.wav in Resources */,
 				AEB344C61B9799FF000F6277 /* lvl02.png in Resources */,
 				AE0C85651B91FA7E001D40DF /* CartonSixBMP.fnt in Resources */,
@@ -885,6 +934,7 @@
 				AEC9659A1B94857700DB2AB0 /* test2.vert in Resources */,
 				AEC84E2B1B8DF58A006ACFAC /* sprites-0001-default.plist in Resources */,
 				AE38BA041B98BE2C005B48E8 /* ouch.wav in Resources */,
+				AE30C2D01BAD76E9005F5860 /* sawParticles.plist in Resources */,
 				521A8EAA19F11F5000D177D7 /* fonts in Resources */,
 				AEC965921B94805800DB2AB0 /* explosionCyan.plist in Resources */,
 				AEBDBC371B9AE02700119201 /* parallaxHill001.png in Resources */,
@@ -914,6 +964,7 @@
 				AEB344C81B979C8D000F6277 /* TestSceneThree.cpp in Sources */,
 				AE0C85561B91A68C001D40DF /* Consumable.cpp in Sources */,
 				AE9659A61B9B4931008D688C /* Enemy.cpp in Sources */,
+				AE8ADC341BAC73F200B9D788 /* DamageObject.cpp in Sources */,
 				503AE10217EB989F00D1A890 /* RootViewController.mm in Sources */,
 				503AE10117EB989F00D1A890 /* main.m in Sources */,
 				AE0C85781B923006001D40DF /* GameOverScene.cpp in Sources */,
@@ -932,6 +983,7 @@
 				AE0C85691B91FB73001D40DF /* MainMenuScene.cpp in Sources */,
 				AEC965961B94855200DB2AB0 /* ShadowLayer.cpp in Sources */,
 				AE0C85791B923006001D40DF /* GameOverScene.cpp in Sources */,
+				AE8ADC351BAC73F200B9D788 /* DamageObject.cpp in Sources */,
 				AE0C85571B91A68C001D40DF /* Consumable.cpp in Sources */,
 				AEC84E361B8DF882006ACFAC /* Level.cpp in Sources */,
 				AEB344C91B979C8D000F6277 /* TestSceneThree.cpp in Sources */,
@@ -967,6 +1019,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				COMPRESS_PNG_FILES = NO;
 				ENABLE_BITCODE = NO;
@@ -993,6 +1047,7 @@
 					"$(_COCOS_LIB_IOS_BEGIN)",
 					"$(_COCOS_LIB_IOS_END)",
 				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.phrkinc.bunny;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				USER_HEADER_SEARCH_PATHS = "$(_COCOS_HEADER_IOS_BEGIN) $(_COCOS_HEADER_IOS_END)";
@@ -1004,6 +1059,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				COMPRESS_PNG_FILES = NO;
 				ENABLE_BITCODE = NO;
@@ -1028,6 +1085,7 @@
 					"$(_COCOS_LIB_IOS_BEGIN)",
 					"$(_COCOS_LIB_IOS_END)",
 				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.phrkinc.bunny;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				USER_HEADER_SEARCH_PATHS = "$(_COCOS_HEADER_IOS_BEGIN) $(_COCOS_HEADER_IOS_END)";
@@ -1064,6 +1122,7 @@
 					"$(_COCOS_LIB_MAC_BEGIN)",
 					"$(_COCOS_LIB_MAC_END)",
 				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.phrkinc.bunny;
 				USER_HEADER_SEARCH_PATHS = "$(_COCOS_HEADER_MAC_BEGIN) $(_COCOS_HEADER_MAC_END)";
 			};
 			name = Debug;
@@ -1095,6 +1154,7 @@
 					"$(_COCOS_LIB_MAC_BEGIN)",
 					"$(_COCOS_LIB_MAC_END)",
 				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.phrkinc.bunny;
 				USER_HEADER_SEARCH_PATHS = "$(_COCOS_HEADER_MAC_BEGIN) $(_COCOS_HEADER_MAC_END)";
 			};
 			name = Release;
@@ -1105,6 +1165,7 @@
 				CLANG_CXX_LANGUAGE_STANDARD = "c++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				COPY_PHASE_STRIP = NO;
+				ENABLE_TESTABILITY = YES;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;

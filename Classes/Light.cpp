@@ -27,12 +27,18 @@ Light* Light::create(int taste)
     {
         success = pSprite->initWithFile("lightPink.png");
         
-    } else if (taste == 2)
+    }
+    else if (taste == 2)
     {
         success = pSprite->initWithFile("lightCyan.png");
-    } else if (taste == 3)
+    }
+    else if (taste == 3)
     {
         success = pSprite->initWithFile("light.png");
+    }
+    else if (taste == 9)
+    {
+    success = pSprite->initWithFile("lightWhite.png");
     }
     else
     {

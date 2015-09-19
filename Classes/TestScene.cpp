@@ -13,6 +13,7 @@
 #include "OverlayLayer.h"
 #include "MainMenuScene.h"
 #include "Light.h"
+#include "DamageObject.hpp"
 
 USING_NS_CC;
 
@@ -77,19 +78,48 @@ bool TestScene::init()
         float x = current.asValueMap()["x"].asFloat();
         float y = current.asValueMap()["y"].asFloat();
         int taste = current.asValueMap()["taste"].asInt();
-        pill = Consumable::create(taste);
-        pill->setTag(taste);
-        pill->retain();
-        pill->setPosition(Point(x*SCALE_FACTOR,y*SCALE_FACTOR));
-        addChild(pill);
-        auto light = Light::create(taste);
-        light->retain();
-        light->setPosition(Point(pill->getContentSize().width*0.5,pill->getContentSize().height*0.5));
-        light->setScale(0.5);
-        light->setGlobalZOrder(15);
-        pill->addChild(light);
-        pill->setGlobalZOrder(16);
-        pillVec.pushBack(pill);
+        int dmgObjType = current.asValueMap()["dmgObj"].asInt();
+        if (taste != 0)
+        {
+            pill = Consumable::create(taste);
+            pill->setTag(taste);
+            pill->retain();
+            pill->setPosition(Point(x*SCALE_FACTOR,y*SCALE_FACTOR));
+            addChild(pill);
+            auto light = Light::create(taste);
+            light->retain();
+            light->setPosition(Point(pill->getContentSize().width*0.5,pill->getContentSize().height*0.5));
+            light->setScale(0.5);
+            light->setGlobalZOrder(15);
+            pill->addChild(light);
+            pill->setGlobalZOrder(16);
+            pillVec.pushBack(pill);
+        }
+        if (dmgObjType != 0)
+        {
+            auto dmgObj = DamageObject::create(dmgObjType);
+            dmgObj->retain();
+            dmgObj->setPosition(Point(x*SCALE_FACTOR,y*SCALE_FACTOR));
+            dmgObj->setGlobalZOrder(14);
+            
+//            dmgObj->setColor(Color3B(255,100,180));
+            collisionVec.pushBack(dmgObj);
+            addChild(dmgObj);
+            if (dmgObjType == 2)
+            {
+                auto light = Light::create(9);
+                light->retain();
+                light->setPosition(Point(dmgObj->getContentSize().width*0.5,dmgObj->getContentSize().height*0.5));
+                light->setScale(0.5);
+                light->setGlobalZOrder(13);
+                dmgObj->addChild(light);
+            }
+            if (dmgObjType == 3)
+            {
+                dmgObj->setGlobalZOrder(2);
+            }
+        }
+        
     }
     
     // parallax

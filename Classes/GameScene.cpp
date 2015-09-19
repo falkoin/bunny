@@ -247,7 +247,7 @@ void GameScene::checkCollisionY()
                 player->setPositionY(topCollisionPosition);
                 player->grounded = true;
                 _touchEnabled = true;
-                if (score > 0)
+                if (score > 0 && !_gameOver)
                 {
                     gameOver();
                     CocosDenshion::SimpleAudioEngine::getInstance()->playEffect("ouch.wav");
@@ -319,6 +319,37 @@ void GameScene::checkHit()
                     pills->removeFromParent();
                     score++;
                     break;
+                }
+            }
+        }
+        for (auto *collisionObject : collisionVec)
+        {
+            if (collisionObject != NULL)
+            {
+                Rect collisionObjectRect = collisionObject->getBoundingBox();
+                Rect playerRect = player->getBoundingBox();
+                if (collisionObjectRect.intersectsRect(playerRect))
+                {
+                    if (collisionObject->getDamageObjectType() == 1 && !_gameOver)
+                    {
+                        gameOver();
+                        CocosDenshion::SimpleAudioEngine::getInstance()->playEffect("burn.wav");
+                    }
+                    if (collisionObject->getDamageObjectType() == 2 && !_gameOver)
+                    {
+                        gameOver();
+                        CocosDenshion::SimpleAudioEngine::getInstance()->playEffect("ouch.wav");
+                    }
+                    if (collisionObject->getDamageObjectType() == 3 && !_gameOver)
+                    {
+                        ParticleSystemQuad* p = ParticleSystemQuad::create("sawParticles.plist");
+                        p->setGlobalZOrder(1010);
+                        p->setPositionType(ParticleSystemQuad::PositionType::RELATIVE);
+                        p->setPosition(player->getPosition()+Point(player->getContentSize()/2));
+                        addChild(p);
+                        gameOver();
+                        CocosDenshion::SimpleAudioEngine::getInstance()->playEffect("ouch.wav");
+                    }
                 }
             }
         }

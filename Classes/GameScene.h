@@ -9,6 +9,7 @@
 #include "ShadowLayer.h"
 #include "Movable.h"
 #include "Enemy.h"
+#include "DamageObject.hpp"
 
 class GameScene : public cocos2d::Layer
 {
@@ -62,6 +63,7 @@ protected:
     Vector<Sprite*> enemyVec;
     Vector<Movable*> cloudVec;
     Vector<Movable*> fallingVec;
+    Vector<DamageObject*> collisionVec;
     cocos2d::Point lastPoint;
     cocos2d::Point lastPlayerPosition;
     
