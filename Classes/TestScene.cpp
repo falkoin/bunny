@@ -55,12 +55,12 @@ bool TestScene::init()
 //    bg->setPosition(Point(0,0));
 //    bg->setScale(SCALE_FACTOR);
 //    addChild(bg);
-    bg->setGlobalZOrder(2);
+    bg->setGlobalZOrder(Z_BG);
     
     auto walls = level->getMap()->getLayer("walls");
-    walls->setGlobalZOrder(7);
+    walls->setGlobalZOrder(Z_WALLS);
     auto wallShadow = level->getMap()->getLayer("wallShadow");
-    wallShadow->setGlobalZOrder(7);
+    wallShadow->setGlobalZOrder(Z_WALLS);
 //    auto mg = level->getMap()->getLayer("midground");
 //    mg->setGlobalZOrder(6);
     
@@ -90,9 +90,9 @@ bool TestScene::init()
             light->retain();
             light->setPosition(Point(pill->getContentSize().width*0.5,pill->getContentSize().height*0.5));
             light->setScale(0.5);
-            light->setGlobalZOrder(15);
+            light->setGlobalZOrder(Z_OBJLIGHT);
             pill->addChild(light);
-            pill->setGlobalZOrder(16);
+            pill->setGlobalZOrder(Z_OBJ);
             pillVec.pushBack(pill);
         }
         if (dmgObjType != 0)
@@ -100,7 +100,7 @@ bool TestScene::init()
             auto dmgObj = DamageObject::create(dmgObjType);
             dmgObj->retain();
             dmgObj->setPosition(Point(x*SCALE_FACTOR,y*SCALE_FACTOR));
-            dmgObj->setGlobalZOrder(14);
+            dmgObj->setGlobalZOrder(Z_OBJ);
             
 //            dmgObj->setColor(Color3B(255,100,180));
             collisionVec.pushBack(dmgObj);
@@ -111,53 +111,62 @@ bool TestScene::init()
                 light->retain();
                 light->setPosition(Point(dmgObj->getContentSize().width*0.5,dmgObj->getContentSize().height*0.5));
                 light->setScale(0.5);
-                light->setGlobalZOrder(13);
+                light->setGlobalZOrder(Z_OBJLIGHT);
                 dmgObj->addChild(light);
             }
             if (dmgObjType == 3)
             {
-                dmgObj->setGlobalZOrder(2);
+                dmgObj->setGlobalZOrder(Z_WALLS-1);
             }
         }
         
     }
     
     // parallax
-    parallaxOne = Sprite::create("parallaxHill001.png");
+    parallaxOne = Sprite::create("parallaxHill001g.png");
     parallaxOne->setColor(Color3B(255,100,180));
-    parallaxOne->setGlobalZOrder(3);
+    parallaxOne->setGlobalZOrder(Z_PLX1);
     parallaxOne->setScale(SCALE_FACTOR);
-    parallaxOne->getTexture()->setAliasTexParameters();
+//    parallaxOne->getTexture()->setAliasTexParameters();
     parallaxOne->setPosition(Point(visibleSize.width*0.5+origin.x,visibleSize.height*0.5+origin.y));
     parallaxOne->setAnchorPoint(Point(0.5, 0.5));
     this->addChild(parallaxOne);
     
-    parallaxTwo = Sprite::create("parallaxHill002.png");
+    parallaxTwo = Sprite::create("parallaxHill002g.png");
     parallaxTwo->setColor(Color3B(255,100,180));
-    parallaxTwo->setGlobalZOrder(4);
+    parallaxTwo->setGlobalZOrder(Z_PLX2);
     parallaxTwo->setScale(SCALE_FACTOR);
-    parallaxTwo->getTexture()->setAliasTexParameters();
+//    parallaxTwo->getTexture()->setAliasTexParameters();
     parallaxTwo->setPosition(Point(visibleSize.width*0.5+origin.x,visibleSize.height*0.5+origin.y));
     parallaxTwo->setAnchorPoint(Point(0.5, 0.5));
     this->addChild(parallaxTwo);
     
-    parallaxThree = Sprite::create("parallaxHill003.png");
+    parallaxThree = Sprite::create("parallaxHill003g.png");
     parallaxThree->setColor(Color3B(255,100,180));
-    parallaxThree->setGlobalZOrder(5);
+    parallaxThree->setGlobalZOrder(Z_PLX3);
     parallaxThree->setScale(SCALE_FACTOR);
-    parallaxThree->getTexture()->setAliasTexParameters();
+//    parallaxThree->getTexture()->setAliasTexParameters();
     parallaxThree->setPosition(Point(visibleSize.width*0.5+origin.x,visibleSize.height*0.5+origin.y));
     parallaxThree->setAnchorPoint(Point(0.5, 0.5));
     this->addChild(parallaxThree);
     
-    parallaxFour = Sprite::create("parallaxFront001.png");
-    parallaxFour->setColor(Color3B(255,100,180));
-    parallaxFour->setGlobalZOrder(6);
+    parallaxFour = Sprite::create("trees_2bw.png");
+    parallaxFour->setColor(Color3B(110,45,80));
+    parallaxFour->setGlobalZOrder(Z_PLX4);
     parallaxFour->setScale(SCALE_FACTOR);
     parallaxFour->getTexture()->setAliasTexParameters();
-    parallaxFour->setPosition(Point(visibleSize.width*0.5+origin.x,visibleSize.height*0.5+origin.y));
-    parallaxFour->setAnchorPoint(Point(0.5, 0.5));
+    parallaxFour->setPosition(Point(visibleSize.width*0.5+origin.x,0));
+    parallaxFour->setAnchorPoint(Point(0.5, 0));
     this->addChild(parallaxFour);
+    
+    parallaxFive = Sprite::create("trees_bw.png");
+    parallaxFive->setColor(Color3B(100,40,70));
+    parallaxFive->setGlobalZOrder(Z_PLX5);
+    parallaxFive->setScale(SCALE_FACTOR);
+    parallaxFive->getTexture()->setAliasTexParameters();
+    parallaxFive->setPosition(Point(visibleSize.width*0.5+origin.x,0));
+    parallaxFive->setAnchorPoint(Point(0.5, 0));
+    this->addChild(parallaxFive);
     
     // clouds
     nMaxClouds = 20;
@@ -165,7 +174,7 @@ bool TestScene::init()
         auto clouds = Movable::create(random(0.1, 0.4),"cloud.png");
         clouds->setScale(SCALE_FACTOR);
         clouds->setPosition(Point(random(0.0,1.0)*level->getMap()->getMapSize().width*16*SCALE_FACTOR-clouds->getContentSize().width, level->getMap()->getMapSize().height*16*SCALE_FACTOR*random(0.4,0.9)));
-        clouds->setGlobalZOrder(3);
+        clouds->setGlobalZOrder(Z_AIR);
         clouds->setScale(random(SCALE_FACTOR, SCALE_FACTOR*2));
         clouds->retain();
         addChild(clouds);
@@ -178,7 +187,7 @@ bool TestScene::init()
     player->retain();
     this->addChild(player);
     player->setPosition(level->tileCoordinateToPosition(Point(7,1)));
-    player->setGlobalZOrder(15);
+    player->setGlobalZOrder(Z_PLY);
     
     // camera
     cameraTarget = Sprite::create();
@@ -194,14 +203,14 @@ bool TestScene::init()
     // shader
     _shadowLayer = ShadowLayer::create();
     this->addChild(_shadowLayer);
-    _shadowLayer->setGlobalZOrder(999);
+    _shadowLayer->setGlobalZOrder(Z_SHADER);
     _shadowLayer->setAnchorPoint(Point(0.5, 0.5));
     lastPoint = Point(0,0);
     
     // Overlay
     _hud = OverlayLayer::create();
     this->addChild(_hud);
-    _hud->setGlobalZOrder(1005);
+    _hud->setGlobalZOrder(Z_MENU);
     _hud->setAnchorPoint(Point(0.5, 0.5));
     
     // touch

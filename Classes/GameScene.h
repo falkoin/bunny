@@ -10,6 +10,7 @@
 #include "Movable.h"
 #include "Enemy.h"
 #include "DamageObject.hpp"
+#include "Explosion.hpp"
 
 class GameScene : public cocos2d::Layer
 {
@@ -39,6 +40,7 @@ protected:
     Sprite* parallaxTwo;
     Sprite* parallaxThree;
     Sprite* parallaxFour;
+    Sprite* parallaxFive;
     
     bool _touchEnabled;
     bool _gameOver;

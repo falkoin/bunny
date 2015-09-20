@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <map version="1.0" orientation="orthogonal" renderorder="right-down" width="64" height="128" tilewidth="16" tileheight="16" nextobjectid="45">
  <tileset firstgid="1" name="tiles" tilewidth="16" tileheight="16">
-  <image source="tiles.png" width="128" height="48"/>
+  <image source="tiles.png" width="128" height="80"/>
  </tileset>
  <layer name="background" width="64" height="128">
   <data encoding="base64" compression="zlib">
@@ -10,12 +10,12 @@
  </layer>
  <layer name="wallShadow" width="64" height="128">
   <data encoding="base64" compression="zlib">
-   eJzt0MEJwCAUBcEUkP7rzV3wJEFlZwv4z/F59O5+wOb42/G342/H346/HX87/nb87fjb8bfjb8ffjr8dfzv+dvzt+Nvxt3bH+Fu7Y/yt3TH+1u4Yfzv+dvzt+Nvxt+Nvx9+Ovx1/O/52/O12+E/6c/7G5iz+xuYs/sbmLP52/O342/G342/H346/HX87/nb87fjb8bc73f/3+/jPjv/u+6vx331/Nf67758efzv+dvzt+Nvxt+Nvx9+Ovx1/O/52dX+5D+1zBwk=
+   eJzt2bFtxFAMBcErZd1/kwenThwIxBAQp4DPfan0+Zx0AJYOwNIBWDoASwdg6QAsHYClA7B0AJYOwNIBWDoASwdg6QAsHYClA7B0AJYOwNIBWDoASwdg6QAsHYClA7B0AJYOwNIBWDoASwdg6QAsHYClA7B0AJYOwNIBWDoAC939QXf/Ct29/TuE7t7+HUJ3b/8Oobtv379FOgBLB2DpACwdgKUDsHQAlg7A0gFYOgBLB2DpACwdgKUDsHQAlg7A0gFYOgBLB2DpACwdgAVubvn2+ytw8/bvEbh5+/cI3Lz9ewRuvn3/JukALB2ApQOwdACWDsDSAVg6AEsHYOkALB2ApQOwdACWDsDSAVg6AEsHYOkALB2ApQOwdACWDsDSAVg64B/T/woafv+p2z+r4fefuv2zGn7/qds/q+H3n3r7/mnpACwdgKUDsHQAlg7A0gFYOgBLB2DpACwdgKUDsHQAlg7A0gFYOgBLB2DpACwdgKUDsHQAlg44zBeuJxLZ
   </data>
  </layer>
  <layer name="walls" width="64" height="128">
   <data encoding="base64" compression="zlib">
-   eJzt3bENwyAUQEEWSJo43n/UxErjBRyw3j3p1+gqEBTsY4xXdPbvPEa35+Dn78bPz9+Nn5+/Gz8/fzd+fv5u/Pz83fj5+bvx8/N34+fn7zbTv01a99xM/3vSuuf4+fnnxD8/+5/zD383fn7+bvz8/N34+fm78fPzd+Pnn+Ff4e73aJZ/hbv/I35+/v/Hv0b2P+cf/m78/Pzd+Pn5u/Hz83fj5+fvxs/P3+0O/ivfCu7gv/KtiJ+ff+34r+sO/vr+d2X8/Pzd+Pn5u/Hz83fj5+fvxs/P343/9wf8Fp3D/gHrhxkH
+   eJzt2csJw0AQBcFJw/IPnH+Qlm9OQOxCV8O7aqjr6jUzn+je527T7Rh+/m78/Pzd+Pn5u/Hz83fj5+fvxs/P342fn78bPz9/N35+/m4r/ceiu//x8/Ovu706fn7+bvz8/N34+fm78fPzd+Pn5+/Gz8/fbZV/h7ffX/z8/Gvu7hA/P383fn7+bvz8/N34+fm78fPzd+Pn5+/Gz7+7/8p/Bfz8/HvHf+23+feu7r8yfn7+bvz8/N34+fm78fPzd+Pn5+/GP/M4d4/uee4LEs0qxw==
   </data>
  </layer>
  <objectgroup name="objects">

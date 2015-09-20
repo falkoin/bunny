@@ -20,4 +20,21 @@
 
 #define LEVEL_TRANSITION_TIME 1
 
+#define Z_BG 1
+#define Z_AIR 5
+
+#define Z_PLX1 8
+#define Z_PLX2 9
+#define Z_PLX3 10
+#define Z_PLX4 11
+#define Z_PLX5 12
+
+#define Z_WALLS 25
+#define Z_OBJLIGHT 35
+#define Z_OBJ 36
+
+#define Z_PLY 45
+#define Z_SHADER 10000
+#define Z_MENU 9999
+
 #endif

@@ -14,7 +14,6 @@ bool ShadowLayer::init()
     setGLProgram(_lightShaderProgram);
     
     _lightSize = 600.0;
-//    _lightSize = 400.0;
     _lightPosition = Point(0,0);
     _shadowColor = Vec4(0.0,0.0,0.0,0.55);
 
