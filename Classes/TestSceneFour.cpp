@@ -6,7 +6,7 @@
 //
 //
 
-#include "TestSceneThree.h"
+#include "TestSceneFour.h"
 #include "GameScene.h"
 #include "Level.h"
 #include "Globals.h"
@@ -16,12 +16,12 @@
 
 USING_NS_CC;
 
-Scene* TestSceneThree::createScene()
+Scene* TestSceneFour::createScene()
 {
     auto scene = Scene::create();
     
     // 'layer' is an autorelease object
-    auto layer = TestSceneThree::create();
+    auto layer = TestSceneFour::create();
     
     // add layer as a child to scene
     scene->addChild(layer);
@@ -31,7 +31,7 @@ Scene* TestSceneThree::createScene()
 }
 
 // on "init" you need to initialize your instance
-bool TestSceneThree::init()
+bool TestSceneFour::init()
 {
     //////////////////////////////
     // 1. super init first
@@ -45,7 +45,7 @@ bool TestSceneThree::init()
     Director::getInstance()->setProjection(cocos2d::DisplayLinkDirector::Projection::_2D);
     // map
     level = new Level();
-    level->loadMap("level3.tmx",this);
+    level->loadMap("testLevel4.tmx",this);
     level->getMap()->setScale(SCALE_FACTOR);
     this->addChild(level->getMap(),-1);
     auto bg = level->getMap()->getLayer("background");
@@ -55,6 +55,7 @@ bool TestSceneThree::init()
     auto wallShadow = level->getMap()->getLayer("wallShadow");
     wallShadow->setGlobalZOrder(Z_WALLS);
     
+
     // level objects
     auto *levelObject = level->getMap()->getObjectGroup("objects");
     if(levelObject == NULL){
@@ -70,7 +71,7 @@ bool TestSceneThree::init()
         float y = current.asValueMap()["y"].asFloat();
         int taste = current.asValueMap()["taste"].asInt();
         int trigger = current.asValueMap()["trigger"].asInt();
-        if (trigger != 0)
+        if (trigger != 0 && taste != 4)
             triggered = false;
         else
             triggered = true;
@@ -103,54 +104,55 @@ bool TestSceneThree::init()
 
     // parallax
     parallaxOne = Sprite::create("parallaxHill001g.png");
-    parallaxOne->setColor(Color3B(225,200,50));
+    parallaxOne->setColor(Color3B(225,100,00));
     parallaxOne->setGlobalZOrder(Z_PLX1);
     parallaxOne->setScale(SCALE_FACTOR);
     parallaxOne->getTexture()->setAliasTexParameters();
     parallaxOne->setAnchorPoint(Point(0.5, 0));
-    parallaxOne->setPosition(Point(64*16*SCALE_FACTOR-parallaxOne->getContentSize().width*0.5*SCALE_FACTOR,0));
+    parallaxOne->setPosition(Point(32*16*SCALE_FACTOR-parallaxOne->getContentSize().width*0.5*SCALE_FACTOR,0));
     this->addChild(parallaxOne);
     
     parallaxTwo = Sprite::create("parallaxHill002g.png");
-    parallaxTwo->setColor(Color3B(215,200,50));
+    parallaxTwo->setColor(Color3B(215,100,0));
     parallaxTwo->setGlobalZOrder(Z_PLX2);
     parallaxTwo->setScale(SCALE_FACTOR);
     parallaxTwo->getTexture()->setAliasTexParameters();
     parallaxTwo->setAnchorPoint(Point(0.5, 0));
-    parallaxTwo->setPosition(Point(64*16*SCALE_FACTOR-parallaxOne->getContentSize().width*0.5*SCALE_FACTOR,0));
+    parallaxTwo->setPosition(Point(32*16*SCALE_FACTOR-parallaxOne->getContentSize().width*0.5*SCALE_FACTOR,0));
     this->addChild(parallaxTwo);
     
     parallaxThree = Sprite::create("parallaxHill003g.png");
-    parallaxThree->setColor(Color3B(205,200,50));
+    parallaxThree->setColor(Color3B(205,100,0));
     parallaxThree->setGlobalZOrder(Z_PLX3);
     parallaxThree->setScale(SCALE_FACTOR);
     parallaxThree->getTexture()->setAliasTexParameters();
     parallaxThree->setAnchorPoint(Point(0.5, 0));
-    parallaxThree->setPosition(Point(64*16*SCALE_FACTOR-parallaxOne->getContentSize().width*0.5*SCALE_FACTOR,0));
+    parallaxThree->setPosition(Point(32*16*SCALE_FACTOR-parallaxOne->getContentSize().width*0.5*SCALE_FACTOR,0));
     this->addChild(parallaxThree);
     
-    parallaxFour = Sprite::create("trees.png");
-    parallaxFour->setColor(Color3B(155,155,125));
+    parallaxFour = Sprite::create("trees_2bw.png");
+    parallaxFour->setColor(Color3B(155,75,0));
     parallaxFour->setGlobalZOrder(Z_PLX4);
     parallaxFour->setScale(SCALE_FACTOR);
     parallaxFour->getTexture()->setAliasTexParameters();
-    parallaxFour->setPosition(Point(64*16*SCALE_FACTOR-parallaxOne->getContentSize().width*0.5*SCALE_FACTOR,0));
+    parallaxFour->setPosition(Point(32*16*SCALE_FACTOR-parallaxOne->getContentSize().width*0.5*SCALE_FACTOR,0));
     parallaxFour->setAnchorPoint(Point(0.5, 0));
     this->addChild(parallaxFour);
     
-    parallaxFive = Sprite::create("parallaxFront001.png");
+    parallaxFive = Sprite::create("trees_bw.png");
+    parallaxFive->setColor(Color3B(135,155,0));
     parallaxFive->setGlobalZOrder(Z_PLX5);
     parallaxFive->setScale(SCALE_FACTOR);
     parallaxFive->getTexture()->setAliasTexParameters();
-    parallaxFive->setPosition(Point(64*16*SCALE_FACTOR-parallaxOne->getContentSize().width*0.5*SCALE_FACTOR,visibleSize.height*0.5+origin.y));
-    parallaxFive->setAnchorPoint(Point(0.5, 0.5));
+    parallaxFive->setPosition(Point(32*16*SCALE_FACTOR-parallaxOne->getContentSize().width*0.5*SCALE_FACTOR,0));
+    parallaxFive->setAnchorPoint(Point(0.5, 0));
     this->addChild(parallaxFive);
     
     // player
     player = Player::create();
     player->retain();
     this->addChild(player);
-    player->setPosition(level->tileCoordinateToPosition(Point(60,1)));
+    player->setPosition(level->tileCoordinateToPosition(Point(16,2)));
     player->setGlobalZOrder(Z_PLY);
     
     // camera
@@ -181,12 +183,12 @@ bool TestSceneThree::init()
     _touchEnabled = true;
     auto touchListener = EventListenerTouchOneByOne::create();
     touchListener->setSwallowTouches(true);
-    touchListener->onTouchBegan = CC_CALLBACK_2(TestSceneThree::onTouchBegan, this);
+    touchListener->onTouchBegan = CC_CALLBACK_2(TestSceneFour::onTouchBegan, this);
     Director::getInstance()->getEventDispatcher()->addEventListenerWithSceneGraphPriority(touchListener, this);
-    this->schedule(schedule_selector(TestSceneThree::update), 0.01f);
+    this->schedule(schedule_selector(TestSceneFour::update), 0.01f);
     
     Device::setAccelerometerEnabled(true);
-    auto listener = EventListenerAcceleration::create(CC_CALLBACK_2(TestSceneThree::onAcceleration, this));
+    auto listener = EventListenerAcceleration::create(CC_CALLBACK_2(TestSceneFour::onAcceleration, this));
     _eventDispatcher->addEventListenerWithSceneGraphPriority(listener, this);
     Device::setAccelerometerInterval(1/100);
     

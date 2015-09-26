@@ -87,18 +87,18 @@ void GameScene::onAcceleration(cocos2d::Acceleration *acc, cocos2d::Event *event
     float accX = acc->x;
     float meanAcc = 0;
     
-    accelBuffer.push_back(accX);
-    if (accelBuffer.size() > 3)
-    {
-        accelBuffer.erase(accelBuffer.begin());
-    }
-    
-    for (int i = 0; i < accelBuffer.size(); i++)
-    {
-        meanAcc = meanAcc + accelBuffer[i];
-    }
-    
-    accX = meanAcc/accelBuffer.size();
+//    accelBuffer.push_back(accX);
+//    if (accelBuffer.size() > 3)
+//    {
+//        accelBuffer.erase(accelBuffer.begin());
+//    }
+//    
+//    for (int i = 0; i < accelBuffer.size(); i++)
+//    {
+//        meanAcc = meanAcc + accelBuffer[i];
+//    }
+//    
+//    accX = meanAcc/accelBuffer.size();
     
     if (accX > ACCELSENSITIVITY && !_gameOver)
     {
@@ -225,7 +225,7 @@ void GameScene::checkCollisionY()
     {
         if ((tile.containsPoint(tmp1pos)) || (tile.containsPoint(tmp2pos)))
         {
-            float mapheight = ((float)level->getMap()->getMapSize().height - 3) * 16 * SCALE_FACTOR;
+            float mapheight = ((float)level->getMap()->getMapSize().height - 4) * 16 * SCALE_FACTOR;
 //            log("Position Y: %f", player->getPositionY());
 //            log("Mapheight: %f", mapheight);
             if (player->getPlayerVelocity().y > 0 && player->getPosition().y+player->getContentSize().height >= mapheight)
@@ -271,11 +271,17 @@ void GameScene::checkHit()
         {
             if (pills != NULL)
             {
+                if (pills->getTrigger() == toTrigger)
+                {
+                    pills->setTriggered(true);
+                    pills->setVisible(true);
+
+                }
                 Rect pillRect = pills->getBoundingBox();
                 Rect playerRect = player->getBoundingBox();
-                if (pillRect.intersectsRect(playerRect))
+                if (pillRect.intersectsRect(playerRect) && pills->getTriggered())
                 {
-                    if (pills->getTag() == 1)
+                    if (pills->getTaste() == 1)
                     {
                         player->moveUp();
                         ParticleSystemQuad* p = ParticleSystemQuad::create("explosionPink.plist");
@@ -283,10 +289,10 @@ void GameScene::checkHit()
                         p->setPositionType(ParticleSystemQuad::PositionType::RELATIVE);
                         p->setPosition(pills->getPosition()+Point(pills->getContentSize()/2));
                         addChild(p);
-                        _shadowLayer->setShadowColor(Vec4(0.86,0.17,0.87,0.55));
+//                        _shadowLayer->setShadowColor(Vec4(0.86,0.17,0.87,0.55));
                         CocosDenshion::SimpleAudioEngine::getInstance()->playEffect("bloop.wav");
                     }
-                    else if (pills->getTag() == 2)
+                    else if (pills->getTaste() == 2)
                     {
                         player->moveUpDouble();
                         ParticleSystemQuad* p = ParticleSystemQuad::create("explosionCyan.plist");
@@ -294,10 +300,10 @@ void GameScene::checkHit()
                         p->setPositionType(ParticleSystemQuad::PositionType::RELATIVE);
                         p->setPosition(pills->getPosition()+Point(pills->getContentSize()/2));
                         addChild(p);
-                        _shadowLayer->setShadowColor(Vec4(0.17,0.85,0.86,0.55));
+//                        _shadowLayer->setShadowColor(Vec4(0.17,0.85,0.86,0.55));
                         CocosDenshion::SimpleAudioEngine::getInstance()->playEffect("woooh.wav");
                     }
-                    else if (pills->getTag() == 3)
+                    else if (pills->getTaste() == 3)
                     {
                         score = score*2;
                         player->moveUp();
@@ -306,7 +312,18 @@ void GameScene::checkHit()
                         p->setPositionType(ParticleSystemQuad::PositionType::RELATIVE);
                         p->setPosition(pills->getPosition()+Point(pills->getContentSize()/2));
                         addChild(p);
-                        _shadowLayer->setShadowColor(Vec4(0.21,0.86,0.17,0.55));
+//                        _shadowLayer->setShadowColor(Vec4(0.21,0.86,0.17,0.55));
+                        CocosDenshion::SimpleAudioEngine::getInstance()->playEffect("bloop.wav");
+                    }
+                    else if (pills->getTaste() == 4)
+                    {
+                        player->moveUp();
+                        toTrigger = pills->getTrigger();
+                        ParticleSystemQuad* p = ParticleSystemQuad::create("explosionYellow.plist");
+                        p->setGlobalZOrder(1010);
+                        p->setPositionType(ParticleSystemQuad::PositionType::RELATIVE);
+                        p->setPosition(pills->getPosition()+Point(pills->getContentSize()/2));
+                        addChild(p);
                         CocosDenshion::SimpleAudioEngine::getInstance()->playEffect("bloop.wav");
                     }
                     else
@@ -341,10 +358,12 @@ void GameScene::checkHit()
                         explosion->setPosition(Vec2(player->getPosition()+player->getContentSize()*0.5));
                         addChild(explosion);
                         cameraOff = true;
-                        auto moveBy1 = MoveBy::create(0.1, Vec2(-5,-10));
-                        auto moveBy2 = MoveBy::create(0.1, Vec2(3,15));
-                        auto moveBy3 = MoveBy::create(0.1, Vec2(2,-5));
-                        cameraTarget->runAction(Sequence::create(moveBy1, moveBy2, moveBy3, nullptr));
+                        auto moveBy1 = MoveBy::create(0.07, Vec2(-15,-20));
+                        auto moveBy2 = MoveBy::create(0.07, Vec2(5,10));
+                        auto moveBy3 = MoveBy::create(0.07, Vec2(10,-10));
+                        auto moveBy4 = MoveBy::create(0.07, Vec2(-20,-5));
+                        auto moveBy5 = MoveBy::create(0.07, Vec2(20,5));
+                        cameraTarget->runAction(Sequence::create(moveBy1, moveBy2, moveBy3, moveBy4, moveBy5, nullptr));
                         gameOver();
                         CocosDenshion::SimpleAudioEngine::getInstance()->playEffect("burn.wav");
                         

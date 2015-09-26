@@ -75,14 +75,19 @@ bool TestScene::init()
     ValueVector jumpPosition = levelObject->getObjects();
     for (auto current : jumpPosition)
     {
+        bool triggered;
         float x = current.asValueMap()["x"].asFloat();
         float y = current.asValueMap()["y"].asFloat();
         int taste = current.asValueMap()["taste"].asInt();
+        int trigger = current.asValueMap()["trigger"].asInt();
+        if (trigger != 0)
+            triggered = false;
+        else
+            triggered = true;
         int dmgObjType = current.asValueMap()["dmgObj"].asInt();
         if (taste != 0)
         {
-            pill = Consumable::create(taste);
-            pill->setTag(taste);
+            auto pill = Consumable::create(taste,trigger,triggered);
             pill->retain();
             pill->setPosition(Point(x*SCALE_FACTOR,y*SCALE_FACTOR));
             addChild(pill);

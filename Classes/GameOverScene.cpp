@@ -11,6 +11,7 @@
 #include "TestScene.h"
 #include "TestSceneTwo.h"
 #include "TestSceneThree.h"
+#include "TestSceneFour.h"
 #include "Globals.h"
 #include "LevelMenuScene.h"
 
@@ -84,6 +85,10 @@ void GameOverScene::gotToGameScene(Ref *sender)
     else if (currentLevel == 3)
     {
         scene = TestSceneThree::createScene();
+    }
+    else if (currentLevel == 4)
+    {
+        scene = TestSceneFour::createScene();
     }
     else
     {

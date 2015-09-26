@@ -36,6 +36,10 @@ Light* Light::create(int taste)
     {
         success = pSprite->initWithFile("light.png");
     }
+    else if (taste == 4)
+    {
+        success = pSprite->initWithFile("lightYellow.png");
+    }
     else if (taste == 9)
     {
     success = pSprite->initWithFile("lightWhite.png");
@@ -43,6 +47,7 @@ Light* Light::create(int taste)
     else
     {
         success = false;
+        log("Missing Light PNG");
     }
     
     if (success)

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <map version="1.0" orientation="orthogonal" renderorder="right-down" width="65" height="64" tilewidth="16" tileheight="16" nextobjectid="93">
  <tileset firstgid="1" name="tiles" tilewidth="16" tileheight="16">
-  <image source="tiles.png" width="128" height="48"/>
+  <image source="tiles.png" width="128" height="80"/>
  </tileset>
  <layer name="background" width="65" height="64">
   <data encoding="base64" compression="zlib">
@@ -10,12 +10,12 @@
  </layer>
  <layer name="wallShadow" width="65" height="64">
   <data encoding="base64" compression="zlib">
-   eJzt2MEJwDAMADEP0P3nLTdDDUlB949t9MyM6jl9wAUxYFAMGBQDBsWAQTFgUAz+a7B599dZpwwZMNjey4DBxiwGDDbe37CXAYONWQwYnIzBbgwYFAMGxYBBMWBQDBgUAwbFgEExYFB//UvbjAGDYsCgGDAoBgyKAYNiwKAYMCgGDIoBA828VoAFBQ==
+   eJzt2LEJxDAQAMEr4Ltw/z0+W4ATWyAZZkOBxDHBBZpR/XYPcEAMGBQDBsWAQTFgUAwYFIPvGlyzbva37+wyZHCWwd0su86fxIDBLHjHPmCw4v7TTjKwDxgUA/tgZwzWxoBBMWBQDBgUAwbFgEExYFAMGBQDBvXVv7SVMWBQDBgUAwbFgEExYFAMGBQDBsWAQTFgoJk/nrgMKQ==
   </data>
  </layer>
  <layer name="walls" width="65" height="64">
   <data encoding="base64" compression="zlib">
-   eJzt2ksKwkAQQMG5gG7U5P431Yd7QTMaJPWgl/nVbposY4zLgWd5zGkcu/NgwIBBMWBQDBgUAwbFgEHNMFh3nBnNMLjNeJEdn8uAQTFgUAwYFAMGxYBBMXBmKmdnBsWAQTFgUAwYFAMGxYBBMWBQDBjUXjuUb9//nZnxr+4nO61f74pe9c/7xFkxYFAMGBQDBsWAQTFgUAwYFAMGxYBBMXgatE+7bph14/V7T99/B0ihHfA=
+   eJzt2MEKgkAUhtF5gdqU+v5vWj8SuApjZpzK88HdCIqexYB3LqXcTjzzcy7l3F0LAwYMEgMGiQGDxIBBYsAgtTBYBk6LWhhMZf33Onqmyvd+xaCdwbbte/a8zoDBNxo4DxgwcB4kBgyS88A/0z/EgEFiwCAxYJAYMEgMGCQGDBIDBonBuB1K7+d/MtlJtd4n7unoXdG7euxUfy0GDBIDBokBg8SAQWLAIDFgkBgwSAwYJAarQfZp94pZKu8fPfn+B6S+NBw=
   </data>
  </layer>
  <objectgroup name="objects">

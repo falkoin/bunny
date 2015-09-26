@@ -61,7 +61,7 @@ protected:
     int nMaxClouds;
     int nMaxFallingObjects;
     bool _win;
-    Vector<Sprite*> pillVec;
+    Vector<Consumable*> pillVec;
     Vector<Sprite*> enemyVec;
     Vector<Movable*> cloudVec;
     Vector<Movable*> fallingVec;
@@ -78,6 +78,7 @@ protected:
     int nPills;
     bool awesomePlayed;
     bool cameraOff;
+    int toTrigger;
     
     std::vector<float> accelBuffer;
 

@@ -1,0 +1,236 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.0" orientation="orthogonal" renderorder="right-down" width="32" height="64" tilewidth="16" tileheight="16" nextobjectid="50">
+ <tileset firstgid="1" name="tiles" tilewidth="16" tileheight="16">
+  <image source="tiles.png" width="128" height="80"/>
+ </tileset>
+ <layer name="background" width="32" height="64">
+  <data encoding="base64" compression="zlib">
+   eJztwwEJAAAMBKEL8/0zLsdAwVVTVVVVVVVVVV8/bi0gEA==
+  </data>
+ </layer>
+ <layer name="wallShadow" width="32" height="64">
+  <data encoding="base64" compression="zlib">
+   eJztzUENAAAIxLATgAv8ewQbhC7Zu4l6Lz6fz+fz+Xw+n8/n8/l8Pp/P5/P5fD6fz+ef9z839B4LBQ==
+  </data>
+ </layer>
+ <layer name="walls" width="32" height="64">
+  <data encoding="base64" compression="zlib">
+   eJztzbEJAAAMw7Cckf8v7ROFDpXBs5qkz7+Kz+fz+Xw+n8/n8/l8Pp/P5/P5fD6fz+fz+bv+5wdkTBdB
+  </data>
+ </layer>
+ <objectgroup name="objects">
+  <object id="1" x="208" y="880" width="16" height="16">
+   <properties>
+    <property name="taste" value="4"/>
+    <property name="trigger" value="1"/>
+   </properties>
+  </object>
+  <object id="3" x="80" y="944" width="16" height="16">
+   <properties>
+    <property name="taste" value="1"/>
+   </properties>
+  </object>
+  <object id="4" x="80" y="896" width="16" height="16">
+   <properties>
+    <property name="taste" value="1"/>
+   </properties>
+  </object>
+  <object id="5" x="80" y="848" width="16" height="16">
+   <properties>
+    <property name="taste" value="1"/>
+   </properties>
+  </object>
+  <object id="6" x="80" y="800" width="16" height="16">
+   <properties>
+    <property name="taste" value="1"/>
+   </properties>
+  </object>
+  <object id="7" x="80" y="752" width="16" height="16">
+   <properties>
+    <property name="taste" value="1"/>
+   </properties>
+  </object>
+  <object id="8" x="208" y="816" width="16" height="16">
+   <properties>
+    <property name="taste" value="1"/>
+    <property name="trigger" value="1"/>
+   </properties>
+  </object>
+  <object id="9" x="208" y="752" width="16" height="16">
+   <properties>
+    <property name="taste" value="1"/>
+    <property name="trigger" value="1"/>
+   </properties>
+  </object>
+  <object id="14" x="400" y="864" width="16" height="16">
+   <properties>
+    <property name="taste" value="4"/>
+    <property name="trigger" value="2"/>
+   </properties>
+  </object>
+  <object id="20" x="400" y="800" width="16" height="16">
+   <properties>
+    <property name="taste" value="1"/>
+    <property name="trigger" value="2"/>
+   </properties>
+  </object>
+  <object id="22" x="400" y="224" width="16" height="16">
+   <properties>
+    <property name="taste" value="2"/>
+    <property name="trigger" value="2"/>
+   </properties>
+  </object>
+  <object id="23" x="400" y="736" width="16" height="16">
+   <properties>
+    <property name="taste" value="1"/>
+    <property name="trigger" value="2"/>
+   </properties>
+  </object>
+  <object id="24" x="400" y="672" width="16" height="16">
+   <properties>
+    <property name="taste" value="1"/>
+    <property name="trigger" value="2"/>
+   </properties>
+  </object>
+  <object id="25" x="400" y="416" width="16" height="16">
+   <properties>
+    <property name="taste" value="1"/>
+    <property name="trigger" value="2"/>
+   </properties>
+  </object>
+  <object id="26" x="400" y="480" width="16" height="16">
+   <properties>
+    <property name="taste" value="1"/>
+    <property name="trigger" value="2"/>
+   </properties>
+  </object>
+  <object id="27" x="400" y="608" width="16" height="16">
+   <properties>
+    <property name="taste" value="1"/>
+    <property name="trigger" value="2"/>
+   </properties>
+  </object>
+  <object id="28" x="400" y="352" width="16" height="16">
+   <properties>
+    <property name="taste" value="1"/>
+    <property name="trigger" value="2"/>
+   </properties>
+  </object>
+  <object id="29" x="400" y="544" width="16" height="16">
+   <properties>
+    <property name="taste" value="1"/>
+    <property name="trigger" value="2"/>
+   </properties>
+  </object>
+  <object id="30" x="400" y="288" width="16" height="16">
+   <properties>
+    <property name="taste" value="1"/>
+    <property name="trigger" value="2"/>
+   </properties>
+  </object>
+  <object id="31" x="80" y="704" width="16" height="16">
+   <properties>
+    <property name="taste" value="1"/>
+   </properties>
+  </object>
+  <object id="32" x="80" y="608" width="16" height="16">
+   <properties>
+    <property name="taste" value="1"/>
+   </properties>
+  </object>
+  <object id="33" x="80" y="560" width="16" height="16">
+   <properties>
+    <property name="taste" value="1"/>
+   </properties>
+  </object>
+  <object id="34" x="80" y="656" width="16" height="16">
+   <properties>
+    <property name="taste" value="1"/>
+   </properties>
+  </object>
+  <object id="35" x="80" y="512" width="16" height="16">
+   <properties>
+    <property name="taste" value="1"/>
+   </properties>
+  </object>
+  <object id="36" x="80" y="464" width="16" height="16">
+   <properties>
+    <property name="taste" value="1"/>
+   </properties>
+  </object>
+  <object id="37" x="80" y="368" width="16" height="16">
+   <properties>
+    <property name="taste" value="1"/>
+   </properties>
+  </object>
+  <object id="38" x="80" y="320" width="16" height="16">
+   <properties>
+    <property name="taste" value="1"/>
+   </properties>
+  </object>
+  <object id="39" x="80" y="416" width="16" height="16">
+   <properties>
+    <property name="taste" value="1"/>
+   </properties>
+  </object>
+  <object id="40" x="80" y="272" width="16" height="16">
+   <properties>
+    <property name="taste" value="1"/>
+   </properties>
+  </object>
+  <object id="41" x="208" y="624" width="16" height="16">
+   <properties>
+    <property name="taste" value="1"/>
+    <property name="trigger" value="1"/>
+   </properties>
+  </object>
+  <object id="42" x="208" y="688" width="16" height="16">
+   <properties>
+    <property name="taste" value="1"/>
+    <property name="trigger" value="1"/>
+   </properties>
+  </object>
+  <object id="43" x="208" y="368" width="16" height="16">
+   <properties>
+    <property name="taste" value="1"/>
+    <property name="trigger" value="1"/>
+   </properties>
+  </object>
+  <object id="44" x="208" y="496" width="16" height="16">
+   <properties>
+    <property name="taste" value="1"/>
+    <property name="trigger" value="1"/>
+   </properties>
+  </object>
+  <object id="45" x="208" y="560" width="16" height="16">
+   <properties>
+    <property name="taste" value="1"/>
+    <property name="trigger" value="1"/>
+   </properties>
+  </object>
+  <object id="46" x="208" y="432" width="16" height="16">
+   <properties>
+    <property name="taste" value="1"/>
+    <property name="trigger" value="1"/>
+   </properties>
+  </object>
+  <object id="47" x="208" y="304" width="16" height="16">
+   <properties>
+    <property name="taste" value="1"/>
+    <property name="trigger" value="1"/>
+   </properties>
+  </object>
+  <object id="48" x="208" y="240" width="16" height="16">
+   <properties>
+    <property name="taste" value="1"/>
+    <property name="trigger" value="1"/>
+   </properties>
+  </object>
+  <object id="49" x="208" y="176" width="16" height="16">
+   <properties>
+    <property name="taste" value="1"/>
+    <property name="trigger" value="1"/>
+   </properties>
+  </object>
+ </objectgroup>
+</map>

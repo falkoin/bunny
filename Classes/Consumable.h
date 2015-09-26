@@ -16,15 +16,20 @@ class Consumable : public cocos2d::Sprite
 public:
     Consumable();
     virtual ~Consumable();
-    static Consumable* create(int taste);
+    static Consumable* create(int taste, int trigger, bool triggered);
     int getTaste();
+    int getTrigger();
+    void setTriggered(bool triggered);
+    bool getTriggered();
 private:
-    void initOptions(int taste);
+    void initOptions(int taste, int trigger, bool triggered);
+    bool _triggered;
     
     CC_SYNTHESIZE(cocos2d::Action*, idleAnimation, IdleAnimation);
     cocos2d::AnimationCache *_idleCache;
     cocos2d::Animation *_idleAnimation;
     int _taste;
+    int _trigger;
 };
 
 #endif /* defined(__bunny__Consumable__) */

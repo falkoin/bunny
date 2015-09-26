@@ -27,7 +27,6 @@ public:
     // implement the "static create()" method manually
     CREATE_FUNC(TestSceneThree);
 protected:
-    cocos2d::Sprite* pill;
 };
 
 #endif /* defined(__bunny__TestSceneThree__) */

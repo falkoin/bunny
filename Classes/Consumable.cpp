@@ -19,19 +19,28 @@ Consumable::~Consumable()
 {
 }
 
-Consumable* Consumable::create(int taste)
+Consumable* Consumable::create(int taste, int trigger, bool triggered)
 {
     SpriteFrameCache::getInstance()->addSpriteFramesWithFile("sprites-0001-default.plist");
     Consumable* pSprite = new Consumable();
     
     if (pSprite->initWithSpriteFrameName("pill_00.png"))
     {
-        pSprite->initOptions(taste);
+        pSprite->initOptions(taste, trigger, triggered);
         pSprite->autorelease();
         pSprite->getTexture()->setAliasTexParameters();
         pSprite->setScale(SCALE_FACTOR);
         pSprite->setFlippedX(false);
         pSprite->setAnchorPoint(Point(0,0));
+        if (triggered)
+        {
+            pSprite->setVisible(true);
+        }
+        else
+        {
+            pSprite->setVisible(false);
+        }
+            
         
         return pSprite;
     }
@@ -40,9 +49,11 @@ Consumable* Consumable::create(int taste)
     return NULL;
 }
 
-void Consumable::initOptions(int taste)
+void Consumable::initOptions(int taste, int trigger, bool triggered)
 {
     _taste = taste;
+    _trigger = trigger;
+    _triggered = triggered;
     switch (_taste) {
         case 1:
             AnimationCache::getInstance()->addAnimationsWithFile("consumable-animations.plist");
@@ -52,11 +63,13 @@ void Consumable::initOptions(int taste)
             break;
         case 3:
             AnimationCache::getInstance()->addAnimationsWithFile("doublePoints-animations.plist");
+            break;
+        case 4:
+            AnimationCache::getInstance()->addAnimationsWithFile("trigger-animations.plist");
+            break;
         default:
             break;
     }
-//    AnimationCache::getInstance()->addAnimationsWithFile("consumable-animations.plist");
-    
     // idle animation
     _idleCache = AnimationCache::getInstance();
     _idleAnimation = _idleCache->getAnimation("idle");
@@ -72,4 +85,19 @@ void Consumable::initOptions(int taste)
 int Consumable::getTaste()
 {
     return _taste;
+}
+
+int Consumable::getTrigger()
+{
+    return _trigger;
+}
+
+void Consumable::setTriggered(bool triggered)
+{
+    _triggered = triggered;
+}
+
+bool Consumable::getTriggered()
+{
+    return _triggered;
 }

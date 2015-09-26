@@ -15,8 +15,8 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "1D6058900D05DD3D006BFB54"
-               BuildableName = "bunny iOS.app"
-               BlueprintName = "bunny iOS"
+               BuildableName = "Toilet Game.app"
+               BlueprintName = "Toilet Game"
                ReferencedContainer = "container:bunny.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -33,8 +33,8 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "1D6058900D05DD3D006BFB54"
-            BuildableName = "bunny iOS.app"
-            BlueprintName = "bunny iOS"
+            BuildableName = "Toilet Game.app"
+            BlueprintName = "Toilet Game"
             ReferencedContainer = "container:bunny.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
@@ -56,8 +56,8 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "1D6058900D05DD3D006BFB54"
-            BuildableName = "bunny iOS.app"
-            BlueprintName = "bunny iOS"
+            BuildableName = "Toilet Game.app"
+            BlueprintName = "Toilet Game"
             ReferencedContainer = "container:bunny.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
@@ -75,8 +75,8 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "1D6058900D05DD3D006BFB54"
-            BuildableName = "bunny iOS.app"
-            BlueprintName = "bunny iOS"
+            BuildableName = "Toilet Game.app"
+            BlueprintName = "Toilet Game"
             ReferencedContainer = "container:bunny.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
