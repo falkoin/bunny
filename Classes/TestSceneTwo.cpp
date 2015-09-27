@@ -43,6 +43,7 @@ bool TestSceneTwo::init()
     visibleSize = Director::getInstance()->getVisibleSize();
     origin = Director::getInstance()->getVisibleOrigin();
     Director::getInstance()->setProjection(cocos2d::DisplayLinkDirector::Projection::_2D);
+    
     // map
     level = new Level();
     level->loadMap("testLevel2.tmx",this);
@@ -224,7 +225,7 @@ bool TestSceneTwo::init()
     score = 0;
     _win = false;
     lastPlayerPosition = player->getPosition();
-    awesomePlayed = false;
+    soundState = playYeah;
     cameraOff = false;
     nPills = pillVec.size();
     this->scheduleUpdate();

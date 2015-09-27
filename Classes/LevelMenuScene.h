@@ -20,6 +20,7 @@ private:
     void goToLevelTwo(Ref *sender);
     void goToLevelThree(Ref *sender);
     void goToLevelFour(Ref *sender);
+    void goToLevelFive(Ref *sender);
 };
 
 #endif // __LEVEL_MENU_SCENE_H__

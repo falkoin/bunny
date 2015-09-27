@@ -238,7 +238,7 @@ bool TestScene::init()
     
     lastPlayerFallingPosition = player->getPositionY();
     playerFallDistance = 0.0f;
-    awesomePlayed = false;
+    soundState = playYeah;
     nPills = pillVec.size();
     cameraOff = false;
     

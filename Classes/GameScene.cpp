@@ -289,7 +289,6 @@ void GameScene::checkHit()
                         p->setPositionType(ParticleSystemQuad::PositionType::RELATIVE);
                         p->setPosition(pills->getPosition()+Point(pills->getContentSize()/2));
                         addChild(p);
-//                        _shadowLayer->setShadowColor(Vec4(0.86,0.17,0.87,0.55));
                         CocosDenshion::SimpleAudioEngine::getInstance()->playEffect("bloop.wav");
                     }
                     else if (pills->getTaste() == 2)
@@ -300,7 +299,6 @@ void GameScene::checkHit()
                         p->setPositionType(ParticleSystemQuad::PositionType::RELATIVE);
                         p->setPosition(pills->getPosition()+Point(pills->getContentSize()/2));
                         addChild(p);
-//                        _shadowLayer->setShadowColor(Vec4(0.17,0.85,0.86,0.55));
                         CocosDenshion::SimpleAudioEngine::getInstance()->playEffect("woooh.wav");
                     }
                     else if (pills->getTaste() == 3)
@@ -312,7 +310,6 @@ void GameScene::checkHit()
                         p->setPositionType(ParticleSystemQuad::PositionType::RELATIVE);
                         p->setPosition(pills->getPosition()+Point(pills->getContentSize()/2));
                         addChild(p);
-//                        _shadowLayer->setShadowColor(Vec4(0.21,0.86,0.17,0.55));
                         CocosDenshion::SimpleAudioEngine::getInstance()->playEffect("bloop.wav");
                     }
                     else if (pills->getTaste() == 4)
@@ -358,11 +355,11 @@ void GameScene::checkHit()
                         explosion->setPosition(Vec2(player->getPosition()+player->getContentSize()*0.5));
                         addChild(explosion);
                         cameraOff = true;
-                        auto moveBy1 = MoveBy::create(0.07, Vec2(-15,-20));
-                        auto moveBy2 = MoveBy::create(0.07, Vec2(5,10));
-                        auto moveBy3 = MoveBy::create(0.07, Vec2(10,-10));
-                        auto moveBy4 = MoveBy::create(0.07, Vec2(-20,-5));
-                        auto moveBy5 = MoveBy::create(0.07, Vec2(20,5));
+                        auto moveBy1 = MoveBy::create(0.07, Vec2(-16,-16));
+                        auto moveBy2 = MoveBy::create(0.07, Vec2(8,24));
+                        auto moveBy3 = MoveBy::create(0.07, Vec2(16,-16));
+                        auto moveBy4 = MoveBy::create(0.07, Vec2(-16,-8));
+                        auto moveBy5 = MoveBy::create(0.07, Vec2(8,16));
                         cameraTarget->runAction(Sequence::create(moveBy1, moveBy2, moveBy3, moveBy4, moveBy5, nullptr));
                         gameOver();
                         CocosDenshion::SimpleAudioEngine::getInstance()->playEffect("burn.wav");
@@ -396,6 +393,17 @@ void GameScene::updateCamera()
     auto mapSize = level->getMap()->getMapSize();
     int mapHeight = mapSize.height*16*SCALE_FACTOR;
     int mapWidth = mapSize.width*16*SCALE_FACTOR;
+    
+//    if (player->getPlayerVelocity().y >= PLAYER_MAX_JUMP_VELOCITY)
+//    {
+////        this->runAction(ScaleTo::create(0.5,SCALE_FACTOR*0.75));
+//        this->setScale(1);
+//    }
+//    else
+//    {
+////        this->runAction(ScaleTo::create(0.5,SCALE_FACTOR));
+//        this->setScale(1.25);
+//    }
     
     if (!cameraOff)
     {
@@ -567,7 +575,7 @@ void GameScene::updateGameobjects()
         auto clouds = Movable::create(random(0.1, 0.4),"cloud.png");
         clouds->setPosition(Point(0-clouds->getContentSize().width, level->getMap()->getMapSize().height*16*SCALE_FACTOR*random(0.2,0.9)));
         clouds->setScale(random(SCALE_FACTOR, SCALE_FACTOR*2));
-        clouds->setGlobalZOrder(2);
+        clouds->setGlobalZOrder(Z_AIR);
         clouds->retain();
         addChild(clouds);
         cloudVec.pushBack(clouds);
@@ -577,18 +585,24 @@ void GameScene::updateGameobjects()
     player->animate();
     
     // sounds
-    
-    if (pillVec.size() <= round(nPills*0.2) && !awesomePlayed)
+    if (pillVec.size() <= round(nPills*0.1) && soundState == playBrilliant)
+    {
+//        CocosDenshion::SimpleAudioEngine::getInstance()->playEffect("awesome.wav");
+        _hud->shouOut((std::string)"Brilliant!!!");
+        soundState = playNone;
+    }
+    else if (pillVec.size() <= round(nPills*0.25) && soundState == playAwesome)
     {
         CocosDenshion::SimpleAudioEngine::getInstance()->playEffect("awesome.wav");
         _hud->shouOut((std::string)"Awesome!!!");
-        awesomePlayed = true;
+        soundState = playBrilliant;
     }
-    
-    // falling objects
-    
-    if (fallingVec.size() < nMaxFallingObjects)
+    else if (pillVec.size() <= round(nPills*0.5) && soundState == playYeah)
     {
-        
+//        CocosDenshion::SimpleAudioEngine::getInstance()->playEffect("awesome.wav");
+        _hud->shouOut((std::string)"Yeah!!!");
+        soundState = playAwesome;
     }
+    
+    
 }

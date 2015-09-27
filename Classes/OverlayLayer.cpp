@@ -38,14 +38,7 @@ bool OverlayLayer::init()
     _trialWinLabel->setGlobalZOrder(9999);
     _trialWinLabel->retain();
     
-    _shoutWinLabel = cocos2d::Label::createWithBMFont("CartonSixBMP.fnt","",CCTextAlignment::CENTER);
-    _shoutWinLabel->setColor(cocos2d::Color3B(255, 255, 255));
-    _shoutWinLabel->setPosition(cocos2d::Vec2(origin.x + visibleSize.width*0.5f,origin.y + visibleSize.height*(0.9f)));
-    _shoutWinLabel->setAnchorPoint(Point(0.5,0.5));
-    _shoutWinLabel->setScale(SCALE_FACTOR/9);
-    _shoutWinLabel->getTexture()->setAliasTexParameters();
-    _shoutWinLabel->setGlobalZOrder(9999);
-    _shoutWinLabel->retain();
+
     
     _scoreLabel = cocos2d::Label::createWithBMFont("CartonSixBMP.fnt","");
     _scoreLabel->setColor(cocos2d::Color3B(255, 255, 255));
@@ -84,17 +77,25 @@ void OverlayLayer::updateScore(int score)
 
 void OverlayLayer::shouOut(std::string shoutoutText)
 {
-    _shoutWinLabel->Label::setString(shoutoutText);
-    _shoutWinLabel->setOpacity(0);
-    this->addChild(_shoutWinLabel);
+    auto shoutWinLabel = cocos2d::Label::createWithBMFont("CartonSixBMP.fnt","",CCTextAlignment::CENTER);
+    shoutWinLabel->setColor(cocos2d::Color3B(255, 255, 255));
+    shoutWinLabel->setPosition(cocos2d::Vec2(origin.x + visibleSize.width*0.5f,origin.y + visibleSize.height*(0.9f)));
+    shoutWinLabel->setAnchorPoint(Point(0.5,0.5));
+    shoutWinLabel->setScale(SCALE_FACTOR/9);
+    shoutWinLabel->getTexture()->setAliasTexParameters();
+    shoutWinLabel->setGlobalZOrder(9999);
+    shoutWinLabel->Label::setString(shoutoutText);
+    shoutWinLabel->setOpacity(0);
+    this->addChild(shoutWinLabel);
     
     auto fadeIn = FadeIn::create(0.5f);
     auto fadeOut = FadeOut::create(1.0f);
     auto testN = ScaleTo::create(0.5, SCALE_FACTOR/3);
+    auto removeMe = RemoveSelf::create();
     
     auto spawnC = Spawn::create(Spawn::create(fadeIn, testN, nullptr), nullptr);
     
-    _shoutWinLabel->runAction(Sequence::create(spawnC, fadeOut, nullptr));
+    shoutWinLabel->runAction(Sequence::create(spawnC, fadeOut, removeMe, nullptr));
     
 }
 

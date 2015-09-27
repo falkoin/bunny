@@ -193,7 +193,7 @@ bool TestSceneThree::init()
     // parameters
     score = 0;
     _win = false;
-    awesomePlayed = false;
+    soundState = playYeah;
     cameraOff = false;
     nPills = pillVec.size();
     this->scheduleUpdate();

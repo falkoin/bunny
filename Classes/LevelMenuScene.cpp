@@ -3,6 +3,7 @@
 #include "TestSceneTwo.h"
 #include "TestSceneThree.h"
 #include "TestSceneFour.h"
+#include "TestSceneFive.h"
 #include "Globals.h"
 #include "SimpleAudioEngine.h"
 #include "CocosGUI.h"
@@ -60,7 +61,7 @@ bool LevelMenuScene::init()
     scrollView->setContentSize(scollFrameSize);
     scrollView->setPosition(Point(0, 0));
     scrollView->setDirection(cocos2d::ui::ScrollView::Direction::VERTICAL);
-    scrollView->setBounceEnabled(true);
+    scrollView->setBounceEnabled(false);
     scrollView->setTouchEnabled(true);
     auto containerSize = Size(scollFrameSize.width, scollFrameSize.height*2);
     scrollView->setInnerContainerSize(containerSize);
@@ -83,14 +84,15 @@ bool LevelMenuScene::init()
     playItem4->setScale(SCALE_FACTOR/3.0f);
     playItem4->setPosition(Point( containerSize.width / 2 + origin.x, containerSize.height * 2.6/4 + origin.y));
     
-    auto menu = Menu::create(playItem, playItem2, playItem3, playItem4, NULL);
+    auto playItem5 = MenuItemImage::create("lvl05.png","lvl05pressed.png",CC_CALLBACK_1(LevelMenuScene::goToLevelFive, this));
+    playItem5->setScale(SCALE_FACTOR/3.0f);
+    playItem5->setPosition(Point( containerSize.width / 2 + origin.x, containerSize.height * 2.3/4 + origin.y));
+
+    auto menu = Menu::create(playItem, playItem2, playItem3, playItem4, playItem5,  NULL);
     menu->setPosition(Point::ZERO);
     
     scrollView->addChild(menu);
-    
-    
-    
-    
+
     return true;
 }
 
@@ -119,5 +121,12 @@ void LevelMenuScene::goToLevelFour(Ref *sender)
 {
     UserDefault::getInstance()->setIntegerForKey("currentLevel", 4);
     auto scene = TestSceneFour::createScene();
+    Director::getInstance()->replaceScene(TransitionFade::create(LEVEL_TRANSITION_TIME, scene));
+}
+
+void LevelMenuScene::goToLevelFive(Ref *sender)
+{
+    UserDefault::getInstance()->setIntegerForKey("currentLevel", 5);
+    auto scene = TestSceneFive::createScene();
     Director::getInstance()->replaceScene(TransitionFade::create(LEVEL_TRANSITION_TIME, scene));
 }

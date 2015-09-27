@@ -1,12 +1,12 @@
 //
-//  TestSceneThree.cpp
+//  TestSceneFive.cpp
 //  bunny
 //
 //  Created by Falko Döhring on 26.08.15.
 //
 //
 
-#include "TestSceneFour.h"
+#include "TestSceneFive.h"
 #include "GameScene.h"
 #include "Level.h"
 #include "Globals.h"
@@ -16,12 +16,12 @@
 
 USING_NS_CC;
 
-Scene* TestSceneFour::createScene()
+Scene* TestSceneFive::createScene()
 {
     auto scene = Scene::create();
     
     // 'layer' is an autorelease object
-    auto layer = TestSceneFour::create();
+    auto layer = TestSceneFive::create();
     
     // add layer as a child to scene
     scene->addChild(layer);
@@ -31,7 +31,7 @@ Scene* TestSceneFour::createScene()
 }
 
 // on "init" you need to initialize your instance
-bool TestSceneFour::init()
+bool TestSceneFive::init()
 {
     //////////////////////////////
     // 1. super init first
@@ -45,7 +45,7 @@ bool TestSceneFour::init()
     Director::getInstance()->setProjection(cocos2d::DisplayLinkDirector::Projection::_2D);
     // map
     level = new Level();
-    level->loadMap("testLevel4.tmx",this);
+    level->loadMap("testLevel5.tmx",this);
     level->getMap()->setScale(SCALE_FACTOR);
     this->addChild(level->getMap(),-1);
     auto bg = level->getMap()->getLayer("background");
@@ -75,18 +75,46 @@ bool TestSceneFour::init()
             triggered = false;
         else
             triggered = true;
-        auto pill = Consumable::create(taste,trigger,triggered);
-        pill->retain();
-        pill->setPosition(Point(x*SCALE_FACTOR,y*SCALE_FACTOR));
-        addChild(pill);
-        pill->setGlobalZOrder(Z_OBJ);
-        auto light = Light::create(taste);
-        light->retain();
-        light->setPosition(Point(pill->getContentSize().width*0.5,pill->getContentSize().height*0.5));
-        light->setScale(0.5);
-        light->setGlobalZOrder(Z_OBJLIGHT);
-        pill->addChild(light);
-        pillVec.pushBack(pill);
+        int dmgObjType = current.asValueMap()["dmgObj"].asInt();
+        if (taste != 0)
+        {
+            auto pill = Consumable::create(taste,trigger,triggered);
+            pill->retain();
+            pill->setPosition(Point(x*SCALE_FACTOR,y*SCALE_FACTOR));
+            addChild(pill);
+            pill->setGlobalZOrder(Z_OBJ);
+            auto light = Light::create(taste);
+            light->retain();
+            light->setPosition(Point(pill->getContentSize().width*0.5,pill->getContentSize().height*0.5));
+            light->setScale(0.5);
+            light->setGlobalZOrder(Z_OBJLIGHT);
+            pill->addChild(light);
+            pillVec.pushBack(pill);
+        }
+        if (dmgObjType != 0)
+        {
+            auto dmgObj = DamageObject::create(dmgObjType);
+            dmgObj->retain();
+            dmgObj->setPosition(Point(x*SCALE_FACTOR,y*SCALE_FACTOR));
+            dmgObj->setGlobalZOrder(Z_OBJ);
+            
+            //            dmgObj->setColor(Color3B(255,100,180));
+            collisionVec.pushBack(dmgObj);
+            addChild(dmgObj);
+            if (dmgObjType == 2)
+            {
+                auto light = Light::create(9);
+                light->retain();
+                light->setPosition(Point(dmgObj->getContentSize().width*0.5,dmgObj->getContentSize().height*0.5));
+                light->setScale(0.5);
+                light->setGlobalZOrder(Z_OBJLIGHT);
+                dmgObj->addChild(light);
+            }
+            if (dmgObjType == 3)
+            {
+                dmgObj->setGlobalZOrder(Z_WALLS-1);
+            }
+        }
     }
     
     // clouds
@@ -109,7 +137,7 @@ bool TestSceneFour::init()
     parallaxOne->setScale(SCALE_FACTOR);
     parallaxOne->getTexture()->setAliasTexParameters();
     parallaxOne->setAnchorPoint(Point(0.5, 0));
-    parallaxOne->setPosition(Point(16*16*SCALE_FACTOR-parallaxOne->getContentSize().width*0.5*SCALE_FACTOR,0));
+    parallaxOne->setPosition(Point(32*16*SCALE_FACTOR-parallaxOne->getContentSize().width*0.5*SCALE_FACTOR,0));
     this->addChild(parallaxOne);
     
     parallaxTwo = Sprite::create("parallaxHill002g.png");
@@ -118,7 +146,7 @@ bool TestSceneFour::init()
     parallaxTwo->setScale(SCALE_FACTOR);
     parallaxTwo->getTexture()->setAliasTexParameters();
     parallaxTwo->setAnchorPoint(Point(0.5, 0));
-    parallaxTwo->setPosition(Point(16*16*SCALE_FACTOR-parallaxOne->getContentSize().width*0.5*SCALE_FACTOR,0));
+    parallaxTwo->setPosition(Point(32*16*SCALE_FACTOR-parallaxTwo->getContentSize().width*0.5*SCALE_FACTOR,0));
     this->addChild(parallaxTwo);
     
     parallaxThree = Sprite::create("parallaxHill003g.png");
@@ -127,24 +155,24 @@ bool TestSceneFour::init()
     parallaxThree->setScale(SCALE_FACTOR);
     parallaxThree->getTexture()->setAliasTexParameters();
     parallaxThree->setAnchorPoint(Point(0.5, 0));
-    parallaxThree->setPosition(Point(16*16*SCALE_FACTOR-parallaxOne->getContentSize().width*0.5*SCALE_FACTOR,0));
+    parallaxThree->setPosition(Point(32*16*SCALE_FACTOR-parallaxThree->getContentSize().width*0.5*SCALE_FACTOR,0));
     this->addChild(parallaxThree);
     
     parallaxFour = Sprite::create("trees_2bw.png");
-    parallaxFour->setColor(Color3B(155,75,0));
+    parallaxFour->setColor(Color3B(55,75,52));
     parallaxFour->setGlobalZOrder(Z_PLX4);
     parallaxFour->setScale(SCALE_FACTOR);
     parallaxFour->getTexture()->setAliasTexParameters();
-    parallaxFour->setPosition(Point(16*16*SCALE_FACTOR-parallaxOne->getContentSize().width*0.5*SCALE_FACTOR,0));
+    parallaxFour->setPosition(Point(32*16*SCALE_FACTOR-parallaxFour->getContentSize().width*0.5*SCALE_FACTOR,0));
     parallaxFour->setAnchorPoint(Point(0.5, 0));
     this->addChild(parallaxFour);
     
     parallaxFive = Sprite::create("trees_bw.png");
-    parallaxFive->setColor(Color3B(135,155,0));
+    parallaxFive->setColor(Color3B(35,155,40));
     parallaxFive->setGlobalZOrder(Z_PLX5);
     parallaxFive->setScale(SCALE_FACTOR);
     parallaxFive->getTexture()->setAliasTexParameters();
-    parallaxFive->setPosition(Point(16*16*SCALE_FACTOR-parallaxOne->getContentSize().width*0.5*SCALE_FACTOR,0));
+    parallaxFive->setPosition(Point(64*16*SCALE_FACTOR-parallaxFive->getContentSize().width*0.5*SCALE_FACTOR,0));
     parallaxFive->setAnchorPoint(Point(0.5, 0));
     this->addChild(parallaxFive);
     
@@ -152,7 +180,7 @@ bool TestSceneFour::init()
     player = Player::create();
     player->retain();
     this->addChild(player);
-    player->setPosition(level->tileCoordinateToPosition(Point(16,2)));
+    player->setPosition(level->tileCoordinateToPosition(Point(32,2)));
     player->setGlobalZOrder(Z_PLY);
     
     // camera
@@ -183,12 +211,12 @@ bool TestSceneFour::init()
     _touchEnabled = true;
     auto touchListener = EventListenerTouchOneByOne::create();
     touchListener->setSwallowTouches(true);
-    touchListener->onTouchBegan = CC_CALLBACK_2(TestSceneFour::onTouchBegan, this);
+    touchListener->onTouchBegan = CC_CALLBACK_2(TestSceneFive::onTouchBegan, this);
     Director::getInstance()->getEventDispatcher()->addEventListenerWithSceneGraphPriority(touchListener, this);
-    this->schedule(schedule_selector(TestSceneFour::update), 0.01f);
+    this->schedule(schedule_selector(TestSceneFive::update), 0.01f);
     
     Device::setAccelerometerEnabled(true);
-    auto listener = EventListenerAcceleration::create(CC_CALLBACK_2(TestSceneFour::onAcceleration, this));
+    auto listener = EventListenerAcceleration::create(CC_CALLBACK_2(TestSceneFive::onAcceleration, this));
     _eventDispatcher->addEventListenerWithSceneGraphPriority(listener, this);
     Device::setAccelerometerInterval(1/100);
     

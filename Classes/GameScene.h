@@ -76,7 +76,11 @@ protected:
     float playerFallDistance;
     
     int nPills;
-    bool awesomePlayed;
+    enum soundPlayed
+    {
+        playAwesome, playYeah, playBrilliant, playNone
+    };
+    soundPlayed soundState;
     bool cameraOff;
     int toTrigger;
     
