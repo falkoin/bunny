@@ -2,6 +2,7 @@
 #include "TestScene.h"
 #include "Globals.h"
 #include "LevelMenuScene.h"
+#include "SimpleAudioEngine.h"
 
 
 USING_NS_CC;
@@ -39,14 +40,28 @@ bool MainMenuScene::init()
     backgroundSprite->setPosition(Point(visibleSize.width / 2 + origin.x, visibleSize.height / 2 + origin.y));
     this->addChild(backgroundSprite);
     
-    auto playItem = MenuItemImage::create("title.png","titleClicked.png",CC_CALLBACK_1(MainMenuScene::gotToGameScene, this));
+    auto playItem = MenuItemImage::create("buttonStart.png","buttonStartPressed.png",CC_CALLBACK_1(MainMenuScene::gotToGameScene, this));
     playItem->setScale(SCALE_FACTOR/3.0f);
-    playItem->setPosition(Point( visibleSize.width / 2 + origin.x, visibleSize.height / 2 + origin.y));
+    playItem->setPosition(Point( visibleSize.width / 2 + origin.x, visibleSize.height * 2/3 + origin.y));
     
-    auto menu = Menu::create(playItem,NULL);
+    auto playItem2 = MenuItemImage::create("buttonHighscore.png","buttonHighscorePressed.png",CC_CALLBACK_1(MainMenuScene::gotToGameScene, this));
+    playItem2->setScale(SCALE_FACTOR/3.0f);
+    playItem2->setPosition(Point( visibleSize.width / 2 + origin.x, visibleSize.height * 1/3 + origin.y));
+    
+    auto menu = Menu::create(playItem,playItem2,NULL);
     menu->setPosition(Point::ZERO);
     
     this->addChild(menu);
+    
+    // sound
+    CocosDenshion::SimpleAudioEngine::getInstance()->preloadEffect("bloop.wav");
+    CocosDenshion::SimpleAudioEngine::getInstance()->preloadEffect("woooh.wav");
+    CocosDenshion::SimpleAudioEngine::getInstance()->preloadEffect("ouch.wav");
+    CocosDenshion::SimpleAudioEngine::getInstance()->preloadEffect("awesome.wav");
+    CocosDenshion::SimpleAudioEngine::getInstance()->preloadEffect("burn.wav");
+    CocosDenshion::SimpleAudioEngine::getInstance()->preloadEffect("jump.wav");
+    CocosDenshion::SimpleAudioEngine::getInstance()->preloadEffect("fire.wav");
+    CocosDenshion::SimpleAudioEngine::getInstance()->setEffectsVolume(0.2);
     
     
     
@@ -57,5 +72,5 @@ bool MainMenuScene::init()
 void MainMenuScene::gotToGameScene(Ref *sender)
 {
     auto scene = LevelMenuScene::createScene();
-    Director::getInstance()->replaceScene(TransitionFade::create(2.0, scene));
+    Director::getInstance()->replaceScene(TransitionFade::create(LEVEL_TRANSITION_TIME, scene));
 }

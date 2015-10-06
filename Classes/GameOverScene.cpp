@@ -51,22 +51,57 @@ bool GameOverScene::init()
     auto backgroundSprite = Sprite::create("background.png");
     backgroundSprite->setPosition(Point(visibleSize.width / 2 + origin.x, visibleSize.height / 2 + origin.y));
     this->addChild(backgroundSprite);
+    auto gameoverSprite = Sprite::create("labelGameover.png");
+    gameoverSprite->setPosition(Point(visibleSize.width / 2 + origin.x, visibleSize.height * 8.5/10 + origin.y));
+    this->addChild(gameoverSprite,2);
 
-    auto playItem = MenuItemImage::create("retry.png","retryPressed.png",CC_CALLBACK_1(GameOverScene::gotToGameScene, this));
+    auto playItem = MenuItemImage::create("buttonRetry.png","buttonRetryPressed.png",CC_CALLBACK_1(GameOverScene::gotToGameScene, this));
     playItem->setScale(SCALE_FACTOR/3.0f);
-    playItem->setPosition(Point( visibleSize.width * 0.75 + origin.x, visibleSize.height / 2 + origin.y));
+    playItem->setPosition(Point( visibleSize.width * 0.5 + origin.x, visibleSize.height / 2 + origin.y));
     
-    auto playItem2 = MenuItemImage::create("back.png","backPressed.png",CC_CALLBACK_1(GameOverScene::gotToMenuScene, this));
-    playItem2->setScale(SCALE_FACTOR/3.0f);
-    playItem2->setPosition(Point( visibleSize.width * 0.25 + origin.x, visibleSize.height / 2 + origin.y));
+    auto playItem2 = MenuItemImage::create("buttonBack.png","buttonBackPressed.png",CC_CALLBACK_1(GameOverScene::gotToMenuScene, this));
+    playItem2->setScale(SCALE_FACTOR/6.0f);
+    playItem2->setPosition(Point(origin.x+visibleSize.width*1/10, visibleSize.height * 9.2/10 + origin.y));
     
     auto menu = Menu::create(playItem,playItem2,NULL);
     menu->setPosition(Point::ZERO);
     
     this->addChild(menu);
     
+    _scoreLabel = cocos2d::Label::createWithBMFont("CartonSixBMP.fnt","");
+    _scoreLabel->setColor(cocos2d::Color3B(255, 255, 255));
+    _scoreLabel->setAnchorPoint(Point(0.0,0.0));
+    _scoreLabel->setScale(SCALE_FACTOR*0.5);
+    _scoreLabel->getTexture()->setAliasTexParameters();
+    _scoreLabel->setGlobalZOrder(9999);
+    _scoreLabel->retain();
+    addChild(_scoreLabel);
+    int currentLevel = UserDefault::getInstance()->getIntegerForKey("currentLevel");
+    int score;
+    switch (currentLevel) {
+        case 1:
+            score = UserDefault::getInstance()->getIntegerForKey("Level01");
+            break;
+        case 2:
+            score = UserDefault::getInstance()->getIntegerForKey("Level02");
+            break;
+        case 3:
+            score = UserDefault::getInstance()->getIntegerForKey("Level03");
+            break;
+        case 4:
+            score = UserDefault::getInstance()->getIntegerForKey("Level04");
+            break;
+        case 5:
+            score = UserDefault::getInstance()->getIntegerForKey("Level05");
+            break;
+            
+        default:
+            break;
+    }
     
-    
+    _scoreLabel->Label::setString("Score: "+std::to_string(score));
+    _scoreLabel->setPosition(cocos2d::Vec2(origin.x + visibleSize.width*0.5f-_scoreLabel->getContentSize().width*0.5f-25,origin.y + origin.y+visibleSize.height*(0.25f)));
+
     
     return true;
 }

@@ -26,6 +26,7 @@ public:
 private:
     void gotToGameScene(Ref *sender);
     void gotToMenuScene(Ref *sender);
+    cocos2d::Label* _scoreLabel;
 };
 
 #endif /* defined(__bunny__GameOverScene__) */

@@ -55,6 +55,7 @@ protected:
     void checkCollisionY();
     void checkHit();
     void updateGameobjects();
+    void setHighscore(int highscore);
     virtual void gameOver();
     
     int score;

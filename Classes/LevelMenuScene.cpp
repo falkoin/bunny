@@ -4,8 +4,8 @@
 #include "TestSceneThree.h"
 #include "TestSceneFour.h"
 #include "TestSceneFive.h"
+#include "MainMenuScene.h"
 #include "Globals.h"
-#include "SimpleAudioEngine.h"
 #include "CocosGUI.h"
 #include "cocos-ext.h"
 
@@ -41,20 +41,22 @@ bool LevelMenuScene::init()
     Vec2 origin = Director::getInstance()->getVisibleOrigin();
     Director::getInstance()->setProjection(cocos2d::DisplayLinkDirector::Projection::_2D);
     
-    // sound
-    CocosDenshion::SimpleAudioEngine::getInstance()->preloadEffect("bloop.wav");
-    CocosDenshion::SimpleAudioEngine::getInstance()->preloadEffect("woooh.wav");
-    CocosDenshion::SimpleAudioEngine::getInstance()->preloadEffect("ouch.wav");
-    CocosDenshion::SimpleAudioEngine::getInstance()->preloadEffect("awesome.wav");
-    CocosDenshion::SimpleAudioEngine::getInstance()->preloadEffect("burn.wav");
-    CocosDenshion::SimpleAudioEngine::getInstance()->preloadEffect("jump.wav");
-    CocosDenshion::SimpleAudioEngine::getInstance()->preloadEffect("fire.wav");
-    CocosDenshion::SimpleAudioEngine::getInstance()->setEffectsVolume(0.2);
-    
-    
     auto backgroundSprite = Sprite::create("background.png");
     backgroundSprite->setPosition(Point(visibleSize.width / 2 + origin.x, visibleSize.height / 2 + origin.y));
-    this->addChild(backgroundSprite);
+    this->addChild(backgroundSprite,1);
+    
+    auto titleLabel = Sprite::create("levels.png");
+    titleLabel->setScale(SCALE_FACTOR/2.0f);
+    titleLabel->setPosition(Point(visibleSize.width / 2 + origin.x, visibleSize.height *9.2/10 + origin.y));
+    this->addChild(titleLabel,3);
+    
+    auto backItem = MenuItemImage::create("buttonBack.png","buttonBackPressed.png",CC_CALLBACK_1(LevelMenuScene::goBack, this));
+    backItem->setScale(SCALE_FACTOR/5.0f);
+    backItem->setPosition(Point(origin.x+visibleSize.width*1/10, visibleSize.height * 9.2/10 + origin.y));
+    auto menuBack = Menu::create(backItem, NULL);
+    menuBack->setPosition(Point::ZERO);
+    
+    this->addChild(menuBack,3);
     
     Size scollFrameSize = Size(visibleSize.width, visibleSize.height);
     auto scrollView = cocos2d::ui::ScrollView::create();
@@ -66,7 +68,7 @@ bool LevelMenuScene::init()
     auto containerSize = Size(scollFrameSize.width, scollFrameSize.height*2);
     scrollView->setInnerContainerSize(containerSize);
     
-    this->addChild(scrollView);
+    this->addChild(scrollView,2);
     
     auto playItem = MenuItemImage::create("lvl01.png","lvl01pressed.png",CC_CALLBACK_1(LevelMenuScene::goToLevelOne, this));
     playItem->setScale(SCALE_FACTOR/3.0f);
@@ -128,5 +130,11 @@ void LevelMenuScene::goToLevelFive(Ref *sender)
 {
     UserDefault::getInstance()->setIntegerForKey("currentLevel", 5);
     auto scene = TestSceneFive::createScene();
+    Director::getInstance()->replaceScene(TransitionFade::create(LEVEL_TRANSITION_TIME, scene));
+}
+
+void LevelMenuScene::goBack(Ref *sender)
+{
+    auto scene = MainMenuScene::createScene();
     Director::getInstance()->replaceScene(TransitionFade::create(LEVEL_TRANSITION_TIME, scene));
 }
