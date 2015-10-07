@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.0" orientation="orthogonal" renderorder="right-down" width="128" height="64" tilewidth="16" tileheight="16" nextobjectid="46">
+<map version="1.0" orientation="orthogonal" renderorder="right-down" width="128" height="64" tilewidth="16" tileheight="16" nextobjectid="47">
  <tileset firstgid="1" name="tiles" tilewidth="16" tileheight="16">
-  <image source="tiles.png" width="128" height="48"/>
+  <image source="tiles.png" width="128" height="80"/>
  </tileset>
- <tileset firstgid="25" name="tilesFG" tilewidth="16" tileheight="16">
+ <tileset firstgid="41" name="tilesFG" tilewidth="16" tileheight="16">
   <image source="tilesFG.png" width="48" height="32"/>
  </tileset>
  <layer name="background" width="128" height="64">
@@ -161,7 +161,10 @@
  <objectgroup name="enemys"/>
  <layer name="foreground" width="128" height="64">
   <data encoding="base64" compression="zlib">
-   eJztzLkNACAMA0DW4N1/TFJSUEAH0p3kxrGSEgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAMBfcqRE6uVm7U5+8KYW6ZFxuVm73X0CYV0ClQ==
+   eJztzLkNACAMA0DW4d1/PFJSUEAH0p3kxrGSEgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAMBfcqRE6uVm7U5+8KYW6ZFxuVm73X0CI3sEFQ==
   </data>
  </layer>
+ <objectgroup name="spawn">
+  <object id="46" x="1968" y="992" width="16" height="16"/>
+ </objectgroup>
 </map>

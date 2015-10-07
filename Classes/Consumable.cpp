@@ -26,16 +26,20 @@ Consumable* Consumable::create(int taste, int trigger, bool triggered)
     bool spriteLoad;
     switch (taste) {
         case 1:
-            spriteLoad = pSprite->initWithSpriteFrameName("pill_00.png");
+            spriteLoad = pSprite->initWithSpriteFrameName("pillPink.png");
             break;
         case 2:
-            spriteLoad = pSprite->initWithSpriteFrameName("pill_08.png");
+            spriteLoad = pSprite->initWithSpriteFrameName("pillCyan.png");
             break;
         case 3:
-            spriteLoad = pSprite->initWithSpriteFrameName("pill_17.png");
+            spriteLoad = pSprite->initWithSpriteFrameName("pillGreen.png");
             break;
         case 4:
-            spriteLoad = pSprite->initWithSpriteFrameName("pill_26.png");
+            spriteLoad = pSprite->initWithSpriteFrameName("pillYellow.png");
+            break;
+        case 5:
+            spriteLoad = pSprite->initWithSpriteFrameName("pillTemplate.png");
+            pSprite->setColor(Color3B(255, 180, 20));
             break;
             
         default:
@@ -97,10 +101,13 @@ void Consumable::initOptions(int taste, int trigger, bool triggered)
 //    idleAnimation = RepeatForever::create(Animate::create(_idleAnimation));
 //    idleAnimation->retain();
 //    runAction(idleAnimation);
-    float moveDuration = cocos2d::RandomHelper::random_real(0.7, 1.1);
-    auto moveBy1 = MoveBy::create(moveDuration, Vec2(0,20));
-    auto moveBy2 = MoveBy::create(moveDuration, Vec2(0,-20));
-    this->runAction(RepeatForever::create(Sequence::create(moveBy1, moveBy2, nullptr)));
+    if (taste != 5)
+    {
+        float moveDuration = cocos2d::RandomHelper::random_real(0.7, 1.1);
+        auto moveBy1 = MoveBy::create(moveDuration, Vec2(0,20));
+        auto moveBy2 = MoveBy::create(moveDuration, Vec2(0,-20));
+        this->runAction(RepeatForever::create(Sequence::create(moveBy1, moveBy2, nullptr)));
+    }
     
     
 }
@@ -123,4 +130,11 @@ void Consumable::setTriggered(bool triggered)
 bool Consumable::getTriggered()
 {
     return _triggered;
+}
+
+void Consumable::pushPill()
+{
+    auto moveBy1 = MoveBy::create(0.1, Vec2(0,-4*SCALE_FACTOR));
+    auto moveBy2 = MoveBy::create(0.1, Vec2(0,4*SCALE_FACTOR));
+    this->runAction(Sequence::create(moveBy1, moveBy2, nullptr));
 }

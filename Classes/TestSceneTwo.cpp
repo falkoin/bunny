@@ -181,7 +181,14 @@ bool TestSceneTwo::init()
     player = Player::create();
     player->retain();
     this->addChild(player);
-    player->setPosition(level->tileCoordinateToPosition(Point(120,1)));
+    auto *playerSpawn = level->getMap()->getObjectGroup("spawn");
+    ValueVector spawnPosition = playerSpawn->getObjects();
+    for (auto current : spawnPosition)
+    {
+        float x = current.asValueMap()["x"].asFloat()/16;
+        float y = current.asValueMap()["y"].asFloat()/16;
+        player->setPosition(level->tileCoordinateToPosition(Point(x,y)));
+    }
     player->setGlobalZOrder(Z_PLY);
     
     // camera
@@ -228,6 +235,11 @@ bool TestSceneTwo::init()
     soundState = playYeah;
     cameraOff = false;
     nPills = pillVec.size();
+    
+    pillPosition.push_back(Point(0,0));
+    pillPosition.push_back(Point(0,0));
+    pillDistance.push_back(9999.0f);
+    pillDistance.push_back(9999.0f);
     this->scheduleUpdate();
     return true;
 }

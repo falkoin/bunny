@@ -107,27 +107,27 @@ bool TestSceneFour::init()
     parallaxOne->setColor(Color3B(225,100,00));
     parallaxOne->setGlobalZOrder(Z_PLX1);
     parallaxOne->setScale(SCALE_FACTOR);
-    parallaxOne->getTexture()->setAliasTexParameters();
-    parallaxOne->setAnchorPoint(Point(0.5, 0));
-    parallaxOne->setPosition(Point(16*16*SCALE_FACTOR-parallaxOne->getContentSize().width*0.5*SCALE_FACTOR,0));
+    //    parallaxOne->getTexture()->setAliasTexParameters();
+    parallaxOne->setPosition(Point(visibleSize.width*0.5+origin.x,visibleSize.height*0.5+origin.y));
+    parallaxOne->setAnchorPoint(Point(0.5, 0.5));
     this->addChild(parallaxOne);
     
     parallaxTwo = Sprite::create("parallaxHill002g.png");
     parallaxTwo->setColor(Color3B(215,100,0));
     parallaxTwo->setGlobalZOrder(Z_PLX2);
     parallaxTwo->setScale(SCALE_FACTOR);
-    parallaxTwo->getTexture()->setAliasTexParameters();
-    parallaxTwo->setAnchorPoint(Point(0.5, 0));
-    parallaxTwo->setPosition(Point(16*16*SCALE_FACTOR-parallaxOne->getContentSize().width*0.5*SCALE_FACTOR,0));
+    //    parallaxTwo->getTexture()->setAliasTexParameters();
+    parallaxTwo->setPosition(Point(visibleSize.width*0.5+origin.x,visibleSize.height*0.5+origin.y));
+    parallaxTwo->setAnchorPoint(Point(0.5, 0.5));
     this->addChild(parallaxTwo);
     
     parallaxThree = Sprite::create("parallaxHill003g.png");
     parallaxThree->setColor(Color3B(205,100,0));
     parallaxThree->setGlobalZOrder(Z_PLX3);
     parallaxThree->setScale(SCALE_FACTOR);
-    parallaxThree->getTexture()->setAliasTexParameters();
-    parallaxThree->setAnchorPoint(Point(0.5, 0));
-    parallaxThree->setPosition(Point(16*16*SCALE_FACTOR-parallaxOne->getContentSize().width*0.5*SCALE_FACTOR,0));
+    //    parallaxThree->getTexture()->setAliasTexParameters();
+    parallaxThree->setPosition(Point(visibleSize.width*0.5+origin.x,visibleSize.height*0.5+origin.y));
+    parallaxThree->setAnchorPoint(Point(0.5, 0.5));
     this->addChild(parallaxThree);
     
     parallaxFour = Sprite::create("trees_2bw.png");
@@ -152,7 +152,14 @@ bool TestSceneFour::init()
     player = Player::create();
     player->retain();
     this->addChild(player);
-    player->setPosition(level->tileCoordinateToPosition(Point(16,2)));
+    auto *playerSpawn = level->getMap()->getObjectGroup("spawn");
+    ValueVector spawnPosition = playerSpawn->getObjects();
+    for (auto current : spawnPosition)
+    {
+        float x = current.asValueMap()["x"].asFloat()/16;
+        float y = current.asValueMap()["y"].asFloat()/16;
+        player->setPosition(level->tileCoordinateToPosition(Point(x,y)));
+    }
     player->setGlobalZOrder(Z_PLY);
     
     // camera
@@ -198,6 +205,10 @@ bool TestSceneFour::init()
     soundState = playYeah;
     cameraOff = false;
     nPills = pillVec.size();
+    pillPosition.push_back(Point(0,0));
+    pillPosition.push_back(Point(0,0));
+    pillDistance.push_back(9999.0f);
+    pillDistance.push_back(9999.0f);
     this->scheduleUpdate();
     return true;
 }

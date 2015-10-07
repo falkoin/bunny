@@ -106,7 +106,8 @@ void GameScene::onAcceleration(cocos2d::Acceleration *acc, cocos2d::Event *event
     }
     else if (accX < -ACCELSENSITIVITY && !_gameOver)
     {
-        player->moveLeft(acc->x);
+//        player->moveLeft(acc->x);
+        player->moveRight(acc->x);
     }
     else
     {
@@ -279,6 +280,25 @@ void GameScene::checkHit()
                 }
                 Rect pillRect = pills->getBoundingBox();
                 Rect playerRect = player->getBoundingBox();
+                Point pillsPosition = pills->getPosition();
+                Point playersPosition = player->getPosition();
+                float currentDistance = sqrt((pillsPosition.x-playersPosition.x)*(pillsPosition.x-playersPosition.x)+(pillsPosition.y-playersPosition.y)*(pillsPosition.y-playersPosition.y));
+//                log("Position Pill %f", pills->getPositionX());
+                if (currentDistance < pillDistance[0]) {
+                    if (currentDistance < pillDistance[1])
+                    {
+                        pillDistance[0] = pillDistance[1];
+                        pillDistance[1] = currentDistance;
+                        pillPosition[0] = pillPosition[1];
+                        pillPosition[1] = pills->getPosition();
+                    }
+                    else
+                    {
+                        pillDistance[1] = currentDistance;
+                        pillPosition[1] = pills->getPosition();
+                    }
+                }
+                
                 if (pillRect.intersectsRect(playerRect) && pills->getTriggered())
                 {
                     if (pills->getTaste() == 1)
@@ -321,16 +341,31 @@ void GameScene::checkHit()
                         p->setPositionType(ParticleSystemQuad::PositionType::RELATIVE);
                         p->setPosition(pills->getPosition()+Point(pills->getContentSize()/2));
                         addChild(p);
-                        CocosDenshion::SimpleAudioEngine::getInstance()->playEffect("bloop.wav");
+                        CocosDenshion::SimpleAudioEngine::getInstance()->playEffect("warp.wav");
+                    }
+                    else if (pills->getTaste() == 5)
+                    {
+                        player->moveUp();
+                        toTrigger = pills->getTrigger();
+                        pills->pushPill();
+//                        ParticleSystemQuad* p = ParticleSystemQuad::create("explosionYellow.plist");
+//                        p->setGlobalZOrder(1010);
+//                        p->setPositionType(ParticleSystemQuad::PositionType::RELATIVE);
+//                        p->setPosition(pills->getPosition()+Point(pills->getContentSize()/2));
+//                        addChild(p);
+                        CocosDenshion::SimpleAudioEngine::getInstance()->playEffect("bounce.wav");
                     }
                     else
                     {
                         log("Error");
                         _shadowLayer->setShadowColor(Vec4(0.0,0.0,0.0,0.55));
                     }
-                    pillVec.eraseObject(pills);
-                    pills->removeFromParent();
-                    score++;
+                    if (pills->getTaste() != 5)
+                    {
+                        pillVec.eraseObject(pills);
+                        pills->removeFromParent();
+                        score++;
+                    }
                     break;
                 }
             }
@@ -604,6 +639,16 @@ void GameScene::updateGameobjects()
         _hud->shouOut((std::string)"Yeah!!!");
         soundState = playAwesome;
     }
+    
+    // ckecking distance
+    
+//    if (player->getPositionX()+5 > pillPosition[0].x)
+//    {
+//        player->setPlayerVelocity(Point(player->getPlayerVelocity().x-pillDistance[0]*0.1f,player->getPlayerVelocity().y));
+//    } else if (player->getPositionX()-5 < pillPosition[0].x)
+//    {
+//        player->setPlayerVelocity(Point(player->getPlayerVelocity().x+pillDistance[0]*0.1f,player->getPlayerVelocity().y));
+//    }
     
     
 }

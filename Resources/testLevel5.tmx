@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.0" orientation="orthogonal" renderorder="right-down" width="64" height="64" tilewidth="16" tileheight="16" nextobjectid="44">
+<map version="1.0" orientation="orthogonal" renderorder="right-down" width="64" height="64" tilewidth="16" tileheight="16" nextobjectid="45">
  <tileset firstgid="1" name="tiles2" tilewidth="16" tileheight="16">
   <image source="tiles2.png" width="128" height="32"/>
  </tileset>
@@ -161,7 +161,7 @@
   </object>
   <object id="29" x="640" y="208" width="16" height="16">
    <properties>
-    <property name="taste" value="1"/>
+    <property name="taste" value="3"/>
    </properties>
   </object>
   <object id="30" x="592" y="176" width="16" height="16">
@@ -171,7 +171,7 @@
   </object>
   <object id="31" x="496" y="176" width="16" height="16">
    <properties>
-    <property name="taste" value="3"/>
+    <property name="taste" value="5"/>
    </properties>
   </object>
   <object id="32" x="304" y="176" width="16" height="16">
@@ -236,5 +236,8 @@
     <property name="dmgObj" value="2"/>
    </properties>
   </object>
+ </objectgroup>
+ <objectgroup name="spawn">
+  <object id="44" x="448" y="976" width="16" height="16"/>
  </objectgroup>
 </map>

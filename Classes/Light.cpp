@@ -40,6 +40,12 @@ Light* Light::create(int taste)
     {
         success = pSprite->initWithFile("lightYellow.png");
     }
+    else if (taste == 5)
+    {
+        success = pSprite->initWithFile("lightWhite.png");
+        pSprite->setColor(Color3B(255, 180, 20));
+        
+    }
     else if (taste == 9)
     {
     success = pSprite->initWithFile("lightWhite.png");

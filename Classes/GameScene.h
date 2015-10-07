@@ -86,6 +86,8 @@ protected:
     int toTrigger;
     
     std::vector<float> accelBuffer;
+    std::vector<cocos2d::Point> pillPosition;
+    std::vector<float> pillDistance;
 
     
 };

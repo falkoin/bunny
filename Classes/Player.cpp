@@ -103,19 +103,29 @@ void Player::moveUpDouble()
 
 void Player::moveRight(float factor)
 {
-    if (_velocity.x < 0)
-        _velocity.x = 0;
-    if (_velocity.x > (PLAYER_MAX_VELOCITY * SCALE_FACTOR) * 0.25)
-        _velocity.x = _velocity.x + 0.075f;
-    else if (_velocity.x > (PLAYER_MAX_VELOCITY * SCALE_FACTOR) * 0.5)
-        _velocity.x = _velocity.x + 0.100f;
-    else if (_velocity.x > (PLAYER_MAX_VELOCITY * SCALE_FACTOR) * 0.75)
-        _velocity.x = _velocity.x + 0.125f;
-    else
-        _velocity.x = _velocity.x + 0.075f;
+//    if (_velocity.x < 0)
+//        _velocity.x = 0;
+//    if (_velocity.x > (PLAYER_MAX_VELOCITY * SCALE_FACTOR) * 0.25)
+//        _velocity.x = _velocity.x + 0.075f;
+//    else if (_velocity.x > (PLAYER_MAX_VELOCITY * SCALE_FACTOR) * 0.5)
+//        _velocity.x = _velocity.x + 0.100f;
+//    else if (_velocity.x > (PLAYER_MAX_VELOCITY * SCALE_FACTOR) * 0.75)
+//        _velocity.x = _velocity.x + 0.125f;
+//    else
+//        _velocity.x = _velocity.x + 0.075f;
+//    if (_velocity.x >= PLAYER_MAX_VELOCITY * SCALE_FACTOR)
+//    {
+//        _velocity.x = PLAYER_MAX_VELOCITY * SCALE_FACTOR;
+//    }
+    
+    _velocity.x = factor*5*SCALE_FACTOR;
     if (_velocity.x >= PLAYER_MAX_VELOCITY * SCALE_FACTOR)
     {
         _velocity.x = PLAYER_MAX_VELOCITY * SCALE_FACTOR;
+    }
+    else if (_velocity.x <= -PLAYER_MAX_VELOCITY * SCALE_FACTOR)
+    {
+        _velocity.x = -PLAYER_MAX_VELOCITY * SCALE_FACTOR;
     }
 }
 

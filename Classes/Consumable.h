@@ -21,6 +21,7 @@ public:
     int getTrigger();
     void setTriggered(bool triggered);
     bool getTriggered();
+    void pushPill();
 private:
     void initOptions(int taste, int trigger, bool triggered);
     bool _triggered;

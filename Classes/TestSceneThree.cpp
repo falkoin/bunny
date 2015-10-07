@@ -108,7 +108,7 @@ bool TestSceneThree::init()
     parallaxOne->setScale(SCALE_FACTOR);
     parallaxOne->getTexture()->setAliasTexParameters();
     parallaxOne->setAnchorPoint(Point(0.5, 0));
-    parallaxOne->setPosition(Point(64*16*SCALE_FACTOR-parallaxOne->getContentSize().width*0.5*SCALE_FACTOR,0));
+    parallaxOne->setPosition(Point(49*16*SCALE_FACTOR-parallaxOne->getContentSize().width*0.5*SCALE_FACTOR,0));
     this->addChild(parallaxOne);
     
     parallaxTwo = Sprite::create("parallaxHill002g.png");
@@ -117,7 +117,7 @@ bool TestSceneThree::init()
     parallaxTwo->setScale(SCALE_FACTOR);
     parallaxTwo->getTexture()->setAliasTexParameters();
     parallaxTwo->setAnchorPoint(Point(0.5, 0));
-    parallaxTwo->setPosition(Point(64*16*SCALE_FACTOR-parallaxOne->getContentSize().width*0.5*SCALE_FACTOR,0));
+    parallaxTwo->setPosition(Point(49*16*SCALE_FACTOR-parallaxOne->getContentSize().width*0.5*SCALE_FACTOR,0));
     this->addChild(parallaxTwo);
     
     parallaxThree = Sprite::create("parallaxHill003g.png");
@@ -126,7 +126,7 @@ bool TestSceneThree::init()
     parallaxThree->setScale(SCALE_FACTOR);
     parallaxThree->getTexture()->setAliasTexParameters();
     parallaxThree->setAnchorPoint(Point(0.5, 0));
-    parallaxThree->setPosition(Point(64*16*SCALE_FACTOR-parallaxOne->getContentSize().width*0.5*SCALE_FACTOR,0));
+    parallaxThree->setPosition(Point(49*16*SCALE_FACTOR-parallaxOne->getContentSize().width*0.5*SCALE_FACTOR,0));
     this->addChild(parallaxThree);
     
     parallaxFour = Sprite::create("trees.png");
@@ -134,7 +134,7 @@ bool TestSceneThree::init()
     parallaxFour->setGlobalZOrder(Z_PLX4);
     parallaxFour->setScale(SCALE_FACTOR);
     parallaxFour->getTexture()->setAliasTexParameters();
-    parallaxFour->setPosition(Point(64*16*SCALE_FACTOR-parallaxOne->getContentSize().width*0.5*SCALE_FACTOR,0));
+    parallaxFour->setPosition(Point(49*16*SCALE_FACTOR-parallaxOne->getContentSize().width*0.5*SCALE_FACTOR,0));
     parallaxFour->setAnchorPoint(Point(0.5, 0));
     this->addChild(parallaxFour);
     
@@ -142,7 +142,7 @@ bool TestSceneThree::init()
     parallaxFive->setGlobalZOrder(Z_PLX5);
     parallaxFive->setScale(SCALE_FACTOR);
     parallaxFive->getTexture()->setAliasTexParameters();
-    parallaxFive->setPosition(Point(64*16*SCALE_FACTOR-parallaxOne->getContentSize().width*0.5*SCALE_FACTOR,visibleSize.height*0.5+origin.y));
+    parallaxFive->setPosition(Point(49*16*SCALE_FACTOR-parallaxOne->getContentSize().width*0.5*SCALE_FACTOR,visibleSize.height*0.5+origin.y));
     parallaxFive->setAnchorPoint(Point(0.5, 0.5));
     this->addChild(parallaxFive);
     
@@ -150,7 +150,14 @@ bool TestSceneThree::init()
     player = Player::create();
     player->retain();
     this->addChild(player);
-    player->setPosition(level->tileCoordinateToPosition(Point(60,1)));
+    auto *playerSpawn = level->getMap()->getObjectGroup("spawn");
+    ValueVector spawnPosition = playerSpawn->getObjects();
+    for (auto current : spawnPosition)
+    {
+        float x = current.asValueMap()["x"].asFloat()/16;
+        float y = current.asValueMap()["y"].asFloat()/16;
+        player->setPosition(level->tileCoordinateToPosition(Point(x,y)));
+    }
     player->setGlobalZOrder(Z_PLY);
     
     // camera
@@ -196,6 +203,11 @@ bool TestSceneThree::init()
     soundState = playYeah;
     cameraOff = false;
     nPills = pillVec.size();
+    
+    pillPosition.push_back(Point(0,0));
+    pillPosition.push_back(Point(0,0));
+    pillDistance.push_back(9999.0f);
+    pillDistance.push_back(9999.0f);
     this->scheduleUpdate();
     return true;
 }
