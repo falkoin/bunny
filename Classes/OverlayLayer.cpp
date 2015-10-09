@@ -49,6 +49,17 @@ bool OverlayLayer::init()
     _scoreLabel->setGlobalZOrder(9999);
     _scoreLabel->retain();
     addChild(_scoreLabel);
+    
+    _timerLabel = cocos2d::Label::createWithBMFont("CartonSixBMP.fnt","");
+    _timerLabel->setColor(cocos2d::Color3B(255, 255, 255));
+    _timerLabel->setPosition(cocos2d::Vec2(origin.x + visibleSize.width*0.01f,origin.y + visibleSize.height*(0.97f)));
+    _timerLabel->setAnchorPoint(Point(0.0,0.0));
+    _timerLabel->setScale(SCALE_FACTOR/6.0f);
+    _timerLabel->getTexture()->setAliasTexParameters();
+    _timerLabel->setGlobalZOrder(9999);
+    _timerLabel->retain();
+    addChild(_timerLabel);
+    
     return true;
 }
 
@@ -73,6 +84,11 @@ void OverlayLayer::drawWinMessage()
 void OverlayLayer::updateScore(int score)
 {
     _scoreLabel->Label::setString("Score: "+std::to_string(score));
+}
+
+void OverlayLayer::updateTimer(std::string timer)
+{
+    _timerLabel->Label::setString(timer);
 }
 
 void OverlayLayer::shouOut(std::string shoutoutText)

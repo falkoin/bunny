@@ -64,6 +64,8 @@ void GameScene::update(float dt)
 //    log("Player Vel Y: %f", player->getPlayerVelocity().y);
     _hud->setPosition(this->convertToNodeSpace(Point(1,1)));
     _hud->updateScore(score);
+    if (score > 0 && !_gameOver)
+        currentTime += dt;
 }
 
 bool GameScene::onTouchBegan(cocos2d::Touch *touch, cocos2d::Event *event)
@@ -343,7 +345,7 @@ void GameScene::checkHit()
                         addChild(p);
                         CocosDenshion::SimpleAudioEngine::getInstance()->playEffect("warp.wav");
                     }
-                    else if (pills->getTaste() == 5)
+                    else if (pills->getTaste() == 5 && !pills->isBusy())
                     {
                         player->moveUp();
                         toTrigger = pills->getTrigger();
@@ -357,8 +359,8 @@ void GameScene::checkHit()
                     }
                     else
                     {
-                        log("Error");
-                        _shadowLayer->setShadowColor(Vec4(0.0,0.0,0.0,0.55));
+//                        log("Error");
+//                        _shadowLayer->setShadowColor(Vec4(0.0,0.0,0.0,0.55));
                     }
                     if (pills->getTaste() != 5)
                     {
@@ -639,6 +641,11 @@ void GameScene::updateGameobjects()
         _hud->shouOut((std::string)"Yeah!!!");
         soundState = playAwesome;
     }
+    
+    // timer
+    char timeNow[100];
+    sprintf(timeNow, "Time: %5.2f",currentTime);
+    _hud->updateTimer(timeNow);
     
     // ckecking distance
     

@@ -88,6 +88,8 @@ protected:
     std::vector<float> accelBuffer;
     std::vector<cocos2d::Point> pillPosition;
     std::vector<float> pillDistance;
+    
+    float currentTime;
 
     
 };

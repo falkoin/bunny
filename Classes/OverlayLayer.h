@@ -25,12 +25,14 @@ public:
     void drawEndMessage();
     void drawWinMessage();
     void updateScore(int score);
+    void updateTimer(std::string timer);
     void shouOut(std::string shoutoutText);
 private:
     cocos2d::Label* _trialEndLabel;
     cocos2d::Label* _trialWinLabel;
     cocos2d::Label* _shoutWinLabel;
     cocos2d::Label* _scoreLabel;
+    cocos2d::Label* _timerLabel;
     cocos2d::Size visibleSize;
     cocos2d::Vec2 origin;
     

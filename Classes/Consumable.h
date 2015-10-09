@@ -22,6 +22,7 @@ public:
     void setTriggered(bool triggered);
     bool getTriggered();
     void pushPill();
+    bool isBusy();
 private:
     void initOptions(int taste, int trigger, bool triggered);
     bool _triggered;
@@ -31,6 +32,8 @@ private:
     cocos2d::Animation *_idleAnimation;
     int _taste;
     int _trigger;
+    void setBusy();
+    bool _busy;
 };
 
 #endif /* defined(__bunny__Consumable__) */
