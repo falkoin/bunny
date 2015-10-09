@@ -22,6 +22,9 @@ private:
     void goToLevelFour(Ref *sender);
     void goToLevelFive(Ref *sender);
     void goBack(Ref *sender);
+    
+    cocos2d::Label* setSublabelHS(const char *labelText);
+    cocos2d::Label* setSublabelT(const char *labelText);
 };
 
 #endif // __LEVEL_MENU_SCENE_H__

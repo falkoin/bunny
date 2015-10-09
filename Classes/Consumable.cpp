@@ -141,13 +141,13 @@ void Consumable::pushPill()
         auto moveBy2 = MoveBy::create(0.1, Vec2(0,4*SCALE_FACTOR));
         auto setVar  = CallFunc::create([this]() {this->setBusy();});
         auto setDelay = DelayTime::create(0.8);
-        this->runAction(Sequence::create(moveBy1, moveBy2, setVar,setDelay, nullptr));
+        this->runAction(Sequence::create(moveBy1, moveBy2, setVar, setDelay, nullptr));
     }
 }
 
 void Consumable::setBusy()
 {
-    _busy = !false;
+    _busy = false;
 }
 
 bool Consumable::isBusy()

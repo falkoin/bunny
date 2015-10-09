@@ -38,8 +38,6 @@ bool OverlayLayer::init()
     _trialWinLabel->setGlobalZOrder(9999);
     _trialWinLabel->retain();
     
-
-    
     _scoreLabel = cocos2d::Label::createWithBMFont("CartonSixBMP.fnt","");
     _scoreLabel->setColor(cocos2d::Color3B(255, 255, 255));
     _scoreLabel->setPosition(cocos2d::Vec2(origin.x + visibleSize.width*0.80f,origin.y + visibleSize.height*(0.97f)));

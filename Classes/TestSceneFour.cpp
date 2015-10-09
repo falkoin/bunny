@@ -209,6 +209,8 @@ bool TestSceneFour::init()
     pillPosition.push_back(Point(0,0));
     pillDistance.push_back(9999.0f);
     pillDistance.push_back(9999.0f);
+    UserDefault::getInstance()->setIntegerForKey("win", 0);
+    
     this->scheduleUpdate();
     return true;
 }

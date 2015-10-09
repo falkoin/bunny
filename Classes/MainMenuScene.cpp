@@ -65,6 +65,18 @@ bool MainMenuScene::init()
     CocosDenshion::SimpleAudioEngine::getInstance()->preloadEffect("warp.wav");
     CocosDenshion::SimpleAudioEngine::getInstance()->setEffectsVolume(0.2);
     
+//    UserDefault::getInstance()->setFloatForKey("Level001T", 99999.99);
+//    UserDefault::getInstance()->setFloatForKey("Level002T", 99999.99);
+//    UserDefault::getInstance()->setFloatForKey("Level003T", 99999.99);
+//    UserDefault::getInstance()->setFloatForKey("Level004T", 99999.99);
+//    UserDefault::getInstance()->setFloatForKey("Level005T", 99999.99);
+//    UserDefault::getInstance()->setIntegerForKey("Level001HS", 0);
+//    UserDefault::getInstance()->setIntegerForKey("Level002HS", 0);
+//    UserDefault::getInstance()->setIntegerForKey("Level003HS", 0);
+//    UserDefault::getInstance()->setIntegerForKey("Level004HS", 0);
+//    UserDefault::getInstance()->setIntegerForKey("Level005HS", 0);
+    
+    
     
     
     

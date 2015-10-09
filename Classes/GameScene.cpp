@@ -571,6 +571,7 @@ void GameScene::gameOver()
         {
             _hud->drawWinMessage();
             player->win();
+            UserDefault::getInstance()->setIntegerForKey("win", 1);
         }
         else
         {
@@ -578,7 +579,7 @@ void GameScene::gameOver()
         }
         _gameOver = true;
         player->setPlayerVelocity(Point(0,0));
-        setHighscore(score);
+        setHighscore(score, currentTime);
         
     }
 }
@@ -660,32 +661,10 @@ void GameScene::updateGameobjects()
     
 }
 
-void GameScene::setHighscore(int highscore)
+void GameScene::setHighscore(int highscore, float time)
 {
-    auto currentLevel = UserDefault::getInstance()->getIntegerForKey("currentLevel");
-    switch (currentLevel) {
-        case 1:
-//            if (UserDefault::getInstance()->getIntegerForKey("Level01") < highscore)
-                UserDefault::getInstance()->setIntegerForKey("Level01", highscore);
-            break;
-        case 2:
-//            if (UserDefault::getInstance()->getIntegerForKey("Level02") < highscore)
-                UserDefault::getInstance()->setIntegerForKey("Level02", highscore);
-            break;
-        case 3:
-//            if (UserDefault::getInstance()->getIntegerForKey("Level03") < highscore)
-                UserDefault::getInstance()->setIntegerForKey("Level03", highscore);
-            break;
-        case 4:
-//            if (UserDefault::getInstance()->getIntegerForKey("Level04") < highscore)
-                UserDefault::getInstance()->setIntegerForKey("Level04", highscore);
-            break;
-        case 5:
-//            if (UserDefault::getInstance()->getIntegerForKey("Level05") < highscore)
-                UserDefault::getInstance()->setIntegerForKey("Level05", highscore);
-            break;
-            
-        default:
-            break;
-    }
+    
+    UserDefault::getInstance()->setIntegerForKey("currentScore", highscore);
+    UserDefault::getInstance()->setFloatForKey("currentTime", time);
+    
 }

@@ -70,25 +70,62 @@ bool LevelMenuScene::init()
     
     this->addChild(scrollView,2);
     
+    float hsPos = 0.5;
+    
     auto playItem = MenuItemImage::create("lvl01.png","lvl01pressed.png",CC_CALLBACK_1(LevelMenuScene::goToLevelOne, this));
     playItem->setScale(SCALE_FACTOR/3.0f);
     playItem->setPosition(Point( containerSize.width / 2 + origin.x, containerSize.height * 3.5/4 + origin.y));
+    
+    auto lvlOneLabel = setSublabelHS("Level001HS");
+    lvlOneLabel->setPosition(Point( containerSize.width * hsPos + origin.x, containerSize.height * 3.4/4 + origin.y));
+    scrollView->addChild(lvlOneLabel);
+    auto lvlOneLabelT = setSublabelT("Level001T");
+    lvlOneLabelT->setPosition(Point( containerSize.width * hsPos + origin.x, containerSize.height * 3.35/4 + origin.y));
+    scrollView->addChild(lvlOneLabelT);
     
     auto playItem2 = MenuItemImage::create("lvl02.png","lvl02pressed.png",CC_CALLBACK_1(LevelMenuScene::goToLevelTwo, this));
     playItem2->setScale(SCALE_FACTOR/3.0f);
     playItem2->setPosition(Point( containerSize.width / 2 + origin.x, containerSize.height * 3.2/4 + origin.y));
     
+    auto lvlTwoLabel = setSublabelHS("Level002HS");
+    lvlTwoLabel->setPosition(Point( containerSize.width * hsPos + origin.x, containerSize.height * 3.1/4 + origin.y));
+    scrollView->addChild(lvlTwoLabel);
+    auto lvlTwoLabelT = setSublabelT("Level002T");
+    lvlTwoLabelT->setPosition(Point( containerSize.width * hsPos + origin.x, containerSize.height * 3.05/4 + origin.y));
+    scrollView->addChild(lvlTwoLabelT);
+    
     auto playItem3 = MenuItemImage::create("lvl03.png","lvl03pressed.png",CC_CALLBACK_1(LevelMenuScene::goToLevelThree, this));
     playItem3->setScale(SCALE_FACTOR/3.0f);
     playItem3->setPosition(Point( containerSize.width / 2 + origin.x, containerSize.height * 2.9/4 + origin.y));
+    
+    auto lvlThreeLabel = setSublabelHS("Level003HS");
+    lvlThreeLabel->setPosition(Point( containerSize.width * hsPos + origin.x, containerSize.height * 2.8/4 + origin.y));
+    scrollView->addChild(lvlThreeLabel);
+    auto lvlThreeLabelT = setSublabelT("Level003T");
+    lvlThreeLabelT->setPosition(Point( containerSize.width * hsPos + origin.x, containerSize.height * 2.75/4 + origin.y));
+    scrollView->addChild(lvlThreeLabelT);
     
     auto playItem4 = MenuItemImage::create("lvl04.png","lvl04pressed.png",CC_CALLBACK_1(LevelMenuScene::goToLevelFour, this));
     playItem4->setScale(SCALE_FACTOR/3.0f);
     playItem4->setPosition(Point( containerSize.width / 2 + origin.x, containerSize.height * 2.6/4 + origin.y));
     
+    auto lvlFourLabel = setSublabelHS("Level004HS");
+    lvlFourLabel->setPosition(Point( containerSize.width * hsPos + origin.x, containerSize.height * 2.5/4 + origin.y));
+    scrollView->addChild(lvlFourLabel);
+    auto lvlFourLabelT = setSublabelT("Level004T");
+    lvlFourLabelT->setPosition(Point( containerSize.width * hsPos + origin.x, containerSize.height * 2.45/4 + origin.y));
+    scrollView->addChild(lvlFourLabelT);
+    
     auto playItem5 = MenuItemImage::create("lvl05.png","lvl05pressed.png",CC_CALLBACK_1(LevelMenuScene::goToLevelFive, this));
     playItem5->setScale(SCALE_FACTOR/3.0f);
     playItem5->setPosition(Point( containerSize.width / 2 + origin.x, containerSize.height * 2.3/4 + origin.y));
+    
+    auto lvlFiveLabel = setSublabelHS("Level005HS");
+    lvlFiveLabel->setPosition(Point( containerSize.width * hsPos + origin.x, containerSize.height * 2.2/4 + origin.y));
+    scrollView->addChild(lvlFiveLabel);
+    auto lvlFiveLabelT = setSublabelT("Level005T");
+    lvlFiveLabelT->setPosition(Point( containerSize.width * hsPos + origin.x, containerSize.height * 2.15/4 + origin.y));
+    scrollView->addChild(lvlFiveLabelT);
 
     auto menu = Menu::create(playItem, playItem2, playItem3, playItem4, playItem5,  NULL);
     menu->setPosition(Point::ZERO);
@@ -103,6 +140,7 @@ void LevelMenuScene::goToLevelOne(Ref *sender)
     UserDefault::getInstance()->setIntegerForKey("currentLevel", 1);
     auto scene = TestScene::createScene();
     Director::getInstance()->replaceScene(TransitionFade::create(LEVEL_TRANSITION_TIME, scene));
+    
 }
 
 void LevelMenuScene::goToLevelTwo(Ref *sender)
@@ -137,4 +175,34 @@ void LevelMenuScene::goBack(Ref *sender)
 {
     auto scene = MainMenuScene::createScene();
     Director::getInstance()->replaceScene(TransitionFade::create(LEVEL_TRANSITION_TIME, scene));
+}
+
+Label* LevelMenuScene::setSublabelHS(const char *labelText)
+{
+    auto lvlOneHC = UserDefault::getInstance()->getIntegerForKey(labelText);
+    char lvlStr[20];
+    sprintf(lvlStr, "Highscore: %i",lvlOneHC);
+    auto lvlOneLabel = cocos2d::Label::createWithBMFont("CartonSixBMP.fnt","",CCTextAlignment::CENTER);
+    lvlOneLabel->setColor(cocos2d::Color3B(255, 255, 255));
+    lvlOneLabel->setAnchorPoint(Point(0.5,0.5));
+    lvlOneLabel->setScale(SCALE_FACTOR/6);
+    lvlOneLabel->getTexture()->setAliasTexParameters();
+    lvlOneLabel->setGlobalZOrder(9999);
+    lvlOneLabel->Label::setString(lvlStr);
+    return lvlOneLabel;
+}
+
+Label* LevelMenuScene::setSublabelT(const char *labelText)
+{
+    auto lvlOneHC = UserDefault::getInstance()->getFloatForKey(labelText);
+    char lvlStr[20];
+    sprintf(lvlStr, "Time: %5.2f",lvlOneHC);
+    auto lvlOneLabel = cocos2d::Label::createWithBMFont("CartonSixBMP.fnt","",CCTextAlignment::CENTER);
+    lvlOneLabel->setColor(cocos2d::Color3B(255, 255, 255));
+    lvlOneLabel->setAnchorPoint(Point(0.5,0.5));
+    lvlOneLabel->setScale(SCALE_FACTOR/6);
+    lvlOneLabel->getTexture()->setAliasTexParameters();
+    lvlOneLabel->setGlobalZOrder(9999);
+    lvlOneLabel->Label::setString(lvlStr);
+    return lvlOneLabel;
 }
