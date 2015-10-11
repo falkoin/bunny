@@ -52,8 +52,8 @@ bool TestSceneFour::init()
     bg->setGlobalZOrder(Z_BG);
     auto walls = level->getMap()->getLayer("walls");
     walls->setGlobalZOrder(Z_WALLS);
-    auto wallShadow = level->getMap()->getLayer("wallShadow");
-    wallShadow->setGlobalZOrder(Z_WALLS);
+//    auto wallShadow = level->getMap()->getLayer("wallShadow");
+//    wallShadow->setGlobalZOrder(Z_WALLS);
     
 
     // level objects
@@ -102,51 +102,7 @@ bool TestSceneFour::init()
         cloudVec.pushBack(clouds);
     }
 
-    // parallax
-    parallaxOne = Sprite::create("parallaxHill001g.png");
-    parallaxOne->setColor(Color3B(225,100,00));
-    parallaxOne->setGlobalZOrder(Z_PLX1);
-    parallaxOne->setScale(SCALE_FACTOR);
-    //    parallaxOne->getTexture()->setAliasTexParameters();
-    parallaxOne->setPosition(Point(visibleSize.width*0.5+origin.x,visibleSize.height*0.5+origin.y));
-    parallaxOne->setAnchorPoint(Point(0.5, 0.5));
-    this->addChild(parallaxOne);
-    
-    parallaxTwo = Sprite::create("parallaxHill002g.png");
-    parallaxTwo->setColor(Color3B(215,100,0));
-    parallaxTwo->setGlobalZOrder(Z_PLX2);
-    parallaxTwo->setScale(SCALE_FACTOR);
-    //    parallaxTwo->getTexture()->setAliasTexParameters();
-    parallaxTwo->setPosition(Point(visibleSize.width*0.5+origin.x,visibleSize.height*0.5+origin.y));
-    parallaxTwo->setAnchorPoint(Point(0.5, 0.5));
-    this->addChild(parallaxTwo);
-    
-    parallaxThree = Sprite::create("parallaxHill003g.png");
-    parallaxThree->setColor(Color3B(205,100,0));
-    parallaxThree->setGlobalZOrder(Z_PLX3);
-    parallaxThree->setScale(SCALE_FACTOR);
-    //    parallaxThree->getTexture()->setAliasTexParameters();
-    parallaxThree->setPosition(Point(visibleSize.width*0.5+origin.x,visibleSize.height*0.5+origin.y));
-    parallaxThree->setAnchorPoint(Point(0.5, 0.5));
-    this->addChild(parallaxThree);
-    
-    parallaxFour = Sprite::create("trees_2bw.png");
-    parallaxFour->setColor(Color3B(155,75,0));
-    parallaxFour->setGlobalZOrder(Z_PLX4);
-    parallaxFour->setScale(SCALE_FACTOR);
-    parallaxFour->getTexture()->setAliasTexParameters();
-    parallaxFour->setPosition(Point(16*16*SCALE_FACTOR-parallaxOne->getContentSize().width*0.5*SCALE_FACTOR,0));
-    parallaxFour->setAnchorPoint(Point(0.5, 0));
-    this->addChild(parallaxFour);
-    
-    parallaxFive = Sprite::create("trees_bw.png");
-    parallaxFive->setColor(Color3B(135,155,0));
-    parallaxFive->setGlobalZOrder(Z_PLX5);
-    parallaxFive->setScale(SCALE_FACTOR);
-    parallaxFive->getTexture()->setAliasTexParameters();
-    parallaxFive->setPosition(Point(16*16*SCALE_FACTOR-parallaxOne->getContentSize().width*0.5*SCALE_FACTOR,0));
-    parallaxFive->setAnchorPoint(Point(0.5, 0));
-    this->addChild(parallaxFive);
+
     
     // player
     player = Player::create();
@@ -161,6 +117,23 @@ bool TestSceneFour::init()
         player->setPosition(level->tileCoordinateToPosition(Point(x,y)));
     }
     player->setGlobalZOrder(Z_PLY);
+    
+    // parallax
+    auto levelWidthHalf = Point((level->getMap()->getMapSize().width*16*SCALE_FACTOR) * 0.5,0);
+    parallaxOne = ParallaxBG::create("parallaxMount005g.png",Z_PLX1,Color3B(225,100,00),levelWidthHalf);
+    this->addChild(parallaxOne);
+    
+    parallaxTwo = ParallaxBG::create("parallaxMount004g.png",Z_PLX2,Color3B(215,100,0),levelWidthHalf);
+    this->addChild(parallaxTwo);
+    
+    parallaxThree = ParallaxBG::create("parallaxMount003g.png",Z_PLX3,Color3B(205,100,0),levelWidthHalf);
+    this->addChild(parallaxThree);
+    
+    parallaxFour = ParallaxBG::create("parallaxMount002gt.png",Z_PLX4,Color3B(105,115,0),levelWidthHalf);
+    this->addChild(parallaxFour);
+    
+    parallaxFive = ParallaxBG::create("parallaxMount001gt.png",Z_PLX5,Color3B(135,155,0),levelWidthHalf);
+    this->addChild(parallaxFive);
     
     // camera
     cameraTarget = Sprite::create();
@@ -205,6 +178,7 @@ bool TestSceneFour::init()
     soundState = playYeah;
     cameraOff = false;
     nPills = pillVec.size();
+    lastPlayerPosition = player->getPosition();
     pillPosition.push_back(Point(0,0));
     pillPosition.push_back(Point(0,0));
     pillDistance.push_back(9999.0f);

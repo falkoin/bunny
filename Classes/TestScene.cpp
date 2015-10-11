@@ -127,52 +127,6 @@ bool TestScene::init()
         
     }
     
-    // parallax
-    parallaxOne = Sprite::create("parallaxHill001g.png");
-    parallaxOne->setColor(Color3B(255,100,180));
-    parallaxOne->setGlobalZOrder(Z_PLX1);
-    parallaxOne->setScale(SCALE_FACTOR);
-//    parallaxOne->getTexture()->setAliasTexParameters();
-    parallaxOne->setPosition(Point(visibleSize.width*0.5+origin.x,visibleSize.height*0.5+origin.y));
-    parallaxOne->setAnchorPoint(Point(0.5, 0.5));
-    this->addChild(parallaxOne);
-    
-    parallaxTwo = Sprite::create("parallaxHill002g.png");
-    parallaxTwo->setColor(Color3B(255,100,180));
-    parallaxTwo->setGlobalZOrder(Z_PLX2);
-    parallaxTwo->setScale(SCALE_FACTOR);
-//    parallaxTwo->getTexture()->setAliasTexParameters();
-    parallaxTwo->setPosition(Point(visibleSize.width*0.5+origin.x,visibleSize.height*0.5+origin.y));
-    parallaxTwo->setAnchorPoint(Point(0.5, 0.5));
-    this->addChild(parallaxTwo);
-    
-    parallaxThree = Sprite::create("parallaxHill003g.png");
-    parallaxThree->setColor(Color3B(255,100,180));
-    parallaxThree->setGlobalZOrder(Z_PLX3);
-    parallaxThree->setScale(SCALE_FACTOR);
-//    parallaxThree->getTexture()->setAliasTexParameters();
-    parallaxThree->setPosition(Point(visibleSize.width*0.5+origin.x,visibleSize.height*0.5+origin.y));
-    parallaxThree->setAnchorPoint(Point(0.5, 0.5));
-    this->addChild(parallaxThree);
-    
-    parallaxFour = Sprite::create("trees_2bw.png");
-    parallaxFour->setColor(Color3B(110,45,80));
-    parallaxFour->setGlobalZOrder(Z_PLX4);
-    parallaxFour->setScale(SCALE_FACTOR);
-    parallaxFour->getTexture()->setAliasTexParameters();
-    parallaxFour->setPosition(Point(visibleSize.width*0.5+origin.x,0));
-    parallaxFour->setAnchorPoint(Point(0.5, 0));
-    this->addChild(parallaxFour);
-    
-    parallaxFive = Sprite::create("trees_bw.png");
-    parallaxFive->setColor(Color3B(100,40,70));
-    parallaxFive->setGlobalZOrder(Z_PLX5);
-    parallaxFive->setScale(SCALE_FACTOR);
-    parallaxFive->getTexture()->setAliasTexParameters();
-    parallaxFive->setPosition(Point(visibleSize.width*0.5+origin.x,0));
-    parallaxFive->setAnchorPoint(Point(0.5, 0));
-    this->addChild(parallaxFive);
-    
     // clouds
     nMaxClouds = 20;
     for (int it = 0; it < nMaxClouds; it++) {
@@ -200,6 +154,23 @@ bool TestScene::init()
         player->setPosition(level->tileCoordinateToPosition(Point(x,y)));
     }
     player->setGlobalZOrder(Z_PLY);
+    
+    // parallax
+    auto levelWidthHalf = Point((level->getMap()->getMapSize().width*16*SCALE_FACTOR) * 0.5,0);
+    parallaxOne = ParallaxBG::create("parallaxMount005g.png",Z_PLX1,Color3B(255,100,180),levelWidthHalf);
+    this->addChild(parallaxOne);
+    
+    parallaxTwo = ParallaxBG::create("parallaxMount004g.png",Z_PLX2,Color3B(255,100,180),levelWidthHalf);
+    this->addChild(parallaxTwo);
+    
+    parallaxThree = ParallaxBG::create("parallaxMount003g.png",Z_PLX3,Color3B(255,100,180),levelWidthHalf);
+    this->addChild(parallaxThree);
+    
+    parallaxFour = ParallaxBG::create("parallaxTrees002.png",Z_PLX4,Color3B(110,45,80),levelWidthHalf);
+    this->addChild(parallaxFour);
+    
+    parallaxFive = ParallaxBG::create("parallaxTrees001.png",Z_PLX5,Color3B(100,40,70),levelWidthHalf);
+    this->addChild(parallaxFive);
     
     // camera
     cameraTarget = Sprite::create();

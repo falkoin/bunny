@@ -22,8 +22,7 @@ public:
     
     inline virtual cocos2d::Label* getMessageLabel() { return _trialEndLabel; };
 //    void setLabel(std::string time);
-    void drawEndMessage();
-    void drawWinMessage();
+    void drawEndMessage(std::string message);
     void updateScore(int score);
     void updateTimer(std::string timer);
     void shouOut(std::string shoutoutText);
@@ -35,6 +34,9 @@ private:
     cocos2d::Label* _timerLabel;
     cocos2d::Size visibleSize;
     cocos2d::Vec2 origin;
+    
+    void drawHackerFont(std::string label);
+    bool printReady;
     
     void draw(Renderer *renderer, const Mat4 &transform, uint32_t flags);
 };

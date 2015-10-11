@@ -16,25 +16,20 @@
    eJzt0SEKADAMBMGoQvP/B1dFVkfcDKw/uCoAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAH5akY2ryMb2Du3+fxQZPPeuEL0=
   </data>
  </layer>
- <layer name="wallShadow" width="128" height="64">
+ <layer name="wallShadow" width="128" height="64" visible="0">
   <data encoding="base64" compression="zlib">
-   eJzt0TENAAAIwDAE4F8vMjjWKliyGer2O4BX/rf53+Z/m/9t/rf53+Z/m/9t/rf53+Z/m/9t/rf53+Z/m/9t/rf53+Z/m/9t/rf53+Z/m/9t/rf53+Z/m/9t/rf53+Z/m/9t/rf53+Z/m/9t/rf53+Z/m/9t/rf53+Z/m/9t/rf53+Z/m/9t/rf53+Z/m/9t/rf53+Z/m/9t/rf53+Z/m/8APQc3owLd
+   eJztwQEBAAAAgJD+r+4ICgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAYgAAAAQ==
   </data>
  </layer>
  <layer name="walls" width="128" height="64">
   <data encoding="base64" compression="zlib">
-   eJzt0UENwDAAxLD7rB1/xNNwxJaCIGfbUbZ3VN35X+Z/m/9t/rf53+Z/m/9t/rf53+Z/m/9t/rf53+Z/m/9t/rf53+Z/m/9t/rf53+Z/m/9t/rf53+Z/m/9t/rf53+Z/m/9t/rf53+Z/m/9t/rf53+Z/m/9t/rf53+Z/m/9t/rf53+Z/m/9t/rf53+Z/m/9t/rf53+Z/m/9t/rf53+Z/m/9t/rf53/b/f5TuA/PgCSM=
+   eJzt0TENADAMwLA+g1L+FKvhiC0FQXZmVulo8r/N/zb/2/xv87/N/zb/2/xv87/N/zb/2/xv87/N/zb/2/xv87/N/zb/2/xv87/N/zb/2/xv87/N/zb/2/xv87/N/zb/2/xv87/N/zb/2/xv87/N/zb/2/xv87/N/zb/2/xv87/N/zb/2/xv87/N/zb/2/xv87/N/zb/2/xv87/N/zb/2/xv87/tv39Kd5rsJu0=
   </data>
  </layer>
  <objectgroup name="objects">
   <object id="1" x="1936" y="944" width="8" height="8">
    <properties>
     <property name="taste" value="1"/>
-   </properties>
-  </object>
-  <object id="3" x="1376.45" y="332.867" width="8" height="8">
-   <properties>
-    <property name="taste" value="2"/>
    </properties>
   </object>
   <object id="17" x="64" y="432" width="8" height="8">

@@ -10,7 +10,7 @@
  </layer>
  <layer name="wallShadow" width="64" height="128">
   <data encoding="base64" compression="zlib">
-   eJzt2bFtxFAMBcErZd1/kwenThwIxBAQp4DPfan0+Zx0AJYOwNIBWDoASwdg6QAsHYClA7B0AJYOwNIBWDoASwdg6QAsHYClA7B0AJYOwNIBWDoASwdg6QAsHYClA7B0AJYOwNIBWDoASwdg6QAsHYClA7B0AJYOwNIBWDoAC939QXf/Ct29/TuE7t7+HUJ3b/8Oobtv379FOgBLB2DpACwdgKUDsHQAlg7A0gFYOgBLB2DpACwdgKUDsHQAlg7A0gFYOgBLB2DpACwdgAVubvn2+ytw8/bvEbh5+/cI3Lz9ewRuvn3/JukALB2ApQOwdACWDsDSAVg6AEsHYOkALB2ApQOwdACWDsDSAVg6AEsHYOkALB2ApQOwdACWDsDSAVg64B/T/woafv+p2z+r4fefuv2zGn7/qds/q+H3n3r7/mnpACwdgKUDsHQAlg7A0gFYOgBLB2DpACwdgKUDsHQAlg7A0gFYOgBLB2DpACwdgKUDsHQAlg44zBeuJxLZ
+   eJzt2TENADAMBLFSKX+SxZApUs9GkFs/5wAAAAAAAAAAADB1tw9Ypr9Nf5v+tno/AAAAAMCP6tuv/jb9bfrb6v0AAAAAAFBX/xXob9Pfpr+t3g8AAAAAAFMP0Z8DGQ==
   </data>
  </layer>
  <layer name="walls" width="64" height="128">

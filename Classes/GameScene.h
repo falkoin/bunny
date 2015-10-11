@@ -11,6 +11,7 @@
 #include "Enemy.h"
 #include "DamageObject.hpp"
 #include "Explosion.hpp"
+#include "ParallaxBG.hpp"
 
 class GameScene : public cocos2d::Layer
 {
@@ -36,11 +37,11 @@ protected:
     ShadowLayer* _shadowLayer;
     Movable* cloud;
     Enemy* enemy;
-    Sprite* parallaxOne;
-    Sprite* parallaxTwo;
-    Sprite* parallaxThree;
-    Sprite* parallaxFour;
-    Sprite* parallaxFive;
+    ParallaxBG* parallaxOne;
+    ParallaxBG* parallaxTwo;
+    ParallaxBG* parallaxThree;
+    ParallaxBG* parallaxFour;
+    ParallaxBG* parallaxFive;
     
     bool _touchEnabled;
     bool _gameOver;
@@ -90,6 +91,7 @@ protected:
     std::vector<float> pillDistance;
     
     float currentTime;
+    float timeGo;
 
     
 };

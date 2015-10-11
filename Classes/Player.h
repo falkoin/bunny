@@ -28,6 +28,9 @@ public:
     void falling();
     void setPlayerVelocity(cocos2d::Vec2 velocity);
     void animate();
+    void setShader(float val);
+    void warpPlayer();
+    void warpCallback();
     bool grounded;
     
     enum State {
@@ -36,6 +39,7 @@ public:
     State state;
     
 private:
+    cocos2d::GLProgramState* _glprogramstate;
     void initOptions();
     cocos2d::Vec2 _velocity;
     

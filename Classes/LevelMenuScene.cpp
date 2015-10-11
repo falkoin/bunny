@@ -182,10 +182,11 @@ Label* LevelMenuScene::setSublabelHS(const char *labelText)
     auto lvlOneHC = UserDefault::getInstance()->getIntegerForKey(labelText);
     char lvlStr[20];
     sprintf(lvlStr, "Highscore: %i",lvlOneHC);
-    auto lvlOneLabel = cocos2d::Label::createWithBMFont("CartonSixBMP.fnt","",CCTextAlignment::CENTER);
+//    auto lvlOneLabel = cocos2d::Label::createWithBMFont("CartonSixBMP.fnt","",CCTextAlignment::CENTER);
+    auto lvlOneLabel = cocos2d::Label::createWithTTF("", "rainyhearts.ttf", 32);
     lvlOneLabel->setColor(cocos2d::Color3B(255, 255, 255));
     lvlOneLabel->setAnchorPoint(Point(0.5,0.5));
-    lvlOneLabel->setScale(SCALE_FACTOR/6);
+//    lvlOneLabel->setScale(SCALE_FACTOR/6);
     lvlOneLabel->getTexture()->setAliasTexParameters();
     lvlOneLabel->setGlobalZOrder(9999);
     lvlOneLabel->Label::setString(lvlStr);
@@ -197,10 +198,11 @@ Label* LevelMenuScene::setSublabelT(const char *labelText)
     auto lvlOneHC = UserDefault::getInstance()->getFloatForKey(labelText);
     char lvlStr[20];
     sprintf(lvlStr, "Time: %5.2f",lvlOneHC);
-    auto lvlOneLabel = cocos2d::Label::createWithBMFont("CartonSixBMP.fnt","",CCTextAlignment::CENTER);
+//    auto lvlOneLabel = cocos2d::Label::createWithBMFont("CartonSixBMP.fnt","",CCTextAlignment::CENTER);
+    auto lvlOneLabel = cocos2d::Label::createWithTTF("", "rainyhearts.ttf", 32);
     lvlOneLabel->setColor(cocos2d::Color3B(255, 255, 255));
     lvlOneLabel->setAnchorPoint(Point(0.5,0.5));
-    lvlOneLabel->setScale(SCALE_FACTOR/6);
+//    lvlOneLabel->setScale(SCALE_FACTOR/6);
     lvlOneLabel->getTexture()->setAliasTexParameters();
     lvlOneLabel->setGlobalZOrder(9999);
     lvlOneLabel->Label::setString(lvlStr);

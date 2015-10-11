@@ -68,23 +68,23 @@ bool GameOverScene::init()
     
     this->addChild(menu);
     
-    _scoreLabel = cocos2d::Label::createWithBMFont("CartonSixBMP.fnt","");
+    _scoreLabel = cocos2d::Label::createWithTTF("", "rainyhearts.ttf", 96);
     _scoreLabel->setColor(cocos2d::Color3B(255, 255, 255));
     _scoreLabel->setAnchorPoint(Point(0.0,0.0));
-    _scoreLabel->setScale(SCALE_FACTOR*0.5);
     _scoreLabel->getTexture()->setAliasTexParameters();
-    _scoreLabel->setGlobalZOrder(9999);
+    _scoreLabel->setGlobalZOrder(Z_MENU);
+    _scoreLabel->setOpacity(180);
     _scoreLabel->retain();
-    addChild(_scoreLabel);
+    this->addChild(_scoreLabel);
     
-    auto _timeLabel = cocos2d::Label::createWithBMFont("CartonSixBMP.fnt","");
+    auto _timeLabel = cocos2d::Label::createWithTTF("", "rainyhearts.ttf", 96);
     _timeLabel->setColor(cocos2d::Color3B(255, 255, 255));
     _timeLabel->setAnchorPoint(Point(0.0,0.0));
-    _timeLabel->setScale(SCALE_FACTOR*0.5);
     _timeLabel->getTexture()->setAliasTexParameters();
-    _timeLabel->setGlobalZOrder(9999);
+    _timeLabel->setGlobalZOrder(Z_MENU);
+    _timeLabel->setOpacity(180);
     _timeLabel->retain();
-    addChild(_timeLabel);
+    this->addChild(_timeLabel);
     
     int currentLevel = UserDefault::getInstance()->getIntegerForKey("currentLevel");
     int score = UserDefault::getInstance()->getIntegerForKey("currentScore");
@@ -105,9 +105,6 @@ bool GameOverScene::init()
         _scoreLabel->setPosition(cocos2d::Vec2(origin.x + visibleSize.width*0.5f-_scoreLabel->getContentSize().width*0.5f-25,origin.y + origin.y+visibleSize.height*(0.25f)));
     }
     
-//    _scoreLabel->Label::setString("Score: "+std::to_string(score));
-//    _scoreLabel->setPosition(cocos2d::Vec2(origin.x + visibleSize.width*0.5f-_scoreLabel->getContentSize().width*0.5f-25,origin.y + origin.y+visibleSize.height*(0.25f)));
-    
     float time = UserDefault::getInstance()->getFloatForKey("currentTime");
     
     char levelT[9];
@@ -115,7 +112,7 @@ bool GameOverScene::init()
     char timeNow[7];
     sprintf(timeNow, "%5.2f",time);
     
-    int currentT = UserDefault::getInstance()->getIntegerForKey(levelT);
+    float currentT = UserDefault::getInstance()->getFloatForKey(levelT);
     if (time < currentT && win == 1) {
         UserDefault::getInstance()->setFloatForKey(levelT,time);
         _timeLabel->Label::setString("New Record Time: "+(std::string)timeNow);
@@ -128,10 +125,6 @@ bool GameOverScene::init()
         _timeLabel->Label::setString("Time: "+(std::string)timeNow);
         _timeLabel->setPosition(cocos2d::Vec2(origin.x + visibleSize.width*0.5f-_scoreLabel->getContentSize().width*0.5f-25,origin.y + origin.y+visibleSize.height*(0.15f)));
     }
-    
-//    _scoreLabel->Label::setString("Score: "+std::to_string(score));
-//    _scoreLabel->setPosition(cocos2d::Vec2(origin.x + visibleSize.width*0.5f-_scoreLabel->getContentSize().width*0.5f-25,origin.y + origin.y+visibleSize.height*(0.25f)));
-
     
     return true;
 }

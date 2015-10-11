@@ -10,7 +10,7 @@
  </layer>
  <layer name="wallShadow" width="65" height="64">
   <data encoding="base64" compression="zlib">
-   eJzt2LEJxDAQAMEr4Ltw/z0+W4ATWyAZZkOBxDHBBZpR/XYPcEAMGBQDBsWAQTFgUAwYFIPvGlyzbva37+wyZHCWwd0su86fxIDBLHjHPmCw4v7TTjKwDxgUA/tgZwzWxoBBMWBQDBgUAwbFgEExYFAMGBQDBvXVv7SVMWBQDBgUAwbFgEExYFAMGBQDBsWAQTFgoJk/nrgMKQ==
+   eJzt2LENgDAMAMEMwBbsvyO8REttgu4kN6msL1xkLQAAAP7ovOeYXuIxtYcG32rwtsvU+wQNNIh7oEE0cA+igQZxD+ZoAAAAALAXfzkaRAMNooEG0UCDaKBBNNAgGmgQDTSIBhpEg/1dtugJQQ==
   </data>
  </layer>
  <layer name="walls" width="65" height="64">
@@ -226,6 +226,6 @@
   </object>
  </objectgroup>
  <objectgroup name="spawn">
-  <object id="93" x="144" y="992" width="16" height="16"/>
+  <object id="93" x="80" y="992" width="16" height="16"/>
  </objectgroup>
 </map>

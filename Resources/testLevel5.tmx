@@ -8,14 +8,14 @@
    eJztwzENAAAMBKEb37/iyugCCaumqqqqqqqqqqqqqqqqqqqqvj4wHoAB
   </data>
  </layer>
- <layer name="wallShadow" width="64" height="64">
+ <layer name="wallShadow" width="64" height="64" visible="0">
   <data encoding="base64" compression="zlib">
-   eJztzzEBADAQhLDb699vZfxAogA22N51wDH/bf7b/Lf5b/Pf5r/Nf5v/Nv9t/tv8t/lv89/mv81/m/82/23+2/y3+W/z3+a/zX+b/zb/bf7b/Lf5b/PfVv+n6QP6PQKV
+   eJztwTEBAAAAwqD1T20MH6AAAAAAAAAAAAAAAAAAAACAtwFAAAAB
   </data>
  </layer>
  <layer name="walls" width="64" height="64">
   <data encoding="base64" compression="zlib">
-   eJzt0skNwDAMBDHlhtN/wZF/cQ3LAbYAChpVdYTu7d29PXTP7w5pjVr/IC1+fn5+fn7+vPj5+fn5+fnz4ufn5+fn58+Ln5+fn5+fPy9+fn5+fn7+vPj5+fn5+fnz4ufn5+fn58+Ln3/az94WuqvWP0jb/PsPGCsIRw==
+   eJzt20EKwkAQRcEOiUpy/wM7QVy799WDf4AaZtv7zOzRXWvP6faazztU+/6Davz8/N34+fm78fPzd+Pn5+/Gz8/fjZ+fvxs/P383fn7+bvz8/N34+fm78fPzd+Pn5+/Gz8/fjZ+fvxs//7G2RfdYO+f3nfi/7r5/fwOhcgNR
   </data>
  </layer>
  <objectgroup name="objects">

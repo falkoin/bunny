@@ -9,6 +9,7 @@
 #include "Player.h"
 #include "Globals.h"
 #include "GameScene.h"
+#include "SimpleAudioEngine.h"
 
 USING_NS_CC;
 
@@ -79,7 +80,29 @@ void Player::initOptions()
     
     cryAnimation = RepeatForever::create(Animate::create(_cryAnimation));
     cryAnimation->retain();
+
+//    auto fileUtiles = FileUtils::getInstance();
+//    auto fragmentFullPath = fileUtiles->fullPathForFilename("wind.fsh");
+//    auto fragSource = fileUtiles->getStringFromFile(fragmentFullPath);
+//    auto glprogram = GLProgram::createWithByteArrays(ccPositionTextureColor_noMVP_vert, fragSource.c_str());
+//
+//    
+//    _glprogramstate = GLProgramState::getOrCreateWithGLProgram(glprogram);
+//    _glprogramstate->retain();
+//    _glprogramstate->setUniformFloat("u_wind", 1.0f);
+//    this->setGLProgramState(_glprogramstate);
     
+//    auto fileUtiles = FileUtils::getInstance();
+//    auto fragmentFullPath = fileUtiles->fullPathForFilename("example_Noisy.fsh");
+//    auto fragSource = fileUtiles->getStringFromFile(fragmentFullPath);
+//    auto glprogram = GLProgram::createWithByteArrays(ccPositionTextureColor_noMVP_vert, fragSource.c_str());
+//    
+//    
+//    auto _glprogramstate = GLProgramState::getOrCreateWithGLProgram(glprogram);
+//    _glprogramstate->retain();
+//    auto s = this->getTexture()->getContentSizeInPixels();
+//    _glprogramstate->setUniformVec2("resolution", Vec2(s.width, s.height));
+//    this->setGLProgramState(_glprogramstate);
 }
 
 void Player::setPlayerVelocity(cocos2d::Vec2 velocity)
@@ -211,4 +234,29 @@ void Player::animate()
             state = State::FallingDeep;
         }
     }
+}
+
+void Player::setShader(float val)
+{
+    _glprogramstate->setUniformFloat("u_wind", val);
+}
+
+void Player::warpPlayer()
+{
+    auto delayAction = DelayTime::create(1);
+    auto warpAction = MoveBy::create(2, Point(0,this->getContentSize().height*SCALE_FACTOR*2));
+    auto setVar  = CallFunc::create([this]() {this->warpCallback();});
+    auto sequenceAction = Sequence::create(delayAction, setVar, warpAction, NULL);
+    this->runAction(sequenceAction);
+
+}
+
+void Player::warpCallback()
+{
+    auto teleporter = Sprite::createWithSpriteFrameName("teleporter.png");
+    teleporter->setAnchorPoint(Point(0.5,0.3));
+    this->addChild(teleporter);
+    teleporter->setGlobalZOrder(Z_TELE);
+    teleporter->setPosition(this->getContentSize().width*0.5-1,0);
+    CocosDenshion::SimpleAudioEngine::getInstance()->playEffect("teleport.wav");
 }

@@ -76,31 +76,7 @@ void Consumable::initOptions(int taste, int trigger, bool triggered)
     _taste = taste;
     _trigger = trigger;
     _triggered = triggered;
-//    switch (_taste) {
-//        case 1:
-//            AnimationCache::getInstance()->addAnimationsWithFile("consumable-animations.plist");
-//            break;
-//        case 2:
-//            AnimationCache::getInstance()->addAnimationsWithFile("highJump-animations.plist");
-//            break;
-//        case 3:
-//            AnimationCache::getInstance()->addAnimationsWithFile("doublePoints-animations.plist");
-//            break;
-//        case 4:
-//            AnimationCache::getInstance()->addAnimationsWithFile("trigger-animations.plist");
-//            break;
-//        default:
-//            break;
-//    }
-//    // idle animation
-//    _idleCache = AnimationCache::getInstance();
-//    _idleAnimation = _idleCache->getAnimation("idle");
-//    _idleAnimation->setRestoreOriginalFrame(true);
-//    _idleAnimation->setDelayPerUnit(cocos2d::RandomHelper::random_real(0.1, 0.3));
-//    
-//    idleAnimation = RepeatForever::create(Animate::create(_idleAnimation));
-//    idleAnimation->retain();
-//    runAction(idleAnimation);
+
     if (taste != 5)
     {
         float moveDuration = cocos2d::RandomHelper::random_real(0.7, 1.1);
