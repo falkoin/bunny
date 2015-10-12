@@ -54,7 +54,7 @@ void GameScene::update(float dt)
             player->setPlayerVelocity(Point(player->getPlayerVelocity().x, player->getPlayerVelocity().y + WORLD_GRAVITY * SCALE_FACTOR));
         }
     }
-    if (!_win)
+    if (!_win && !_gameOver)
     {
         checkCollisionX();
         updatePlayerX(dt);
@@ -307,58 +307,34 @@ void GameScene::checkHit()
                 
                 if (pillRect.intersectsRect(playerRect) && pills->getTriggered())
                 {
+                    ParticleSystemQuad* p;
                     if (pills->getTaste() == 1)
                     {
+                        p = ParticleSystemQuad::create("explosionPink.plist");
                         player->moveUp();
-                        ParticleSystemQuad* p = ParticleSystemQuad::create("explosionPink.plist");
-                        p->setGlobalZOrder(1010);
-                        p->setPositionType(ParticleSystemQuad::PositionType::RELATIVE);
-                        p->setPosition(pills->getPosition()+Point(pills->getContentSize()/2));
-                        addChild(p);
-                        CocosDenshion::SimpleAudioEngine::getInstance()->playEffect("bloop.wav");
                     }
                     else if (pills->getTaste() == 2)
                     {
                         player->moveUpDouble();
-                        ParticleSystemQuad* p = ParticleSystemQuad::create("explosionCyan.plist");
-                        p->setGlobalZOrder(1010);
-                        p->setPositionType(ParticleSystemQuad::PositionType::RELATIVE);
-                        p->setPosition(pills->getPosition()+Point(pills->getContentSize()/2));
-                        addChild(p);
-                        CocosDenshion::SimpleAudioEngine::getInstance()->playEffect("woooh.wav");
+                        p = ParticleSystemQuad::create("explosionCyan.plist");
                     }
                     else if (pills->getTaste() == 3)
                     {
                         score = score*2;
                         player->moveUp();
-                        ParticleSystemQuad* p = ParticleSystemQuad::create("explosionGreen.plist");
-                        p->setGlobalZOrder(1010);
-                        p->setPositionType(ParticleSystemQuad::PositionType::RELATIVE);
-                        p->setPosition(pills->getPosition()+Point(pills->getContentSize()/2));
-                        addChild(p);
-                        CocosDenshion::SimpleAudioEngine::getInstance()->playEffect("bloop.wav");
+                        p = ParticleSystemQuad::create("explosionGreen.plist");
                     }
                     else if (pills->getTaste() == 4)
                     {
                         player->moveUp();
                         toTrigger = pills->getTrigger();
-                        ParticleSystemQuad* p = ParticleSystemQuad::create("explosionYellow.plist");
-                        p->setGlobalZOrder(1010);
-                        p->setPositionType(ParticleSystemQuad::PositionType::RELATIVE);
-                        p->setPosition(pills->getPosition()+Point(pills->getContentSize()/2));
-                        addChild(p);
-                        CocosDenshion::SimpleAudioEngine::getInstance()->playEffect("warp.wav");
+                        p = ParticleSystemQuad::create("explosionYellow.plist");
                     }
                     else if (pills->getTaste() == 5 && !pills->isBusy())
                     {
                         player->moveUp();
                         toTrigger = pills->getTrigger();
                         pills->pushPill();
-//                        ParticleSystemQuad* p = ParticleSystemQuad::create("explosionYellow.plist");
-//                        p->setGlobalZOrder(1010);
-//                        p->setPositionType(ParticleSystemQuad::PositionType::RELATIVE);
-//                        p->setPosition(pills->getPosition()+Point(pills->getContentSize()/2));
-//                        addChild(p);
                         CocosDenshion::SimpleAudioEngine::getInstance()->playEffect("bounce.wav");
                     }
                     else
@@ -368,8 +344,13 @@ void GameScene::checkHit()
                     }
                     if (pills->getTaste() != 5)
                     {
+                        p->setGlobalZOrder(Z_OBJLIGHT);
+                        p->setAutoRemoveOnFinish(true);
+                        p->setPositionType(ParticleSystemQuad::PositionType::RELATIVE);
+                        p->setPosition(pills->getPosition()+Point(pills->getContentSize()*0.5));
+                        addChild(p);
                         pillVec.eraseObject(pills);
-                        pills->removeFromParent();
+                        pills->explodeSelf();
                         score++;
                     }
                     break;
@@ -409,10 +390,15 @@ void GameScene::checkHit()
                     if (collisionObject->getDamageObjectType() == 3 && !_gameOver)
                     {
                         ParticleSystemQuad* p = ParticleSystemQuad::create("sawParticles.plist");
-                        p->setGlobalZOrder(1010);
+                        p->setGlobalZOrder(Z_OBJ);
                         p->setPositionType(ParticleSystemQuad::PositionType::RELATIVE);
                         p->setPosition(player->getPosition()+Point(player->getContentSize()/2));
                         addChild(p);
+                        gameOver();
+                        CocosDenshion::SimpleAudioEngine::getInstance()->playEffect("ouch.wav");
+                    }
+                    if (collisionObject->getDamageObjectType() == 4 && !_gameOver && collisionObject->damageable())
+                    {
                         gameOver();
                         CocosDenshion::SimpleAudioEngine::getInstance()->playEffect("ouch.wav");
                     }
@@ -564,7 +550,8 @@ void GameScene::gameOver()
         if (!_win)
         {
             _hud->drawEndMessage("     Game Over \n\nTouch to continue");
-            player->removeFromParent();
+//            player->removeFromParent();
+            player->playerDeath();
             ParticleSystemQuad* p = ParticleSystemQuad::create("explosionPlayer.plist");
             p->setGlobalZOrder(1010);
             p->setPositionType(ParticleSystemQuad::PositionType::RELATIVE);

@@ -23,6 +23,9 @@ public:
     bool getTriggered();
     void pushPill();
     bool isBusy();
+    void explodeSelf();
+    void explodeCallback();
+    
 private:
     void initOptions(int taste, int trigger, bool triggered);
     bool _triggered;

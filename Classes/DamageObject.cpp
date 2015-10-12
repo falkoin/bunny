@@ -36,6 +36,10 @@ DamageObject* DamageObject::create(int taste)
     {
         success = pSprite->initWithSpriteFrameName("saw_0.png");
     }
+    else if (taste == 4)
+    {
+        success = pSprite->initWithSpriteFrameName("movingWall.png");
+    }
     else
     {
         success = false;
@@ -108,9 +112,41 @@ void DamageObject::initOptions(int taste)
         idleAnimation->retain();
         runAction(idleAnimation);
     }
+    else if (taste == 4)
+    {
+        AnimationCache::getInstance()->addAnimationsWithFile("glow-animations.plist");
+        this->setColor(Color3B(255,195,0));
+        // idle animation
+        _idleCache = AnimationCache::getInstance();
+        _idleAnimation = _idleCache->getAnimation("idle");
+        _idleAnimation->setRestoreOriginalFrame(true);
+        _idleAnimation->setDelayPerUnit(0.1f);
+        
+        idleAnimation = RepeatForever::create(Animate::create(_idleAnimation));
+        idleAnimation->retain();
+        runAction(idleAnimation);
+        _damageable = false;
+        auto fadeAction = FadeTo::create(2.0f, 0);
+        auto delayAction = DelayTime::create(2.0f);
+        auto callAction = CallFunc::create([this]() {this->toggleCallback();});
+        auto fadeAction2 = FadeTo::create(2.0f, 255);
+        auto damageSequence = Sequence::create(fadeAction, delayAction, fadeAction2, callAction, delayAction, callAction, NULL);
+        runAction(RepeatForever::create(damageSequence));
+        
+    }
 }
 
 int DamageObject::getDamageObjectType()
 {
     return _taste;
+}
+
+bool DamageObject::damageable()
+{
+    return _damageable;
+}
+
+void DamageObject::toggleCallback()
+{
+    _damageable = !_damageable;
 }

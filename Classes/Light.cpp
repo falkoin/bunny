@@ -25,20 +25,24 @@ Light* Light::create(int taste)
     bool success;
     if (taste == 1)
     {
-        success = pSprite->initWithFile("lightPink.png");
+        success = pSprite->initWithFile("lightWhite.png");
+        pSprite->setColor(Color3B(220, 43, 220));
         
     }
     else if (taste == 2)
     {
-        success = pSprite->initWithFile("lightCyan.png");
+        success = pSprite->initWithFile("lightWhite.png");
+        pSprite->setColor(Color3B(26, 220, 220));
     }
     else if (taste == 3)
     {
-        success = pSprite->initWithFile("light.png");
+        success = pSprite->initWithFile("lightWhite.png");
+        pSprite->setColor(Color3B(43, 220,54));
     }
     else if (taste == 4)
     {
-        success = pSprite->initWithFile("lightYellow.png");
+        success = pSprite->initWithFile("lightWhite.png");
+        pSprite->setColor(Color3B(245, 220, 0));
     }
     else if (taste == 5)
     {

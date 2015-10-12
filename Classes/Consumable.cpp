@@ -8,6 +8,7 @@
 
 #include "Consumable.h"
 #include "Globals.h"
+#include "SimpleAudioEngine.h"
 
 USING_NS_CC;
 
@@ -129,4 +130,40 @@ void Consumable::setBusy()
 bool Consumable::isBusy()
 {
     return _busy;
+}
+
+void Consumable::explodeSelf()
+{
+    auto scaleAction = ScaleBy::create(0.1, 0);
+    auto callAction  = CallFunc::create([this]() {this->explodeCallback();});
+    auto removeAction = RemoveSelf::create();
+    auto explodeSequence = Sequence::create(scaleAction, callAction, removeAction, NULL);
+    this->runAction(explodeSequence);
+}
+
+void Consumable::explodeCallback()
+{
+//    ParticleSystemQuad* p = ParticleSystemQuad::create("explosionPink.plist");
+    switch (_taste)
+    {
+        case 1:
+            CocosDenshion::SimpleAudioEngine::getInstance()->playEffect("bloop.wav");
+            break;
+        case 2:
+            CocosDenshion::SimpleAudioEngine::getInstance()->playEffect("woooh.wav");
+            break;
+        case 3:
+            CocosDenshion::SimpleAudioEngine::getInstance()->playEffect("bloop.wav");
+            break;
+        case 4:
+            CocosDenshion::SimpleAudioEngine::getInstance()->playEffect("warp.wav");
+            break;
+        default:
+            break;
+    }
+//    p->setGlobalZOrder(Z_OBJ);
+//    p->setPositionType(ParticleSystemQuad::PositionType::RELATIVE);
+////    p->setPosition(this->getPosition());
+//    p->retain();
+//    this->addChild(p);
 }

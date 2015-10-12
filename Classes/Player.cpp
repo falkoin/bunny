@@ -260,3 +260,11 @@ void Player::warpCallback()
     teleporter->setPosition(this->getContentSize().width*0.5-1,0);
     CocosDenshion::SimpleAudioEngine::getInstance()->playEffect("teleport.wav");
 }
+
+void Player::playerDeath()
+{
+    auto scaleAction = ScaleBy::create(0.05, 1, 0);
+    auto removeAction = RemoveSelf::create();
+    auto deathSequence = Sequence::create(scaleAction, removeAction, NULL);
+    this->runAction(deathSequence);
+}

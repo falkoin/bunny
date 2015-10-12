@@ -31,6 +31,7 @@ public:
     void setShader(float val);
     void warpPlayer();
     void warpCallback();
+    void playerDeath();
     bool grounded;
     
     enum State {

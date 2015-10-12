@@ -18,7 +18,10 @@ public:
     virtual ~DamageObject();
     static DamageObject* create(int taste);
     int getDamageObjectType();
+    bool damageable();
 private:
+    void toggleCallback();
+    bool _damageable;
     int _taste;
     void initOptions(int taste);
     CC_SYNTHESIZE(cocos2d::Action*, idleAnimation, IdleAnimation);
