@@ -238,6 +238,7 @@
 		AEC965A21B9487B700DB2AB0 /* shadow.fsh in Resources */ = {isa = PBXBuildFile; fileRef = AEC9659E1B9487B700DB2AB0 /* shadow.fsh */; };
 		AEC965AA1B94942100DB2AB0 /* explosionPlayer.plist in Resources */ = {isa = PBXBuildFile; fileRef = AEC965A91B94942100DB2AB0 /* explosionPlayer.plist */; };
 		AEC965AB1B94942100DB2AB0 /* explosionPlayer.plist in Resources */ = {isa = PBXBuildFile; fileRef = AEC965A91B94942100DB2AB0 /* explosionPlayer.plist */; };
+		AECB86B81BCCF83A00576F6B /* plop.wav in Resources */ = {isa = PBXBuildFile; fileRef = AECB86B71BCCF83A00576F6B /* plop.wav */; settings = {ASSET_TAGS = (); }; };
 		AED10C671BC4305600AFD5C5 /* levels.png in Resources */ = {isa = PBXBuildFile; fileRef = AED10C661BC4305600AFD5C5 /* levels.png */; settings = {ASSET_TAGS = (); }; };
 		AED10C681BC4305600AFD5C5 /* levels.png in Resources */ = {isa = PBXBuildFile; fileRef = AED10C661BC4305600AFD5C5 /* levels.png */; settings = {ASSET_TAGS = (); }; };
 		AED10C6D1BC43C0C00AFD5C5 /* buttonHighscorePressed.png in Resources */ = {isa = PBXBuildFile; fileRef = AED10C691BC43C0C00AFD5C5 /* buttonHighscorePressed.png */; settings = {ASSET_TAGS = (); }; };
@@ -487,6 +488,7 @@
 		AEC9659D1B9487B700DB2AB0 /* test.vert */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = test.vert; sourceTree = "<group>"; };
 		AEC9659E1B9487B700DB2AB0 /* shadow.fsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = shadow.fsh; sourceTree = "<group>"; };
 		AEC965A91B94942100DB2AB0 /* explosionPlayer.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = explosionPlayer.plist; sourceTree = "<group>"; };
+		AECB86B71BCCF83A00576F6B /* plop.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = plop.wav; sourceTree = "<group>"; };
 		AED10C661BC4305600AFD5C5 /* levels.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = levels.png; sourceTree = "<group>"; };
 		AED10C691BC43C0C00AFD5C5 /* buttonHighscorePressed.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = buttonHighscorePressed.png; sourceTree = "<group>"; };
 		AED10C6A1BC43C0C00AFD5C5 /* buttonHighscore.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = buttonHighscore.png; sourceTree = "<group>"; };
@@ -769,6 +771,7 @@
 		AE348F011BAAED4100C365B4 /* Sounds */ = {
 			isa = PBXGroup;
 			children = (
+				AECB86B71BCCF83A00576F6B /* plop.wav */,
 				AE5DEB5C1BCABCEA00EC02A6 /* teleport.wav */,
 				AE1DF9F21BC5AAE100F6333E /* warp.wav */,
 				AE1DF9EF1BC5A7DA00F6333E /* bounce.wav */,
@@ -1057,6 +1060,7 @@
 				AE38BA031B98BE2C005B48E8 /* ouch.wav in Resources */,
 				AE11FE071B925BDD00F52CD4 /* retry.png in Resources */,
 				AEB344D21B979D39000F6277 /* level3.tmx in Resources */,
+				AECB86B81BCCF83A00576F6B /* plop.wav in Resources */,
 				AEC965AA1B94942100DB2AB0 /* explosionPlayer.plist in Resources */,
 				AEB344BC1B979927000F6277 /* lvl01pressed.png in Resources */,
 				AE30C2CC1BAD7551005F5860 /* glow-animations.plist in Resources */,

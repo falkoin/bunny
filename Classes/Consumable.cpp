@@ -42,6 +42,11 @@ Consumable* Consumable::create(int taste, int trigger, bool triggered)
             spriteLoad = pSprite->initWithSpriteFrameName("pillTemplate.png");
             pSprite->setColor(Color3B(255, 180, 20));
             break;
+        case 6:
+            spriteLoad = pSprite->initWithSpriteFrameName("pillScore_0.png");
+            pSprite->setColor(Color3B(135, 255, 171));
+            pSprite->setOpacity(90);
+            break;
             
         default:
             break;
@@ -78,12 +83,17 @@ void Consumable::initOptions(int taste, int trigger, bool triggered)
     _trigger = trigger;
     _triggered = triggered;
 
-    if (taste != 5)
+    if (taste != 5 && taste != 6)
     {
         float moveDuration = cocos2d::RandomHelper::random_real(0.7, 1.1);
         auto moveBy1 = MoveBy::create(moveDuration, Vec2(0,20));
         auto moveBy2 = MoveBy::create(moveDuration, Vec2(0,-20));
         this->runAction(RepeatForever::create(Sequence::create(moveBy1, moveBy2, nullptr)));
+    } else if (taste == 6)
+    {
+        auto scaleAction1 = ScaleBy::create(2.0f, 2.0f);
+        auto scaleAction2 = ScaleBy::create(2.0f, 0.5f);
+        this->runAction(RepeatForever::create(Sequence::create(scaleAction1, scaleAction2, nullptr)));
     }
     
     

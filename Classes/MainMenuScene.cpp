@@ -64,6 +64,7 @@ bool MainMenuScene::init()
     CocosDenshion::SimpleAudioEngine::getInstance()->preloadEffect("bounce.wav");
     CocosDenshion::SimpleAudioEngine::getInstance()->preloadEffect("warp.wav");
     CocosDenshion::SimpleAudioEngine::getInstance()->preloadEffect("teleport.wav");
+    CocosDenshion::SimpleAudioEngine::getInstance()->preloadEffect("plop.wav");
     CocosDenshion::SimpleAudioEngine::getInstance()->setEffectsVolume(0.2);
     
 //    UserDefault::getInstance()->setFloatForKey("Level001T", 99999.99);

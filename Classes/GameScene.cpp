@@ -333,16 +333,22 @@ void GameScene::checkHit()
                     else if (pills->getTaste() == 5 && !pills->isBusy())
                     {
                         player->moveUp();
-                        toTrigger = pills->getTrigger();
                         pills->pushPill();
                         CocosDenshion::SimpleAudioEngine::getInstance()->playEffect("bounce.wav");
+                    }
+                    else if (pills->getTaste() == 6)
+                    {
+                        CocosDenshion::SimpleAudioEngine::getInstance()->playEffect("plop.wav");
+                        score++;
+                        pills->removeFromParent();
+                        pillVec.eraseObject(pills);
                     }
                     else
                     {
 //                        log("Error");
 //                        _shadowLayer->setShadowColor(Vec4(0.0,0.0,0.0,0.55));
                     }
-                    if (pills->getTaste() != 5)
+                    if (pills->getTaste() != 5 && pills->getTaste() != 6)
                     {
                         p->setGlobalZOrder(Z_OBJLIGHT);
                         p->setAutoRemoveOnFinish(true);

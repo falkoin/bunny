@@ -50,6 +50,12 @@ Light* Light::create(int taste)
         pSprite->setColor(Color3B(255, 180, 20));
         
     }
+    else if (taste == 6)
+    {
+        success = pSprite->initWithFile("lightWhite.png");
+        pSprite->setColor(Color3B(135, 255, 171));
+        
+    }
     else if (taste == 9)
     {
     success = pSprite->initWithFile("lightWhite.png");
@@ -64,7 +70,11 @@ Light* Light::create(int taste)
     {
         pSprite->initOptions();
         pSprite->getTexture()->setAliasTexParameters();
-        pSprite->setScale(SCALE_FACTOR);
+        if (taste != 6)
+            pSprite->setScale(SCALE_FACTOR);
+        else
+            pSprite->setScale(SCALE_FACTOR*0.5);
+ 
         pSprite->setFlippedX(false);
         pSprite->setAnchorPoint(Point(0.5,0.5));
         pSprite->setOpacity(60);
