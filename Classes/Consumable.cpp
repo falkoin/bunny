@@ -44,7 +44,7 @@ Consumable* Consumable::create(int taste, int trigger, bool triggered)
             break;
         case 6:
             spriteLoad = pSprite->initWithSpriteFrameName("pillScore_0.png");
-            pSprite->setColor(Color3B(135, 255, 171));
+            pSprite->setColor(Color3B(0, 255, 171));
             pSprite->setOpacity(90);
             break;
             
